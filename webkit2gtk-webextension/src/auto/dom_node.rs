@@ -2,21 +2,15 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
-use crate::DOMDocument;
-use crate::DOMElement;
-use crate::DOMEventTarget;
-use crate::DOMNodeList;
-use crate::DOMObject;
-use glib::object::Cast;
-use glib::object::IsA;
-use glib::signal::connect_raw;
-use glib::signal::SignalHandlerId;
-use glib::translate::*;
-use std::boxed::Box as Box_;
-use std::fmt;
-use std::mem::transmute;
-use std::ptr;
+use crate::{DOMDocument, DOMElement, DOMEventTarget, DOMNodeList, DOMObject};
+use glib::{
+    prelude::*,
+    signal::{connect_raw, SignalHandlerId},
+    translate::*,
+};
+use std::{boxed::Box as Box_, fmt, mem::transmute, ptr};
 
 glib::wrapper! {
     #[doc(alias = "WebKitDOMNode")]
@@ -45,117 +39,140 @@ impl DOMNode {
 
 pub trait DOMNodeExt: 'static {
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_append_child")]
     fn append_child(&self, newChild: &impl IsA<DOMNode>) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_14", deprecated = "Since 2.14")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_clone_node")]
     fn clone_node(&self, deep: bool) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
     #[cfg(any(feature = "v2_14", feature = "dox"))]
     #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_14")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_clone_node_with_error")]
     fn clone_node_with_error(&self, deep: bool) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_compare_document_position")]
     fn compare_document_position(&self, other: &impl IsA<DOMNode>) -> libc::c_ushort;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_contains")]
     fn contains(&self, other: &impl IsA<DOMNode>) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_base_uri")]
     #[doc(alias = "get_base_uri")]
     fn base_uri(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_child_nodes")]
     #[doc(alias = "get_child_nodes")]
     fn child_nodes(&self) -> Option<DOMNodeList>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_first_child")]
     #[doc(alias = "get_first_child")]
     #[must_use]
     fn first_child(&self) -> Option<DOMNode>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_last_child")]
     #[doc(alias = "get_last_child")]
     #[must_use]
     fn last_child(&self) -> Option<DOMNode>;
 
     #[cfg_attr(feature = "v2_14", deprecated = "Since 2.14")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_local_name")]
     #[doc(alias = "get_local_name")]
     fn local_name(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_14", deprecated = "Since 2.14")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_namespace_uri")]
     #[doc(alias = "get_namespace_uri")]
     fn namespace_uri(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_next_sibling")]
     #[doc(alias = "get_next_sibling")]
     #[must_use]
     fn next_sibling(&self) -> Option<DOMNode>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_node_name")]
     #[doc(alias = "get_node_name")]
     fn node_name(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_node_type")]
     #[doc(alias = "get_node_type")]
     fn node_type(&self) -> libc::c_ushort;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_node_value")]
     #[doc(alias = "get_node_value")]
     fn node_value(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_owner_document")]
     #[doc(alias = "get_owner_document")]
     fn owner_document(&self) -> Option<DOMDocument>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_parent_element")]
     #[doc(alias = "get_parent_element")]
     fn parent_element(&self) -> Option<DOMElement>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_parent_node")]
     #[doc(alias = "get_parent_node")]
     #[must_use]
     fn parent_node(&self) -> Option<DOMNode>;
 
     #[cfg_attr(feature = "v2_14", deprecated = "Since 2.14")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_prefix")]
     #[doc(alias = "get_prefix")]
     fn prefix(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_previous_sibling")]
     #[doc(alias = "get_previous_sibling")]
     #[must_use]
     fn previous_sibling(&self) -> Option<DOMNode>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_get_text_content")]
     #[doc(alias = "get_text_content")]
     fn text_content(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_has_child_nodes")]
     fn has_child_nodes(&self) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_insert_before")]
     fn insert_before(
         &self,
@@ -164,38 +181,47 @@ pub trait DOMNodeExt: 'static {
     ) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_is_default_namespace")]
     fn is_default_namespace(&self, namespaceURI: &str) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_is_equal_node")]
     fn is_equal_node(&self, other: &impl IsA<DOMNode>) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_is_same_node")]
     fn is_same_node(&self, other: &impl IsA<DOMNode>) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_is_supported")]
     fn is_supported(&self, feature: &str, version: &str) -> bool;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_lookup_namespace_uri")]
     fn lookup_namespace_uri(&self, prefix: &str) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_lookup_prefix")]
     fn lookup_prefix(&self, namespaceURI: &str) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_normalize")]
     fn normalize(&self);
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_remove_child")]
     fn remove_child(&self, oldChild: &impl IsA<DOMNode>) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_replace_child")]
     fn replace_child(
         &self,
@@ -204,14 +230,17 @@ pub trait DOMNodeExt: 'static {
     ) -> Result<DOMNode, glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_set_node_value")]
     fn set_node_value(&self, value: &str) -> Result<(), glib::Error>;
 
     #[cfg_attr(feature = "v2_14", deprecated = "Since 2.14")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_set_prefix")]
     fn set_prefix(&self, value: &str) -> Result<(), glib::Error>;
 
     #[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_set_text_content")]
     fn set_text_content(&self, value: &str) -> Result<(), glib::Error>;
 
@@ -256,6 +285,7 @@ pub trait DOMNodeExt: 'static {
 }
 
 impl<O: IsA<DOMNode>> DOMNodeExt for O {
+    #[allow(deprecated)]
     fn append_child(&self, newChild: &impl IsA<DOMNode>) -> Result<DOMNode, glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -272,6 +302,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn clone_node(&self, deep: bool) -> Result<DOMNode, glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -290,6 +321,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
 
     #[cfg(any(feature = "v2_14", feature = "dox"))]
     #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_14")))]
+    #[allow(deprecated)]
     fn clone_node_with_error(&self, deep: bool) -> Result<DOMNode, glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -306,6 +338,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn compare_document_position(&self, other: &impl IsA<DOMNode>) -> libc::c_ushort {
         unsafe {
             ffi::webkit_dom_node_compare_document_position(
@@ -315,6 +348,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn contains(&self, other: &impl IsA<DOMNode>) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_contains(
@@ -324,6 +358,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn base_uri(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_base_uri(
@@ -332,6 +367,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn child_nodes(&self) -> Option<DOMNodeList> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_child_nodes(
@@ -340,6 +376,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn first_child(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_first_child(
@@ -348,6 +385,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn last_child(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_last_child(
@@ -356,6 +394,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn local_name(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_local_name(
@@ -364,6 +403,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn namespace_uri(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_namespace_uri(
@@ -372,6 +412,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn next_sibling(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_next_sibling(
@@ -380,6 +421,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn node_name(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_node_name(
@@ -388,10 +430,12 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn node_type(&self) -> libc::c_ushort {
         unsafe { ffi::webkit_dom_node_get_node_type(self.as_ref().to_glib_none().0) }
     }
 
+    #[allow(deprecated)]
     fn node_value(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_node_value(
@@ -400,6 +444,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn owner_document(&self) -> Option<DOMDocument> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_owner_document(
@@ -408,6 +453,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn parent_element(&self) -> Option<DOMElement> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_parent_element(
@@ -416,6 +462,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn parent_node(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_parent_node(
@@ -424,6 +471,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn prefix(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_prefix(
@@ -432,6 +480,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn previous_sibling(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_dom_node_get_previous_sibling(
@@ -440,6 +489,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn text_content(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_get_text_content(
@@ -448,6 +498,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn has_child_nodes(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_has_child_nodes(
@@ -456,6 +507,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn insert_before(
         &self,
         newChild: &impl IsA<DOMNode>,
@@ -477,6 +529,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn is_default_namespace(&self, namespaceURI: &str) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_is_default_namespace(
@@ -486,6 +539,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn is_equal_node(&self, other: &impl IsA<DOMNode>) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_is_equal_node(
@@ -495,6 +549,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn is_same_node(&self, other: &impl IsA<DOMNode>) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_is_same_node(
@@ -504,6 +559,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn is_supported(&self, feature: &str, version: &str) -> bool {
         unsafe {
             from_glib(ffi::webkit_dom_node_is_supported(
@@ -514,6 +570,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn lookup_namespace_uri(&self, prefix: &str) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_lookup_namespace_uri(
@@ -523,6 +580,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn lookup_prefix(&self, namespaceURI: &str) -> Option<glib::GString> {
         unsafe {
             from_glib_full(ffi::webkit_dom_node_lookup_prefix(
@@ -532,12 +590,14 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn normalize(&self) {
         unsafe {
             ffi::webkit_dom_node_normalize(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[allow(deprecated)]
     fn remove_child(&self, oldChild: &impl IsA<DOMNode>) -> Result<DOMNode, glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -554,6 +614,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn replace_child(
         &self,
         newChild: &impl IsA<DOMNode>,
@@ -575,6 +636,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn set_node_value(&self, value: &str) -> Result<(), glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -591,6 +653,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn set_prefix(&self, value: &str) -> Result<(), glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();
@@ -607,6 +670,7 @@ impl<O: IsA<DOMNode>> DOMNodeExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn set_text_content(&self, value: &str) -> Result<(), glib::Error> {
         unsafe {
             let mut error = ptr::null_mut();

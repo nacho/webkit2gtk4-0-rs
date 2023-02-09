@@ -3,8 +3,7 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use crate::ConsoleMessageLevel;
-use crate::ConsoleMessageSource;
+use crate::{ConsoleMessageLevel, ConsoleMessageSource};
 use glib::translate::*;
 
 glib::wrapper! {

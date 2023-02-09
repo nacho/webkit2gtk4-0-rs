@@ -2,21 +2,18 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
 #[cfg(any(feature = "v2_6", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
 use crate::NavigationAction;
-use crate::NavigationType;
-use crate::PolicyDecision;
-use crate::URIRequest;
-use glib::object::Cast;
-use glib::object::IsA;
-use glib::signal::connect_raw;
-use glib::signal::SignalHandlerId;
-use glib::translate::*;
-use std::boxed::Box as Box_;
-use std::fmt;
-use std::mem::transmute;
+use crate::{NavigationType, PolicyDecision, URIRequest};
+use glib::{
+    prelude::*,
+    signal::{connect_raw, SignalHandlerId},
+    translate::*,
+};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitNavigationPolicyDecision")]
@@ -37,11 +34,13 @@ pub trait NavigationPolicyDecisionExt: 'static {
     fn frame_name(&self) -> Option<glib::GString>;
 
     #[cfg_attr(feature = "v2_6", deprecated = "Since 2.6")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_navigation_policy_decision_get_modifiers")]
     #[doc(alias = "get_modifiers")]
     fn modifiers(&self) -> u32;
 
     #[cfg_attr(feature = "v2_6", deprecated = "Since 2.6")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_navigation_policy_decision_get_mouse_button")]
     #[doc(alias = "get_mouse_button")]
     fn mouse_button(&self) -> u32;
@@ -53,11 +52,13 @@ pub trait NavigationPolicyDecisionExt: 'static {
     fn navigation_action(&self) -> Option<NavigationAction>;
 
     #[cfg_attr(feature = "v2_6", deprecated = "Since 2.6")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_navigation_policy_decision_get_navigation_type")]
     #[doc(alias = "get_navigation_type")]
     fn navigation_type(&self) -> NavigationType;
 
     #[cfg_attr(feature = "v2_6", deprecated = "Since 2.6")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_navigation_policy_decision_get_request")]
     #[doc(alias = "get_request")]
     fn request(&self) -> Option<URIRequest>;
@@ -96,12 +97,14 @@ impl<O: IsA<NavigationPolicyDecision>> NavigationPolicyDecisionExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn modifiers(&self) -> u32 {
         unsafe {
             ffi::webkit_navigation_policy_decision_get_modifiers(self.as_ref().to_glib_none().0)
         }
     }
 
+    #[allow(deprecated)]
     fn mouse_button(&self) -> u32 {
         unsafe {
             ffi::webkit_navigation_policy_decision_get_mouse_button(self.as_ref().to_glib_none().0)
@@ -120,6 +123,7 @@ impl<O: IsA<NavigationPolicyDecision>> NavigationPolicyDecisionExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn navigation_type(&self) -> NavigationType {
         unsafe {
             from_glib(ffi::webkit_navigation_policy_decision_get_navigation_type(
@@ -128,6 +132,7 @@ impl<O: IsA<NavigationPolicyDecision>> NavigationPolicyDecisionExt for O {
         }
     }
 
+    #[allow(deprecated)]
     fn request(&self) -> Option<URIRequest> {
         unsafe {
             from_glib_none(ffi::webkit_navigation_policy_decision_get_request(

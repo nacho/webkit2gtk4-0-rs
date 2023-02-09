@@ -3,11 +3,8 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use crate::DOMNode;
-use crate::HitTestResult;
-use glib::object::IsA;
-use glib::translate::*;
-use glib::StaticType;
+use crate::{DOMNode, HitTestResult};
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {

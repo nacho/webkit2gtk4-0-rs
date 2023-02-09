@@ -4,7 +4,7 @@
 // DO NOT EDIT
 
 use crate::PermissionRequest;
-use glib::object::IsA;
+use glib::prelude::*;
 #[cfg(any(feature = "v2_30", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
 use glib::translate::*;

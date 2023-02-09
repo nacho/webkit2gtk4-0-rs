@@ -8,19 +8,19 @@ bitflags = "^1.0"
 
 [dependencies.gio]
 package = "gio-sys"
-version = "0.16"
+version = "0.17"
 
 [dependencies.glib]
 package = "glib-sys"
-version = "0.16"
+version = "0.17"
 
 [dependencies.gobject]
 package = "gobject-sys"
-version = "0.16"
+version = "0.17"
 
 [dependencies.gtk]
 package = "gtk-sys"
-version = "0.16"
+version = "0.17"
 
 [dependencies.soup]
 package = "soup2-sys"
@@ -63,8 +63,10 @@ links = "webkit2gtk4_webextension"
 name = "webkit2gtk4-webextension-sys"
 version = "0.5.0"
 edition = "2021"
+
 [package.metadata.docs.rs]
 features = ["dox"]
+
 [package.metadata.system-deps.webkit2gtk_web_extension_4_0]
 name = "webkit2gtk-web-extension-4.0"
 version = "2.4"

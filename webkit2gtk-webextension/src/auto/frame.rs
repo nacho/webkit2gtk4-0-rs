@@ -2,14 +2,12 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
 #[cfg(any(feature = "v2_22", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
-use crate::DOMObject;
-#[cfg(any(feature = "v2_22", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
-use crate::ScriptWorld;
-use glib::object::IsA;
+use crate::{DOMObject, ScriptWorld};
+use glib::prelude::*;
 #[cfg(any(feature = "v2_2", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
 use glib::translate::*;
@@ -38,6 +36,7 @@ pub trait FrameExt: 'static {
     //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
     //#[cfg(any(feature = "v2_2", feature = "dox"))]
     //#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+    //#[allow(deprecated)]
     //#[doc(alias = "webkit_frame_get_javascript_context_for_script_world")]
     //#[doc(alias = "get_javascript_context_for_script_world")]
     //fn javascript_context_for_script_world(&self, world: &impl IsA<ScriptWorld>) -> /*Ignored*/Option<javascriptcore::GlobalContextRef>;
@@ -45,6 +44,7 @@ pub trait FrameExt: 'static {
     //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
     //#[cfg(any(feature = "v2_2", feature = "dox"))]
     //#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+    //#[allow(deprecated)]
     //#[doc(alias = "webkit_frame_get_javascript_global_context")]
     //#[doc(alias = "get_javascript_global_context")]
     //fn javascript_global_context(&self) -> /*Ignored*/Option<javascriptcore::GlobalContextRef>;
@@ -104,12 +104,14 @@ impl<O: IsA<Frame>> FrameExt for O {
 
     //#[cfg(any(feature = "v2_2", feature = "dox"))]
     //#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+    //#[allow(deprecated)]
     //fn javascript_context_for_script_world(&self, world: &impl IsA<ScriptWorld>) -> /*Ignored*/Option<javascriptcore::GlobalContextRef> {
     //    unsafe { TODO: call ffi:webkit_frame_get_javascript_context_for_script_world() }
     //}
 
     //#[cfg(any(feature = "v2_2", feature = "dox"))]
     //#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+    //#[allow(deprecated)]
     //fn javascript_global_context(&self) -> /*Ignored*/Option<javascriptcore::GlobalContextRef> {
     //    unsafe { TODO: call ffi:webkit_frame_get_javascript_global_context() }
     //}

@@ -6,13 +6,10 @@
 #[cfg(any(feature = "v2_30", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
 use crate::AutoplayPolicy;
-use glib::object::IsA;
+use glib::prelude::*;
 #[cfg(any(feature = "v2_30", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
 use glib::translate::*;
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-use glib::StaticType;
 use std::fmt;
 
 glib::wrapper! {
