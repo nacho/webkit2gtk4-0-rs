@@ -3,26 +3,17 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use glib::object::Cast;
-use glib::object::IsA;
+use glib::prelude::*;
 #[cfg(any(feature = "v2_16", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-use glib::signal::connect_raw;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-use glib::signal::SignalHandlerId;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-use glib::translate::*;
-use glib::StaticType;
-use glib::ToValue;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-use std::boxed::Box as Box_;
+use glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::*,
+};
 use std::fmt;
 #[cfg(any(feature = "v2_16", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-use std::mem::transmute;
+use std::{boxed::Box as Box_, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitPrintCustomWidget")]
@@ -54,7 +45,7 @@ impl PrintCustomWidget {
     ///
     /// This method returns an instance of [`PrintCustomWidgetBuilder`](crate::builders::PrintCustomWidgetBuilder) which can be used to create [`PrintCustomWidget`] objects.
     pub fn builder() -> PrintCustomWidgetBuilder {
-        PrintCustomWidgetBuilder::default()
+        PrintCustomWidgetBuilder::new()
     }
 }
 
@@ -62,60 +53,47 @@ impl PrintCustomWidget {
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
 impl Default for PrintCustomWidget {
     fn default() -> Self {
-        glib::object::Object::new::<Self>(&[])
+        glib::object::Object::new::<Self>()
     }
 }
 
-#[derive(Clone, Default)]
 // rustdoc-stripper-ignore-next
 /// A [builder-pattern] type to construct [`PrintCustomWidget`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
 #[must_use = "The builder must be built to be used"]
 pub struct PrintCustomWidgetBuilder {
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    title: Option<String>,
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    widget: Option<gtk::Widget>,
+    builder: glib::object::ObjectBuilder<'static, PrintCustomWidget>,
 }
 
 impl PrintCustomWidgetBuilder {
-    // rustdoc-stripper-ignore-next
-    /// Create a new [`PrintCustomWidgetBuilder`].
-    pub fn new() -> Self {
-        Self::default()
+    fn new() -> Self {
+        Self {
+            builder: glib::object::Object::builder(),
+        }
+    }
+
+    #[cfg(any(feature = "v2_16", feature = "dox"))]
+    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    pub fn title(self, title: impl Into<glib::GString>) -> Self {
+        Self {
+            builder: self.builder.property("title", title.into()),
+        }
+    }
+
+    #[cfg(any(feature = "v2_16", feature = "dox"))]
+    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    pub fn widget(self, widget: &impl IsA<gtk::Widget>) -> Self {
+        Self {
+            builder: self.builder.property("widget", widget.clone().upcast()),
+        }
     }
 
     // rustdoc-stripper-ignore-next
     /// Build the [`PrintCustomWidget`].
     #[must_use = "Building the object from the builder is usually expensive and is not expected to have side effects"]
     pub fn build(self) -> PrintCustomWidget {
-        let mut properties: Vec<(&str, &dyn ToValue)> = vec![];
-        #[cfg(any(feature = "v2_16", feature = "dox"))]
-        if let Some(ref title) = self.title {
-            properties.push(("title", title));
-        }
-        #[cfg(any(feature = "v2_16", feature = "dox"))]
-        if let Some(ref widget) = self.widget {
-            properties.push(("widget", widget));
-        }
-        glib::Object::new::<PrintCustomWidget>(&properties)
-    }
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    pub fn title(mut self, title: &str) -> Self {
-        self.title = Some(title.to_string());
-        self
-    }
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    pub fn widget(mut self, widget: &impl IsA<gtk::Widget>) -> Self {
-        self.widget = Some(widget.clone().upcast());
-        self
+        self.builder.build()
     }
 }
 

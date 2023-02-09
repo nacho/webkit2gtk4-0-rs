@@ -5,30 +5,18 @@
 
 #[cfg(any(feature = "v2_18", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use crate::ApplicationInfo;
+use crate::{ApplicationInfo, WebView};
+use glib::prelude::*;
 #[cfg(any(feature = "v2_18", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use crate::WebView;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use glib::object::Cast;
-use glib::object::IsA;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use glib::signal::connect_raw;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use glib::signal::SignalHandlerId;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use glib::translate::*;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use std::boxed::Box as Box_;
+use glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::*,
+};
 use std::fmt;
 #[cfg(any(feature = "v2_18", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use std::mem::transmute;
+use std::{boxed::Box as Box_, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitAutomationSession")]
@@ -124,7 +112,7 @@ impl<O: IsA<AutomationSession>> AutomationSessionExt for O {
         }
         unsafe {
             let f: Box_<F> = Box_::new(f);
-            let detailed_signal_name = detail.map(|name| format!("create-web-view::{}\0", name));
+            let detailed_signal_name = detail.map(|name| format!("create-web-view::{name}\0"));
             let signal_name: &[u8] = detailed_signal_name
                 .as_ref()
                 .map_or(&b"create-web-view\0"[..], |n| n.as_bytes());

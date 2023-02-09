@@ -4,7 +4,7 @@ The Rust bindings of [webkit2gtk 4.0](https://webkitgtk.org/)
 
 ## Documentation
 
-This project targets bindings for WebkitGTK 4.0 and gtk-rs 0.16. If your intention is to use
+This project targets bindings for WebkitGTK 4.0 and gtk-rs 0.17. If your intention is to use
 a different version of WebkitGTK then there are other projects:
 
  - WebkitGTK 4.1: https://github.com/nacho/webkit2gtk4-1-rs

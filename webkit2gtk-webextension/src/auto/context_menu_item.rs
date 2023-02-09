@@ -2,12 +2,12 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
-use crate::ContextMenu;
-use crate::ContextMenuAction;
+use crate::{ContextMenu, ContextMenuAction};
 #[cfg(any(feature = "v2_18", feature = "dox"))]
 #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-use glib::object::IsA;
+use glib::prelude::*;
 use glib::translate::*;
 use std::fmt;
 
@@ -22,6 +22,7 @@ glib::wrapper! {
 
 impl ContextMenuItem {
     //#[cfg_attr(feature = "v2_18", deprecated = "Since 2.18")]
+    //#[allow(deprecated)]
     //#[doc(alias = "webkit_context_menu_item_new")]
     //pub fn new(action: /*Ignored*/&gtk::Action) -> ContextMenuItem {
     //    unsafe { TODO: call ffi:webkit_context_menu_item_new() }
@@ -90,6 +91,7 @@ impl ContextMenuItem {
     }
 
     //#[cfg_attr(feature = "v2_18", deprecated = "Since 2.18")]
+    //#[allow(deprecated)]
     //#[doc(alias = "webkit_context_menu_item_get_action")]
     //#[doc(alias = "get_action")]
     //pub fn action(&self) -> /*Ignored*/Option<gtk::Action> {
