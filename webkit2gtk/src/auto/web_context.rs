@@ -4,23 +4,23 @@
 // DO NOT EDIT
 #![allow(deprecated)]
 
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+#[cfg(feature = "v2_18")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
 use crate::AutomationSession;
-#[cfg(any(feature = "v2_26", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
+#[cfg(feature = "v2_26")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 use crate::GeolocationManager;
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 use crate::ProcessModel;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use crate::SecurityOrigin;
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 use crate::UserMessage;
-#[cfg(any(feature = "v2_10", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+#[cfg(feature = "v2_10")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 use crate::WebsiteDataManager;
 use crate::{
     CacheModel, CookieManager, Download, FaviconDatabase, Plugin, SecurityManager, TLSErrorsPolicy,
@@ -45,24 +45,24 @@ glib::wrapper! {
 impl WebContext {
     pub const NONE: Option<&'static WebContext> = None;
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_web_context_new")]
     pub fn new() -> WebContext {
         assert_initialized_main_thread!();
         unsafe { from_glib_full(ffi::webkit_web_context_new()) }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     #[doc(alias = "webkit_web_context_new_ephemeral")]
     pub fn new_ephemeral() -> WebContext {
         assert_initialized_main_thread!();
         unsafe { from_glib_full(ffi::webkit_web_context_new_ephemeral()) }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[doc(alias = "webkit_web_context_new_with_website_data_manager")]
     #[doc(alias = "new_with_website_data_manager")]
     pub fn with_website_data_manager(manager: &impl IsA<WebsiteDataManager>) -> WebContext {
@@ -91,8 +91,8 @@ impl WebContext {
     }
 }
 
-#[cfg(any(feature = "v2_8", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 impl Default for WebContext {
     fn default() -> Self {
         Self::new()
@@ -115,8 +115,8 @@ impl WebContextBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[cfg_attr(feature = "v2_10", deprecated = "Since 2.10")]
     pub fn local_storage_directory(
         self,
@@ -129,13 +129,13 @@ impl WebContextBuilder {
         }
     }
 
-    //    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    //    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
     //pub fn memory_pressure_settings(self, memory_pressure_settings: /*Ignored*/&MemoryPressureSettings) -> Self {
     //    Self { builder: self.builder.property("memory-pressure-settings", memory_pressure_settings), }
     //}
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     pub fn process_swap_on_cross_site_navigation_enabled(
         self,
         process_swap_on_cross_site_navigation_enabled: bool,
@@ -148,8 +148,8 @@ impl WebContextBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     pub fn use_system_appearance_for_scrollbars(
         self,
         use_system_appearance_for_scrollbars: bool,
@@ -162,8 +162,8 @@ impl WebContextBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     pub fn website_data_manager(self, website_data_manager: &impl IsA<WebsiteDataManager>) -> Self {
         Self {
             builder: self.builder.property(
@@ -181,265 +181,15 @@ impl WebContextBuilder {
     }
 }
 
-pub trait WebContextExt: 'static {
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
-    #[doc(alias = "webkit_web_context_add_path_to_sandbox")]
-    fn add_path_to_sandbox(&self, path: impl AsRef<std::path::Path>, read_only: bool);
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "webkit_web_context_allow_tls_certificate_for_host")]
-    fn allow_tls_certificate_for_host(
-        &self,
-        certificate: &impl IsA<gio::TlsCertificate>,
-        host: &str,
-    );
-
-    #[doc(alias = "webkit_web_context_clear_cache")]
-    fn clear_cache(&self);
-
-    #[doc(alias = "webkit_web_context_download_uri")]
-    fn download_uri(&self, uri: &str) -> Option<Download>;
-
-    #[doc(alias = "webkit_web_context_get_cache_model")]
-    #[doc(alias = "get_cache_model")]
-    fn cache_model(&self) -> CacheModel;
-
-    #[doc(alias = "webkit_web_context_get_cookie_manager")]
-    #[doc(alias = "get_cookie_manager")]
-    fn cookie_manager(&self) -> Option<CookieManager>;
-
-    #[doc(alias = "webkit_web_context_get_favicon_database")]
-    #[doc(alias = "get_favicon_database")]
-    fn favicon_database(&self) -> Option<FaviconDatabase>;
-
-    #[doc(alias = "webkit_web_context_get_favicon_database_directory")]
-    #[doc(alias = "get_favicon_database_directory")]
-    fn favicon_database_directory(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
-    #[doc(alias = "webkit_web_context_get_geolocation_manager")]
-    #[doc(alias = "get_geolocation_manager")]
-    fn geolocation_manager(&self) -> Option<GeolocationManager>;
-
-    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_get_plugins")]
-    #[doc(alias = "get_plugins")]
-    fn plugins<P: FnOnce(Result<Vec<Plugin>, glib::Error>) + 'static>(
-        &self,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
-
-    fn plugins_future(
-        &self,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<Vec<Plugin>, glib::Error>> + 'static>>;
-
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-    #[doc(alias = "webkit_web_context_get_process_model")]
-    #[doc(alias = "get_process_model")]
-    fn process_model(&self) -> ProcessModel;
-
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
-    #[doc(alias = "webkit_web_context_get_sandbox_enabled")]
-    #[doc(alias = "get_sandbox_enabled")]
-    fn is_sandbox_enabled(&self) -> bool;
-
-    #[doc(alias = "webkit_web_context_get_security_manager")]
-    #[doc(alias = "get_security_manager")]
-    fn security_manager(&self) -> Option<SecurityManager>;
-
-    #[doc(alias = "webkit_web_context_get_spell_checking_enabled")]
-    #[doc(alias = "get_spell_checking_enabled")]
-    fn is_spell_checking_enabled(&self) -> bool;
-
-    #[doc(alias = "webkit_web_context_get_spell_checking_languages")]
-    #[doc(alias = "get_spell_checking_languages")]
-    fn spell_checking_languages(&self) -> Vec<glib::GString>;
-
-    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_get_tls_errors_policy")]
-    #[doc(alias = "get_tls_errors_policy")]
-    fn tls_errors_policy(&self) -> TLSErrorsPolicy;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_web_context_get_use_system_appearance_for_scrollbars")]
-    #[doc(alias = "get_use_system_appearance_for_scrollbars")]
-    fn uses_system_appearance_for_scrollbars(&self) -> bool;
-
-    #[cfg_attr(feature = "v2_26", deprecated = "Since 2.26")]
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_get_web_process_count_limit")]
-    #[doc(alias = "get_web_process_count_limit")]
-    fn web_process_count_limit(&self) -> u32;
-
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
-    #[doc(alias = "webkit_web_context_get_website_data_manager")]
-    #[doc(alias = "get_website_data_manager")]
-    fn website_data_manager(&self) -> Option<WebsiteDataManager>;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_web_context_initialize_notification_permissions")]
-    fn initialize_notification_permissions(
-        &self,
-        allowed_origins: &[&SecurityOrigin],
-        disallowed_origins: &[&SecurityOrigin],
-    );
-
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-    #[doc(alias = "webkit_web_context_is_automation_allowed")]
-    fn is_automation_allowed(&self) -> bool;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_web_context_is_ephemeral")]
-    fn is_ephemeral(&self) -> bool;
-
-    #[doc(alias = "webkit_web_context_prefetch_dns")]
-    fn prefetch_dns(&self, hostname: &str);
-
-    #[doc(alias = "webkit_web_context_register_uri_scheme")]
-    fn register_uri_scheme<P: Fn(&URISchemeRequest) + 'static>(&self, scheme: &str, callback: P);
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "webkit_web_context_send_message_to_all_extensions")]
-    fn send_message_to_all_extensions(&self, message: &impl IsA<UserMessage>);
-
-    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_set_additional_plugins_directory")]
-    fn set_additional_plugins_directory(&self, directory: &str);
-
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-    #[doc(alias = "webkit_web_context_set_automation_allowed")]
-    fn set_automation_allowed(&self, allowed: bool);
-
-    #[doc(alias = "webkit_web_context_set_cache_model")]
-    fn set_cache_model(&self, cache_model: CacheModel);
-
-    #[cfg_attr(feature = "v2_10", deprecated = "Since 2.10")]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_set_disk_cache_directory")]
-    fn set_disk_cache_directory(&self, directory: &str);
-
-    #[doc(alias = "webkit_web_context_set_favicon_database_directory")]
-    fn set_favicon_database_directory(&self, path: Option<&str>);
-
-    #[doc(alias = "webkit_web_context_set_preferred_languages")]
-    fn set_preferred_languages(&self, languages: &[&str]);
-
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-    #[doc(alias = "webkit_web_context_set_process_model")]
-    fn set_process_model(&self, process_model: ProcessModel);
-
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
-    #[doc(alias = "webkit_web_context_set_sandbox_enabled")]
-    fn set_sandbox_enabled(&self, enabled: bool);
-
-    #[doc(alias = "webkit_web_context_set_spell_checking_enabled")]
-    fn set_spell_checking_enabled(&self, enabled: bool);
-
-    #[doc(alias = "webkit_web_context_set_spell_checking_languages")]
-    fn set_spell_checking_languages(&self, languages: &[&str]);
-
-    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_set_tls_errors_policy")]
-    fn set_tls_errors_policy(&self, policy: TLSErrorsPolicy);
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_web_context_set_use_system_appearance_for_scrollbars")]
-    fn set_use_system_appearance_for_scrollbars(&self, enabled: bool);
-
-    #[doc(alias = "webkit_web_context_set_web_extensions_directory")]
-    fn set_web_extensions_directory(&self, directory: &str);
-
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-    #[doc(alias = "webkit_web_context_set_web_extensions_initialization_user_data")]
-    fn set_web_extensions_initialization_user_data(&self, user_data: &glib::Variant);
-
-    #[cfg_attr(feature = "v2_26", deprecated = "Since 2.26")]
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
-    #[allow(deprecated)]
-    #[doc(alias = "webkit_web_context_set_web_process_count_limit")]
-    fn set_web_process_count_limit(&self, limit: u32);
-
-    #[cfg_attr(feature = "v2_10", deprecated = "Since 2.10")]
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "local-storage-directory")]
-    fn local_storage_directory(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "process-swap-on-cross-site-navigation-enabled")]
-    fn is_process_swap_on_cross_site_navigation_enabled(&self) -> bool;
-
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-    #[doc(alias = "automation-started")]
-    fn connect_automation_started<F: Fn(&Self, &AutomationSession) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "download-started")]
-    fn connect_download_started<F: Fn(&Self, &Download) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "initialize-notification-permissions")]
-    fn connect_initialize_notification_permissions<F: Fn(&Self) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-    #[doc(alias = "initialize-web-extensions")]
-    fn connect_initialize_web_extensions<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "user-message-received")]
-    fn connect_user_message_received<F: Fn(&Self, &UserMessage) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "use-system-appearance-for-scrollbars")]
-    fn connect_use_system_appearance_for_scrollbars_notify<F: Fn(&Self) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::WebContext>> Sealed for T {}
 }
 
-impl<O: IsA<WebContext>> WebContextExt for O {
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
+pub trait WebContextExt: IsA<WebContext> + sealed::Sealed + 'static {
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[doc(alias = "webkit_web_context_add_path_to_sandbox")]
     fn add_path_to_sandbox(&self, path: impl AsRef<std::path::Path>, read_only: bool) {
         unsafe {
             ffi::webkit_web_context_add_path_to_sandbox(
@@ -450,8 +200,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "webkit_web_context_allow_tls_certificate_for_host")]
     fn allow_tls_certificate_for_host(
         &self,
         certificate: &impl IsA<gio::TlsCertificate>,
@@ -466,12 +217,14 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_clear_cache")]
     fn clear_cache(&self) {
         unsafe {
             ffi::webkit_web_context_clear_cache(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[doc(alias = "webkit_web_context_download_uri")]
     fn download_uri(&self, uri: &str) -> Option<Download> {
         unsafe {
             from_glib_full(ffi::webkit_web_context_download_uri(
@@ -481,6 +234,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_cache_model")]
+    #[doc(alias = "get_cache_model")]
     fn cache_model(&self) -> CacheModel {
         unsafe {
             from_glib(ffi::webkit_web_context_get_cache_model(
@@ -489,6 +244,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_cookie_manager")]
+    #[doc(alias = "get_cookie_manager")]
     fn cookie_manager(&self) -> Option<CookieManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_cookie_manager(
@@ -497,6 +254,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_favicon_database")]
+    #[doc(alias = "get_favicon_database")]
     fn favicon_database(&self) -> Option<FaviconDatabase> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_favicon_database(
@@ -505,6 +264,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_favicon_database_directory")]
+    #[doc(alias = "get_favicon_database_directory")]
     fn favicon_database_directory(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_favicon_database_directory(
@@ -513,8 +274,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[doc(alias = "webkit_web_context_get_geolocation_manager")]
+    #[doc(alias = "get_geolocation_manager")]
     fn geolocation_manager(&self) -> Option<GeolocationManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_geolocation_manager(
@@ -523,7 +286,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_get_plugins")]
+    #[doc(alias = "get_plugins")]
     fn plugins<P: FnOnce(Result<Vec<Plugin>, glib::Error>) + 'static>(
         &self,
         cancellable: Option<&impl IsA<gio::Cancellable>>,
@@ -575,6 +341,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
+
     fn plugins_future(
         &self,
     ) -> Pin<Box_<dyn std::future::Future<Output = Result<Vec<Plugin>, glib::Error>> + 'static>>
@@ -586,8 +354,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }))
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[doc(alias = "webkit_web_context_get_process_model")]
+    #[doc(alias = "get_process_model")]
     fn process_model(&self) -> ProcessModel {
         unsafe {
             from_glib(ffi::webkit_web_context_get_process_model(
@@ -596,8 +366,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[doc(alias = "webkit_web_context_get_sandbox_enabled")]
+    #[doc(alias = "get_sandbox_enabled")]
     fn is_sandbox_enabled(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_context_get_sandbox_enabled(
@@ -606,6 +378,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_security_manager")]
+    #[doc(alias = "get_security_manager")]
     fn security_manager(&self) -> Option<SecurityManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_security_manager(
@@ -614,6 +388,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_spell_checking_enabled")]
+    #[doc(alias = "get_spell_checking_enabled")]
     fn is_spell_checking_enabled(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_context_get_spell_checking_enabled(
@@ -622,6 +398,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_get_spell_checking_languages")]
+    #[doc(alias = "get_spell_checking_languages")]
     fn spell_checking_languages(&self) -> Vec<glib::GString> {
         unsafe {
             FromGlibPtrContainer::from_glib_none(
@@ -632,7 +410,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_get_tls_errors_policy")]
+    #[doc(alias = "get_tls_errors_policy")]
     fn tls_errors_policy(&self) -> TLSErrorsPolicy {
         unsafe {
             from_glib(ffi::webkit_web_context_get_tls_errors_policy(
@@ -641,8 +422,10 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_web_context_get_use_system_appearance_for_scrollbars")]
+    #[doc(alias = "get_use_system_appearance_for_scrollbars")]
     fn uses_system_appearance_for_scrollbars(&self) -> bool {
         unsafe {
             from_glib(
@@ -653,17 +436,22 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_26", deprecated = "Since 2.26")]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_get_web_process_count_limit")]
+    #[doc(alias = "get_web_process_count_limit")]
     fn web_process_count_limit(&self) -> u32 {
         unsafe {
             ffi::webkit_web_context_get_web_process_count_limit(self.as_ref().to_glib_none().0)
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[doc(alias = "webkit_web_context_get_website_data_manager")]
+    #[doc(alias = "get_website_data_manager")]
     fn website_data_manager(&self) -> Option<WebsiteDataManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_context_get_website_data_manager(
@@ -672,8 +460,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_web_context_initialize_notification_permissions")]
     fn initialize_notification_permissions(
         &self,
         allowed_origins: &[&SecurityOrigin],
@@ -688,8 +477,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
+    #[doc(alias = "webkit_web_context_is_automation_allowed")]
     fn is_automation_allowed(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_context_is_automation_allowed(
@@ -698,8 +488,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_web_context_is_ephemeral")]
     fn is_ephemeral(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_context_is_ephemeral(
@@ -708,6 +499,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_prefetch_dns")]
     fn prefetch_dns(&self, hostname: &str) {
         unsafe {
             ffi::webkit_web_context_prefetch_dns(
@@ -717,6 +509,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_register_uri_scheme")]
     fn register_uri_scheme<P: Fn(&URISchemeRequest) + 'static>(&self, scheme: &str, callback: P) {
         let callback_data: Box_<P> = Box_::new(callback);
         unsafe extern "C" fn callback_func<P: Fn(&URISchemeRequest) + 'static>(
@@ -746,8 +539,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "webkit_web_context_send_message_to_all_extensions")]
     fn send_message_to_all_extensions(&self, message: &impl IsA<UserMessage>) {
         unsafe {
             ffi::webkit_web_context_send_message_to_all_extensions(
@@ -757,7 +551,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_set_additional_plugins_directory")]
     fn set_additional_plugins_directory(&self, directory: &str) {
         unsafe {
             ffi::webkit_web_context_set_additional_plugins_directory(
@@ -767,8 +563,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
+    #[doc(alias = "webkit_web_context_set_automation_allowed")]
     fn set_automation_allowed(&self, allowed: bool) {
         unsafe {
             ffi::webkit_web_context_set_automation_allowed(
@@ -778,6 +575,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_cache_model")]
     fn set_cache_model(&self, cache_model: CacheModel) {
         unsafe {
             ffi::webkit_web_context_set_cache_model(
@@ -787,7 +585,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_10", deprecated = "Since 2.10")]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_set_disk_cache_directory")]
     fn set_disk_cache_directory(&self, directory: &str) {
         unsafe {
             ffi::webkit_web_context_set_disk_cache_directory(
@@ -797,6 +597,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_favicon_database_directory")]
     fn set_favicon_database_directory(&self, path: Option<&str>) {
         unsafe {
             ffi::webkit_web_context_set_favicon_database_directory(
@@ -806,6 +607,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_preferred_languages")]
     fn set_preferred_languages(&self, languages: &[&str]) {
         unsafe {
             ffi::webkit_web_context_set_preferred_languages(
@@ -815,8 +617,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[doc(alias = "webkit_web_context_set_process_model")]
     fn set_process_model(&self, process_model: ProcessModel) {
         unsafe {
             ffi::webkit_web_context_set_process_model(
@@ -826,8 +629,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_26", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_26")))]
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[doc(alias = "webkit_web_context_set_sandbox_enabled")]
     fn set_sandbox_enabled(&self, enabled: bool) {
         unsafe {
             ffi::webkit_web_context_set_sandbox_enabled(
@@ -837,6 +641,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_spell_checking_enabled")]
     fn set_spell_checking_enabled(&self, enabled: bool) {
         unsafe {
             ffi::webkit_web_context_set_spell_checking_enabled(
@@ -846,6 +651,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_spell_checking_languages")]
     fn set_spell_checking_languages(&self, languages: &[&str]) {
         unsafe {
             ffi::webkit_web_context_set_spell_checking_languages(
@@ -855,7 +661,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_32", deprecated = "Since 2.32")]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_set_tls_errors_policy")]
     fn set_tls_errors_policy(&self, policy: TLSErrorsPolicy) {
         unsafe {
             ffi::webkit_web_context_set_tls_errors_policy(
@@ -865,8 +673,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_web_context_set_use_system_appearance_for_scrollbars")]
     fn set_use_system_appearance_for_scrollbars(&self, enabled: bool) {
         unsafe {
             ffi::webkit_web_context_set_use_system_appearance_for_scrollbars(
@@ -876,6 +685,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_context_set_web_extensions_directory")]
     fn set_web_extensions_directory(&self, directory: &str) {
         unsafe {
             ffi::webkit_web_context_set_web_extensions_directory(
@@ -885,8 +695,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[doc(alias = "webkit_web_context_set_web_extensions_initialization_user_data")]
     fn set_web_extensions_initialization_user_data(&self, user_data: &glib::Variant) {
         unsafe {
             ffi::webkit_web_context_set_web_extensions_initialization_user_data(
@@ -896,9 +707,11 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_26", deprecated = "Since 2.26")]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[allow(deprecated)]
+    #[doc(alias = "webkit_web_context_set_web_process_count_limit")]
     fn set_web_process_count_limit(&self, limit: u32) {
         unsafe {
             ffi::webkit_web_context_set_web_process_count_limit(
@@ -908,23 +721,27 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg_attr(feature = "v2_10", deprecated = "Since 2.10")]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "local-storage-directory")]
     fn local_storage_directory(&self) -> Option<glib::GString> {
-        glib::ObjectExt::property(self.as_ref(), "local-storage-directory")
+        ObjectExt::property(self.as_ref(), "local-storage-directory")
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "process-swap-on-cross-site-navigation-enabled")]
     fn is_process_swap_on_cross_site_navigation_enabled(&self) -> bool {
-        glib::ObjectExt::property(
+        ObjectExt::property(
             self.as_ref(),
             "process-swap-on-cross-site-navigation-enabled",
         )
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
+    #[doc(alias = "automation-started")]
     fn connect_automation_started<F: Fn(&Self, &AutomationSession) + 'static>(
         &self,
         f: F,
@@ -956,6 +773,7 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
+    #[doc(alias = "download-started")]
     fn connect_download_started<F: Fn(&Self, &Download) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn download_started_trampoline<
             P: IsA<WebContext>,
@@ -984,8 +802,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "initialize-notification-permissions")]
     fn connect_initialize_notification_permissions<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -1013,8 +832,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[doc(alias = "initialize-web-extensions")]
     fn connect_initialize_web_extensions<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn initialize_web_extensions_trampoline<
             P: IsA<WebContext>,
@@ -1039,8 +859,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "user-message-received")]
     fn connect_user_message_received<F: Fn(&Self, &UserMessage) -> bool + 'static>(
         &self,
         f: F,
@@ -1073,8 +894,9 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "use-system-appearance-for-scrollbars")]
     fn connect_use_system_appearance_for_scrollbars_notify<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -1103,6 +925,8 @@ impl<O: IsA<WebContext>> WebContextExt for O {
         }
     }
 }
+
+impl<O: IsA<WebContext>> WebContextExt for O {}
 
 impl fmt::Display for WebContext {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

@@ -24,29 +24,25 @@ impl UserMediaPermissionRequest {
     pub const NONE: Option<&'static UserMediaPermissionRequest> = None;
 }
 
-pub trait UserMediaPermissionRequestExt: 'static {
-    #[doc(alias = "is-for-audio-device")]
-    fn is_for_audio_device(&self) -> bool;
-
-    #[doc(alias = "is-for-video-device")]
-    fn is_for_video_device(&self) -> bool;
-
-    #[doc(alias = "is-for-audio-device")]
-    fn connect_is_for_audio_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "is-for-video-device")]
-    fn connect_is_for_video_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::UserMediaPermissionRequest>> Sealed for T {}
 }
 
-impl<O: IsA<UserMediaPermissionRequest>> UserMediaPermissionRequestExt for O {
+pub trait UserMediaPermissionRequestExt:
+    IsA<UserMediaPermissionRequest> + sealed::Sealed + 'static
+{
+    #[doc(alias = "is-for-audio-device")]
     fn is_for_audio_device(&self) -> bool {
-        glib::ObjectExt::property(self.as_ref(), "is-for-audio-device")
+        ObjectExt::property(self.as_ref(), "is-for-audio-device")
     }
 
+    #[doc(alias = "is-for-video-device")]
     fn is_for_video_device(&self) -> bool {
-        glib::ObjectExt::property(self.as_ref(), "is-for-video-device")
+        ObjectExt::property(self.as_ref(), "is-for-video-device")
     }
 
+    #[doc(alias = "is-for-audio-device")]
     fn connect_is_for_audio_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_for_audio_device_trampoline<
             P: IsA<UserMediaPermissionRequest>,
@@ -72,6 +68,7 @@ impl<O: IsA<UserMediaPermissionRequest>> UserMediaPermissionRequestExt for O {
         }
     }
 
+    #[doc(alias = "is-for-video-device")]
     fn connect_is_for_video_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_for_video_device_trampoline<
             P: IsA<UserMediaPermissionRequest>,
@@ -97,6 +94,8 @@ impl<O: IsA<UserMediaPermissionRequest>> UserMediaPermissionRequestExt for O {
         }
     }
 }
+
+impl<O: IsA<UserMediaPermissionRequest>> UserMediaPermissionRequestExt for O {}
 
 impl fmt::Display for UserMediaPermissionRequest {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

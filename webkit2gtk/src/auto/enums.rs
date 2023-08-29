@@ -3,13 +3,11 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use glib::{
-    error::ErrorDomain, translate::*, value::FromValue, value::ToValue, Quark, StaticType, Type,
-};
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitAuthenticationScheme")]
@@ -38,8 +36,8 @@ pub enum AuthenticationScheme {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl fmt::Display for AuthenticationScheme {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -62,8 +60,8 @@ impl fmt::Display for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[doc(hidden)]
 impl IntoGlib for AuthenticationScheme {
     type GlibType = ffi::WebKitAuthenticationScheme;
@@ -92,8 +90,8 @@ impl IntoGlib for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitAuthenticationScheme> for AuthenticationScheme {
     #[inline]
@@ -122,17 +120,17 @@ impl FromGlib<ffi::WebKitAuthenticationScheme> for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl StaticType for AuthenticationScheme {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_authentication_scheme_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl glib::HasParamSpec for AuthenticationScheme {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -143,15 +141,15 @@ impl glib::HasParamSpec for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl glib::value::ValueType for AuthenticationScheme {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
-unsafe impl<'a> FromValue<'a> for AuthenticationScheme {
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
+unsafe impl<'a> glib::value::FromValue<'a> for AuthenticationScheme {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -161,8 +159,8 @@ unsafe impl<'a> FromValue<'a> for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl ToValue for AuthenticationScheme {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -179,8 +177,8 @@ impl ToValue for AuthenticationScheme {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl From<AuthenticationScheme> for glib::Value {
     #[inline]
     fn from(v: AuthenticationScheme) -> Self {
@@ -189,8 +187,8 @@ impl From<AuthenticationScheme> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitAutomationBrowsingContextPresentation")]
@@ -203,8 +201,8 @@ pub enum AutomationBrowsingContextPresentation {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl fmt::Display for AutomationBrowsingContextPresentation {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -219,8 +217,8 @@ impl fmt::Display for AutomationBrowsingContextPresentation {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl IntoGlib for AutomationBrowsingContextPresentation {
     type GlibType = ffi::WebKitAutomationBrowsingContextPresentation;
@@ -235,8 +233,8 @@ impl IntoGlib for AutomationBrowsingContextPresentation {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitAutomationBrowsingContextPresentation>
     for AutomationBrowsingContextPresentation
@@ -253,17 +251,17 @@ impl FromGlib<ffi::WebKitAutomationBrowsingContextPresentation>
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl StaticType for AutomationBrowsingContextPresentation {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_automation_browsing_context_presentation_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::HasParamSpec for AutomationBrowsingContextPresentation {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -274,15 +272,15 @@ impl glib::HasParamSpec for AutomationBrowsingContextPresentation {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::value::ValueType for AutomationBrowsingContextPresentation {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-unsafe impl<'a> FromValue<'a> for AutomationBrowsingContextPresentation {
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+unsafe impl<'a> glib::value::FromValue<'a> for AutomationBrowsingContextPresentation {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -292,8 +290,8 @@ unsafe impl<'a> FromValue<'a> for AutomationBrowsingContextPresentation {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl ToValue for AutomationBrowsingContextPresentation {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -310,8 +308,8 @@ impl ToValue for AutomationBrowsingContextPresentation {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl From<AutomationBrowsingContextPresentation> for glib::Value {
     #[inline]
     fn from(v: AutomationBrowsingContextPresentation) -> Self {
@@ -320,8 +318,8 @@ impl From<AutomationBrowsingContextPresentation> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitAutoplayPolicy")]
@@ -336,8 +334,8 @@ pub enum AutoplayPolicy {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl fmt::Display for AutoplayPolicy {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -353,8 +351,8 @@ impl fmt::Display for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 #[doc(hidden)]
 impl IntoGlib for AutoplayPolicy {
     type GlibType = ffi::WebKitAutoplayPolicy;
@@ -370,8 +368,8 @@ impl IntoGlib for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitAutoplayPolicy> for AutoplayPolicy {
     #[inline]
@@ -387,17 +385,17 @@ impl FromGlib<ffi::WebKitAutoplayPolicy> for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl StaticType for AutoplayPolicy {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_autoplay_policy_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl glib::HasParamSpec for AutoplayPolicy {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -408,15 +406,15 @@ impl glib::HasParamSpec for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl glib::value::ValueType for AutoplayPolicy {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-unsafe impl<'a> FromValue<'a> for AutoplayPolicy {
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+unsafe impl<'a> glib::value::FromValue<'a> for AutoplayPolicy {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -426,8 +424,8 @@ unsafe impl<'a> FromValue<'a> for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl ToValue for AutoplayPolicy {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -444,8 +442,8 @@ impl ToValue for AutoplayPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 impl From<AutoplayPolicy> for glib::Value {
     #[inline]
     fn from(v: AutoplayPolicy) -> Self {
@@ -515,7 +513,7 @@ impl FromGlib<ffi::WebKitCacheModel> for CacheModel {
 
 impl StaticType for CacheModel {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_cache_model_get_type()) }
     }
 }
@@ -534,7 +532,7 @@ impl glib::value::ValueType for CacheModel {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for CacheModel {
+unsafe impl<'a> glib::value::FromValue<'a> for CacheModel {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -859,7 +857,7 @@ impl FromGlib<ffi::WebKitContextMenuAction> for ContextMenuAction {
 
 impl StaticType for ContextMenuAction {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_context_menu_action_get_type()) }
     }
 }
@@ -878,7 +876,7 @@ impl glib::value::ValueType for ContextMenuAction {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for ContextMenuAction {
+unsafe impl<'a> glib::value::FromValue<'a> for ContextMenuAction {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -973,7 +971,7 @@ impl FromGlib<ffi::WebKitCookieAcceptPolicy> for CookieAcceptPolicy {
 
 impl StaticType for CookieAcceptPolicy {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_cookie_accept_policy_get_type()) }
     }
 }
@@ -992,7 +990,7 @@ impl glib::value::ValueType for CookieAcceptPolicy {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for CookieAcceptPolicy {
+unsafe impl<'a> glib::value::FromValue<'a> for CookieAcceptPolicy {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1082,7 +1080,7 @@ impl FromGlib<ffi::WebKitCookiePersistentStorage> for CookiePersistentStorage {
 
 impl StaticType for CookiePersistentStorage {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_cookie_persistent_storage_get_type()) }
     }
 }
@@ -1101,7 +1099,7 @@ impl glib::value::ValueType for CookiePersistentStorage {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for CookiePersistentStorage {
+unsafe impl<'a> glib::value::FromValue<'a> for CookiePersistentStorage {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1135,8 +1133,8 @@ impl From<CookiePersistentStorage> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitCredentialPersistence")]
@@ -1151,8 +1149,8 @@ pub enum CredentialPersistence {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl fmt::Display for CredentialPersistence {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -1168,8 +1166,8 @@ impl fmt::Display for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[doc(hidden)]
 impl IntoGlib for CredentialPersistence {
     type GlibType = ffi::WebKitCredentialPersistence;
@@ -1185,8 +1183,8 @@ impl IntoGlib for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitCredentialPersistence> for CredentialPersistence {
     #[inline]
@@ -1202,17 +1200,17 @@ impl FromGlib<ffi::WebKitCredentialPersistence> for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl StaticType for CredentialPersistence {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_credential_persistence_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl glib::HasParamSpec for CredentialPersistence {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -1223,15 +1221,15 @@ impl glib::HasParamSpec for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl glib::value::ValueType for CredentialPersistence {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
-unsafe impl<'a> FromValue<'a> for CredentialPersistence {
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
+unsafe impl<'a> glib::value::FromValue<'a> for CredentialPersistence {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1241,8 +1239,8 @@ unsafe impl<'a> FromValue<'a> for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl ToValue for CredentialPersistence {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -1259,8 +1257,8 @@ impl ToValue for CredentialPersistence {
     }
 }
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 impl From<CredentialPersistence> for glib::Value {
     #[inline]
     fn from(v: CredentialPersistence) -> Self {
@@ -1336,9 +1334,9 @@ impl FromGlib<ffi::WebKitDownloadError> for DownloadError {
     }
 }
 
-impl ErrorDomain for DownloadError {
+impl glib::error::ErrorDomain for DownloadError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -1365,7 +1363,7 @@ impl ErrorDomain for DownloadError {
 
 impl StaticType for DownloadError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_download_error_get_type()) }
     }
 }
@@ -1384,7 +1382,7 @@ impl glib::value::ValueType for DownloadError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for DownloadError {
+unsafe impl<'a> glib::value::FromValue<'a> for DownloadError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1485,9 +1483,9 @@ impl FromGlib<ffi::WebKitFaviconDatabaseError> for FaviconDatabaseError {
     }
 }
 
-impl ErrorDomain for FaviconDatabaseError {
+impl glib::error::ErrorDomain for FaviconDatabaseError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -1516,7 +1514,7 @@ impl ErrorDomain for FaviconDatabaseError {
 
 impl StaticType for FaviconDatabaseError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_favicon_database_error_get_type()) }
     }
 }
@@ -1535,7 +1533,7 @@ impl glib::value::ValueType for FaviconDatabaseError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for FaviconDatabaseError {
+unsafe impl<'a> glib::value::FromValue<'a> for FaviconDatabaseError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1569,8 +1567,8 @@ impl From<FaviconDatabaseError> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitHardwareAccelerationPolicy")]
@@ -1585,8 +1583,8 @@ pub enum HardwareAccelerationPolicy {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl fmt::Display for HardwareAccelerationPolicy {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -1602,8 +1600,8 @@ impl fmt::Display for HardwareAccelerationPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[doc(hidden)]
 impl IntoGlib for HardwareAccelerationPolicy {
     type GlibType = ffi::WebKitHardwareAccelerationPolicy;
@@ -1619,8 +1617,8 @@ impl IntoGlib for HardwareAccelerationPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitHardwareAccelerationPolicy> for HardwareAccelerationPolicy {
     #[inline]
@@ -1636,17 +1634,17 @@ impl FromGlib<ffi::WebKitHardwareAccelerationPolicy> for HardwareAccelerationPol
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl StaticType for HardwareAccelerationPolicy {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_hardware_acceleration_policy_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl glib::HasParamSpec for HardwareAccelerationPolicy {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -1657,15 +1655,15 @@ impl glib::HasParamSpec for HardwareAccelerationPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl glib::value::ValueType for HardwareAccelerationPolicy {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-unsafe impl<'a> FromValue<'a> for HardwareAccelerationPolicy {
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+unsafe impl<'a> glib::value::FromValue<'a> for HardwareAccelerationPolicy {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1675,8 +1673,8 @@ unsafe impl<'a> FromValue<'a> for HardwareAccelerationPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl ToValue for HardwareAccelerationPolicy {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -1693,8 +1691,8 @@ impl ToValue for HardwareAccelerationPolicy {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl From<HardwareAccelerationPolicy> for glib::Value {
     #[inline]
     fn from(v: HardwareAccelerationPolicy) -> Self {
@@ -1703,8 +1701,8 @@ impl From<HardwareAccelerationPolicy> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitInputPurpose")]
@@ -1727,8 +1725,8 @@ pub enum InputPurpose {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl fmt::Display for InputPurpose {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -1748,8 +1746,8 @@ impl fmt::Display for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl IntoGlib for InputPurpose {
     type GlibType = ffi::WebKitInputPurpose;
@@ -1769,8 +1767,8 @@ impl IntoGlib for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitInputPurpose> for InputPurpose {
     #[inline]
@@ -1790,17 +1788,17 @@ impl FromGlib<ffi::WebKitInputPurpose> for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl StaticType for InputPurpose {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_input_purpose_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::HasParamSpec for InputPurpose {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -1811,15 +1809,15 @@ impl glib::HasParamSpec for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::value::ValueType for InputPurpose {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-unsafe impl<'a> FromValue<'a> for InputPurpose {
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+unsafe impl<'a> glib::value::FromValue<'a> for InputPurpose {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -1829,8 +1827,8 @@ unsafe impl<'a> FromValue<'a> for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl ToValue for InputPurpose {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -1847,8 +1845,8 @@ impl ToValue for InputPurpose {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl From<InputPurpose> for glib::Value {
     #[inline]
     fn from(v: InputPurpose) -> Self {
@@ -1913,7 +1911,7 @@ impl FromGlib<ffi::WebKitInsecureContentEvent> for InsecureContentEvent {
 
 impl StaticType for InsecureContentEvent {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_insecure_content_event_get_type()) }
     }
 }
@@ -1932,7 +1930,7 @@ impl glib::value::ValueType for InsecureContentEvent {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for InsecureContentEvent {
+unsafe impl<'a> glib::value::FromValue<'a> for InsecureContentEvent {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2023,9 +2021,9 @@ impl FromGlib<ffi::WebKitJavascriptError> for JavascriptError {
     }
 }
 
-impl ErrorDomain for JavascriptError {
+impl glib::error::ErrorDomain for JavascriptError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -2055,7 +2053,7 @@ impl ErrorDomain for JavascriptError {
 
 impl StaticType for JavascriptError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_javascript_error_get_type()) }
     }
 }
@@ -2074,7 +2072,7 @@ impl glib::value::ValueType for JavascriptError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for JavascriptError {
+unsafe impl<'a> glib::value::FromValue<'a> for JavascriptError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2174,7 +2172,7 @@ impl FromGlib<ffi::WebKitLoadEvent> for LoadEvent {
 
 impl StaticType for LoadEvent {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_load_event_get_type()) }
     }
 }
@@ -2193,7 +2191,7 @@ impl glib::value::ValueType for LoadEvent {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for LoadEvent {
+unsafe impl<'a> glib::value::FromValue<'a> for LoadEvent {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2227,8 +2225,8 @@ impl From<LoadEvent> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitMediaCaptureState")]
@@ -2243,8 +2241,8 @@ pub enum MediaCaptureState {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl fmt::Display for MediaCaptureState {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -2260,8 +2258,8 @@ impl fmt::Display for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 #[doc(hidden)]
 impl IntoGlib for MediaCaptureState {
     type GlibType = ffi::WebKitMediaCaptureState;
@@ -2277,8 +2275,8 @@ impl IntoGlib for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitMediaCaptureState> for MediaCaptureState {
     #[inline]
@@ -2294,17 +2292,17 @@ impl FromGlib<ffi::WebKitMediaCaptureState> for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl StaticType for MediaCaptureState {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_media_capture_state_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl glib::HasParamSpec for MediaCaptureState {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -2315,15 +2313,15 @@ impl glib::HasParamSpec for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl glib::value::ValueType for MediaCaptureState {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-unsafe impl<'a> FromValue<'a> for MediaCaptureState {
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+unsafe impl<'a> glib::value::FromValue<'a> for MediaCaptureState {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2333,8 +2331,8 @@ unsafe impl<'a> FromValue<'a> for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl ToValue for MediaCaptureState {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -2351,8 +2349,8 @@ impl ToValue for MediaCaptureState {
     }
 }
 
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 impl From<MediaCaptureState> for glib::Value {
     #[inline]
     fn from(v: MediaCaptureState) -> Self {
@@ -2437,7 +2435,7 @@ impl FromGlib<ffi::WebKitNavigationType> for NavigationType {
 
 impl StaticType for NavigationType {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_navigation_type_get_type()) }
     }
 }
@@ -2456,7 +2454,7 @@ impl glib::value::ValueType for NavigationType {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for NavigationType {
+unsafe impl<'a> glib::value::FromValue<'a> for NavigationType {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2567,9 +2565,9 @@ impl FromGlib<ffi::WebKitNetworkError> for NetworkError {
     }
 }
 
-impl ErrorDomain for NetworkError {
+impl glib::error::ErrorDomain for NetworkError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -2597,7 +2595,7 @@ impl ErrorDomain for NetworkError {
 
 impl StaticType for NetworkError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_network_error_get_type()) }
     }
 }
@@ -2616,7 +2614,7 @@ impl glib::value::ValueType for NetworkError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for NetworkError {
+unsafe impl<'a> glib::value::FromValue<'a> for NetworkError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2650,8 +2648,8 @@ impl From<NetworkError> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitNetworkProxyMode")]
@@ -2666,8 +2664,8 @@ pub enum NetworkProxyMode {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl fmt::Display for NetworkProxyMode {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -2683,8 +2681,8 @@ impl fmt::Display for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[doc(hidden)]
 impl IntoGlib for NetworkProxyMode {
     type GlibType = ffi::WebKitNetworkProxyMode;
@@ -2700,8 +2698,8 @@ impl IntoGlib for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitNetworkProxyMode> for NetworkProxyMode {
     #[inline]
@@ -2717,17 +2715,17 @@ impl FromGlib<ffi::WebKitNetworkProxyMode> for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl StaticType for NetworkProxyMode {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_network_proxy_mode_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl glib::HasParamSpec for NetworkProxyMode {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -2738,15 +2736,15 @@ impl glib::HasParamSpec for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl glib::value::ValueType for NetworkProxyMode {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-unsafe impl<'a> FromValue<'a> for NetworkProxyMode {
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+unsafe impl<'a> glib::value::FromValue<'a> for NetworkProxyMode {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -2756,8 +2754,8 @@ unsafe impl<'a> FromValue<'a> for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl ToValue for NetworkProxyMode {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -2774,8 +2772,8 @@ impl ToValue for NetworkProxyMode {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl From<NetworkProxyMode> for glib::Value {
     #[inline]
     fn from(v: NetworkProxyMode) -> Self {
@@ -2866,9 +2864,9 @@ impl FromGlib<ffi::WebKitPluginError> for PluginError {
     }
 }
 
-impl ErrorDomain for PluginError {
+impl glib::error::ErrorDomain for PluginError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -2896,7 +2894,7 @@ impl ErrorDomain for PluginError {
 
 impl StaticType for PluginError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_plugin_error_get_type()) }
     }
 }
@@ -2915,7 +2913,7 @@ impl glib::value::ValueType for PluginError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for PluginError {
+unsafe impl<'a> glib::value::FromValue<'a> for PluginError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3010,7 +3008,7 @@ impl FromGlib<ffi::WebKitPolicyDecisionType> for PolicyDecisionType {
 
 impl StaticType for PolicyDecisionType {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_policy_decision_type_get_type()) }
     }
 }
@@ -3029,7 +3027,7 @@ impl glib::value::ValueType for PolicyDecisionType {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for PolicyDecisionType {
+unsafe impl<'a> glib::value::FromValue<'a> for PolicyDecisionType {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3144,9 +3142,9 @@ impl FromGlib<ffi::WebKitPolicyError> for PolicyError {
     }
 }
 
-impl ErrorDomain for PolicyError {
+impl glib::error::ErrorDomain for PolicyError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -3174,7 +3172,7 @@ impl ErrorDomain for PolicyError {
 
 impl StaticType for PolicyError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_policy_error_get_type()) }
     }
 }
@@ -3193,7 +3191,7 @@ impl glib::value::ValueType for PolicyError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for PolicyError {
+unsafe impl<'a> glib::value::FromValue<'a> for PolicyError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3294,9 +3292,9 @@ impl FromGlib<ffi::WebKitPrintError> for PrintError {
     }
 }
 
-impl ErrorDomain for PrintError {
+impl glib::error::ErrorDomain for PrintError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -3323,7 +3321,7 @@ impl ErrorDomain for PrintError {
 
 impl StaticType for PrintError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_print_error_get_type()) }
     }
 }
@@ -3342,7 +3340,7 @@ impl glib::value::ValueType for PrintError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for PrintError {
+unsafe impl<'a> glib::value::FromValue<'a> for PrintError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3432,7 +3430,7 @@ impl FromGlib<ffi::WebKitPrintOperationResponse> for PrintOperationResponse {
 
 impl StaticType for PrintOperationResponse {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_print_operation_response_get_type()) }
     }
 }
@@ -3451,7 +3449,7 @@ impl glib::value::ValueType for PrintOperationResponse {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for PrintOperationResponse {
+unsafe impl<'a> glib::value::FromValue<'a> for PrintOperationResponse {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3485,8 +3483,8 @@ impl From<PrintOperationResponse> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitProcessModel")]
@@ -3499,8 +3497,8 @@ pub enum ProcessModel {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl fmt::Display for ProcessModel {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -3515,8 +3513,8 @@ impl fmt::Display for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 #[doc(hidden)]
 impl IntoGlib for ProcessModel {
     type GlibType = ffi::WebKitProcessModel;
@@ -3533,8 +3531,8 @@ impl IntoGlib for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitProcessModel> for ProcessModel {
     #[inline]
@@ -3551,17 +3549,17 @@ impl FromGlib<ffi::WebKitProcessModel> for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl StaticType for ProcessModel {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_process_model_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl glib::HasParamSpec for ProcessModel {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -3572,15 +3570,15 @@ impl glib::HasParamSpec for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl glib::value::ValueType for ProcessModel {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-unsafe impl<'a> FromValue<'a> for ProcessModel {
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+unsafe impl<'a> glib::value::FromValue<'a> for ProcessModel {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3590,8 +3588,8 @@ unsafe impl<'a> FromValue<'a> for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl ToValue for ProcessModel {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -3608,8 +3606,8 @@ impl ToValue for ProcessModel {
     }
 }
 
-#[cfg(any(feature = "v2_4", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+#[cfg(feature = "v2_4")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 impl From<ProcessModel> for glib::Value {
     #[inline]
     fn from(v: ProcessModel) -> Self {
@@ -3669,7 +3667,7 @@ impl FromGlib<ffi::WebKitSaveMode> for SaveMode {
 
 impl StaticType for SaveMode {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_save_mode_get_type()) }
     }
 }
@@ -3688,7 +3686,7 @@ impl glib::value::ValueType for SaveMode {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for SaveMode {
+unsafe impl<'a> glib::value::FromValue<'a> for SaveMode {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3788,7 +3786,7 @@ impl FromGlib<ffi::WebKitScriptDialogType> for ScriptDialogType {
 
 impl StaticType for ScriptDialogType {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_script_dialog_type_get_type()) }
     }
 }
@@ -3807,7 +3805,7 @@ impl glib::value::ValueType for ScriptDialogType {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for ScriptDialogType {
+unsafe impl<'a> glib::value::FromValue<'a> for ScriptDialogType {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -3898,9 +3896,9 @@ impl FromGlib<ffi::WebKitSnapshotError> for SnapshotError {
     }
 }
 
-impl ErrorDomain for SnapshotError {
+impl glib::error::ErrorDomain for SnapshotError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -3927,7 +3925,7 @@ impl ErrorDomain for SnapshotError {
 
 impl StaticType for SnapshotError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_snapshot_error_get_type()) }
     }
 }
@@ -3946,7 +3944,7 @@ impl glib::value::ValueType for SnapshotError {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for SnapshotError {
+unsafe impl<'a> glib::value::FromValue<'a> for SnapshotError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4036,7 +4034,7 @@ impl FromGlib<ffi::WebKitSnapshotRegion> for SnapshotRegion {
 
 impl StaticType for SnapshotRegion {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_snapshot_region_get_type()) }
     }
 }
@@ -4055,7 +4053,7 @@ impl glib::value::ValueType for SnapshotRegion {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for SnapshotRegion {
+unsafe impl<'a> glib::value::FromValue<'a> for SnapshotRegion {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4145,7 +4143,7 @@ impl FromGlib<ffi::WebKitTLSErrorsPolicy> for TLSErrorsPolicy {
 
 impl StaticType for TLSErrorsPolicy {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_tls_errors_policy_get_type()) }
     }
 }
@@ -4164,7 +4162,7 @@ impl glib::value::ValueType for TLSErrorsPolicy {
     type Type = Self;
 }
 
-unsafe impl<'a> FromValue<'a> for TLSErrorsPolicy {
+unsafe impl<'a> glib::value::FromValue<'a> for TLSErrorsPolicy {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4198,8 +4196,8 @@ impl From<TLSErrorsPolicy> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitUserContentFilterError")]
@@ -4212,8 +4210,8 @@ pub enum UserContentFilterError {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl UserContentFilterError {
     #[doc(alias = "webkit_user_content_filter_error_quark")]
     pub fn quark() -> glib::Quark {
@@ -4222,8 +4220,8 @@ impl UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl fmt::Display for UserContentFilterError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4238,8 +4236,8 @@ impl fmt::Display for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 #[doc(hidden)]
 impl IntoGlib for UserContentFilterError {
     type GlibType = ffi::WebKitUserContentFilterError;
@@ -4254,8 +4252,8 @@ impl IntoGlib for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitUserContentFilterError> for UserContentFilterError {
     #[inline]
@@ -4270,11 +4268,11 @@ impl FromGlib<ffi::WebKitUserContentFilterError> for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
-impl ErrorDomain for UserContentFilterError {
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
+impl glib::error::ErrorDomain for UserContentFilterError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -4301,17 +4299,17 @@ impl ErrorDomain for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl StaticType for UserContentFilterError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_user_content_filter_error_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl glib::HasParamSpec for UserContentFilterError {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -4322,15 +4320,15 @@ impl glib::HasParamSpec for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl glib::value::ValueType for UserContentFilterError {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
-unsafe impl<'a> FromValue<'a> for UserContentFilterError {
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
+unsafe impl<'a> glib::value::FromValue<'a> for UserContentFilterError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4340,8 +4338,8 @@ unsafe impl<'a> FromValue<'a> for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl ToValue for UserContentFilterError {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -4358,8 +4356,8 @@ impl ToValue for UserContentFilterError {
     }
 }
 
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 impl From<UserContentFilterError> for glib::Value {
     #[inline]
     fn from(v: UserContentFilterError) -> Self {
@@ -4368,8 +4366,8 @@ impl From<UserContentFilterError> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitUserContentInjectedFrames")]
@@ -4382,8 +4380,8 @@ pub enum UserContentInjectedFrames {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl fmt::Display for UserContentInjectedFrames {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4398,8 +4396,8 @@ impl fmt::Display for UserContentInjectedFrames {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl IntoGlib for UserContentInjectedFrames {
     type GlibType = ffi::WebKitUserContentInjectedFrames;
@@ -4414,8 +4412,8 @@ impl IntoGlib for UserContentInjectedFrames {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitUserContentInjectedFrames> for UserContentInjectedFrames {
     #[inline]
@@ -4430,17 +4428,17 @@ impl FromGlib<ffi::WebKitUserContentInjectedFrames> for UserContentInjectedFrame
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl StaticType for UserContentInjectedFrames {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_user_content_injected_frames_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::HasParamSpec for UserContentInjectedFrames {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -4451,15 +4449,15 @@ impl glib::HasParamSpec for UserContentInjectedFrames {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::value::ValueType for UserContentInjectedFrames {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-unsafe impl<'a> FromValue<'a> for UserContentInjectedFrames {
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+unsafe impl<'a> glib::value::FromValue<'a> for UserContentInjectedFrames {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4469,8 +4467,8 @@ unsafe impl<'a> FromValue<'a> for UserContentInjectedFrames {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl ToValue for UserContentInjectedFrames {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -4487,8 +4485,8 @@ impl ToValue for UserContentInjectedFrames {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl From<UserContentInjectedFrames> for glib::Value {
     #[inline]
     fn from(v: UserContentInjectedFrames) -> Self {
@@ -4497,8 +4495,8 @@ impl From<UserContentInjectedFrames> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitUserMessageError")]
@@ -4509,8 +4507,8 @@ pub enum UserMessageError {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl UserMessageError {
     #[doc(alias = "webkit_user_message_error_quark")]
     pub fn quark() -> glib::Quark {
@@ -4519,8 +4517,8 @@ impl UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl fmt::Display for UserMessageError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4534,8 +4532,8 @@ impl fmt::Display for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl IntoGlib for UserMessageError {
     type GlibType = ffi::WebKitUserMessageError;
@@ -4549,8 +4547,8 @@ impl IntoGlib for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitUserMessageError> for UserMessageError {
     #[inline]
@@ -4564,11 +4562,11 @@ impl FromGlib<ffi::WebKitUserMessageError> for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-impl ErrorDomain for UserMessageError {
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+impl glib::error::ErrorDomain for UserMessageError {
     #[inline]
-    fn domain() -> Quark {
+    fn domain() -> glib::Quark {
         skip_assert_initialized!();
 
         static QUARK: once_cell::sync::Lazy<glib::ffi::GQuark> =
@@ -4595,17 +4593,17 @@ impl ErrorDomain for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl StaticType for UserMessageError {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_user_message_error_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::HasParamSpec for UserMessageError {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -4616,15 +4614,15 @@ impl glib::HasParamSpec for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl glib::value::ValueType for UserMessageError {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-unsafe impl<'a> FromValue<'a> for UserMessageError {
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+unsafe impl<'a> glib::value::FromValue<'a> for UserMessageError {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4634,8 +4632,8 @@ unsafe impl<'a> FromValue<'a> for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl ToValue for UserMessageError {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -4652,8 +4650,8 @@ impl ToValue for UserMessageError {
     }
 }
 
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 impl From<UserMessageError> for glib::Value {
     #[inline]
     fn from(v: UserMessageError) -> Self {
@@ -4662,8 +4660,8 @@ impl From<UserMessageError> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitUserScriptInjectionTime")]
@@ -4676,8 +4674,8 @@ pub enum UserScriptInjectionTime {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl fmt::Display for UserScriptInjectionTime {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4692,8 +4690,8 @@ impl fmt::Display for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl IntoGlib for UserScriptInjectionTime {
     type GlibType = ffi::WebKitUserScriptInjectionTime;
@@ -4708,8 +4706,8 @@ impl IntoGlib for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitUserScriptInjectionTime> for UserScriptInjectionTime {
     #[inline]
@@ -4724,17 +4722,17 @@ impl FromGlib<ffi::WebKitUserScriptInjectionTime> for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl StaticType for UserScriptInjectionTime {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_user_script_injection_time_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::HasParamSpec for UserScriptInjectionTime {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -4745,15 +4743,15 @@ impl glib::HasParamSpec for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::value::ValueType for UserScriptInjectionTime {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-unsafe impl<'a> FromValue<'a> for UserScriptInjectionTime {
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+unsafe impl<'a> glib::value::FromValue<'a> for UserScriptInjectionTime {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4763,8 +4761,8 @@ unsafe impl<'a> FromValue<'a> for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl ToValue for UserScriptInjectionTime {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -4781,8 +4779,8 @@ impl ToValue for UserScriptInjectionTime {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl From<UserScriptInjectionTime> for glib::Value {
     #[inline]
     fn from(v: UserScriptInjectionTime) -> Self {
@@ -4791,8 +4789,8 @@ impl From<UserScriptInjectionTime> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitUserStyleLevel")]
@@ -4805,8 +4803,8 @@ pub enum UserStyleLevel {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl fmt::Display for UserStyleLevel {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4821,8 +4819,8 @@ impl fmt::Display for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl IntoGlib for UserStyleLevel {
     type GlibType = ffi::WebKitUserStyleLevel;
@@ -4837,8 +4835,8 @@ impl IntoGlib for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitUserStyleLevel> for UserStyleLevel {
     #[inline]
@@ -4853,17 +4851,17 @@ impl FromGlib<ffi::WebKitUserStyleLevel> for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl StaticType for UserStyleLevel {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_user_style_level_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::HasParamSpec for UserStyleLevel {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -4874,15 +4872,15 @@ impl glib::HasParamSpec for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl glib::value::ValueType for UserStyleLevel {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-unsafe impl<'a> FromValue<'a> for UserStyleLevel {
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+unsafe impl<'a> glib::value::FromValue<'a> for UserStyleLevel {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -4892,8 +4890,8 @@ unsafe impl<'a> FromValue<'a> for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl ToValue for UserStyleLevel {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -4910,8 +4908,8 @@ impl ToValue for UserStyleLevel {
     }
 }
 
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 impl From<UserStyleLevel> for glib::Value {
     #[inline]
     fn from(v: UserStyleLevel) -> Self {
@@ -4920,8 +4918,8 @@ impl From<UserStyleLevel> for glib::Value {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = "WebKitWebProcessTerminationReason")]
@@ -4936,8 +4934,8 @@ pub enum WebProcessTerminationReason {
     __Unknown(i32),
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl fmt::Display for WebProcessTerminationReason {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -4953,8 +4951,8 @@ impl fmt::Display for WebProcessTerminationReason {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 #[doc(hidden)]
 impl IntoGlib for WebProcessTerminationReason {
     type GlibType = ffi::WebKitWebProcessTerminationReason;
@@ -4970,8 +4968,8 @@ impl IntoGlib for WebProcessTerminationReason {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitWebProcessTerminationReason> for WebProcessTerminationReason {
     #[inline]
@@ -4987,17 +4985,17 @@ impl FromGlib<ffi::WebKitWebProcessTerminationReason> for WebProcessTerminationR
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl StaticType for WebProcessTerminationReason {
     #[inline]
-    fn static_type() -> Type {
+    fn static_type() -> glib::Type {
         unsafe { from_glib(ffi::webkit_web_process_termination_reason_get_type()) }
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl glib::HasParamSpec for WebProcessTerminationReason {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -5008,15 +5006,15 @@ impl glib::HasParamSpec for WebProcessTerminationReason {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl glib::value::ValueType for WebProcessTerminationReason {
     type Type = Self;
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
-unsafe impl<'a> FromValue<'a> for WebProcessTerminationReason {
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+unsafe impl<'a> glib::value::FromValue<'a> for WebProcessTerminationReason {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
     #[inline]
@@ -5026,8 +5024,8 @@ unsafe impl<'a> FromValue<'a> for WebProcessTerminationReason {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl ToValue for WebProcessTerminationReason {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -5044,8 +5042,8 @@ impl ToValue for WebProcessTerminationReason {
     }
 }
 
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 impl From<WebProcessTerminationReason> for glib::Value {
     #[inline]
     fn from(v: WebProcessTerminationReason) -> Self {

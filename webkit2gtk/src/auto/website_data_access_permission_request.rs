@@ -5,8 +5,8 @@
 
 use crate::PermissionRequest;
 use glib::prelude::*;
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 use glib::translate::*;
 use std::fmt;
 
@@ -23,23 +23,18 @@ impl WebsiteDataAccessPermissionRequest {
     pub const NONE: Option<&'static WebsiteDataAccessPermissionRequest> = None;
 }
 
-pub trait WebsiteDataAccessPermissionRequestExt: 'static {
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_website_data_access_permission_request_get_current_domain")]
-    #[doc(alias = "get_current_domain")]
-    fn current_domain(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_website_data_access_permission_request_get_requesting_domain")]
-    #[doc(alias = "get_requesting_domain")]
-    fn requesting_domain(&self) -> Option<glib::GString>;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::WebsiteDataAccessPermissionRequest>> Sealed for T {}
 }
 
-impl<O: IsA<WebsiteDataAccessPermissionRequest>> WebsiteDataAccessPermissionRequestExt for O {
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+pub trait WebsiteDataAccessPermissionRequestExt:
+    IsA<WebsiteDataAccessPermissionRequest> + sealed::Sealed + 'static
+{
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_website_data_access_permission_request_get_current_domain")]
+    #[doc(alias = "get_current_domain")]
     fn current_domain(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(
@@ -50,8 +45,10 @@ impl<O: IsA<WebsiteDataAccessPermissionRequest>> WebsiteDataAccessPermissionRequ
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_website_data_access_permission_request_get_requesting_domain")]
+    #[doc(alias = "get_requesting_domain")]
     fn requesting_domain(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(
@@ -62,6 +59,8 @@ impl<O: IsA<WebsiteDataAccessPermissionRequest>> WebsiteDataAccessPermissionRequ
         }
     }
 }
+
+impl<O: IsA<WebsiteDataAccessPermissionRequest>> WebsiteDataAccessPermissionRequestExt for O {}
 
 impl fmt::Display for WebsiteDataAccessPermissionRequest {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

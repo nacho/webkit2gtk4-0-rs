@@ -4,15 +4,15 @@
 // DO NOT EDIT
 
 use glib::prelude::*;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use glib::{
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
 use std::fmt;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use std::{boxed::Box as Box_, mem::transmute};
 
 glib::wrapper! {
@@ -27,8 +27,8 @@ glib::wrapper! {
 impl PrintCustomWidget {
     pub const NONE: Option<&'static PrintCustomWidget> = None;
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     #[doc(alias = "webkit_print_custom_widget_new")]
     pub fn new(widget: &impl IsA<gtk::Widget>, title: &str) -> PrintCustomWidget {
         assert_initialized_main_thread!();
@@ -49,8 +49,8 @@ impl PrintCustomWidget {
     }
 }
 
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 impl Default for PrintCustomWidget {
     fn default() -> Self {
         glib::object::Object::new::<Self>()
@@ -73,16 +73,16 @@ impl PrintCustomWidgetBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     pub fn title(self, title: impl Into<glib::GString>) -> Self {
         Self {
             builder: self.builder.property("title", title.into()),
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     pub fn widget(self, widget: &impl IsA<gtk::Widget>) -> Self {
         Self {
             builder: self.builder.property("widget", widget.clone().upcast()),
@@ -97,36 +97,16 @@ impl PrintCustomWidgetBuilder {
     }
 }
 
-pub trait PrintCustomWidgetExt: 'static {
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_print_custom_widget_get_title")]
-    #[doc(alias = "get_title")]
-    fn title(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_print_custom_widget_get_widget")]
-    #[doc(alias = "get_widget")]
-    fn widget(&self) -> Option<gtk::Widget>;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "apply")]
-    fn connect_apply<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "update")]
-    fn connect_update<F: Fn(&Self, &gtk::PageSetup, &gtk::PrintSettings) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::PrintCustomWidget>> Sealed for T {}
 }
 
-impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+pub trait PrintCustomWidgetExt: IsA<PrintCustomWidget> + sealed::Sealed + 'static {
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_print_custom_widget_get_title")]
+    #[doc(alias = "get_title")]
     fn title(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(ffi::webkit_print_custom_widget_get_title(
@@ -135,8 +115,10 @@ impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_print_custom_widget_get_widget")]
+    #[doc(alias = "get_widget")]
     fn widget(&self) -> Option<gtk::Widget> {
         unsafe {
             from_glib_none(ffi::webkit_print_custom_widget_get_widget(
@@ -145,8 +127,9 @@ impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "apply")]
     fn connect_apply<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn apply_trampoline<P: IsA<PrintCustomWidget>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitPrintCustomWidget,
@@ -168,8 +151,9 @@ impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "update")]
     fn connect_update<F: Fn(&Self, &gtk::PageSetup, &gtk::PrintSettings) + 'static>(
         &self,
         f: F,
@@ -203,6 +187,8 @@ impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {
         }
     }
 }
+
+impl<O: IsA<PrintCustomWidget>> PrintCustomWidgetExt for O {}
 
 impl fmt::Display for PrintCustomWidget {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
