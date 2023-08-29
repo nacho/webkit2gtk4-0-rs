@@ -5,8 +5,8 @@
 #![allow(deprecated)]
 
 use crate::{ContextMenu, ContextMenuAction};
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+#[cfg(feature = "v2_18")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
 use glib::prelude::*;
 use glib::translate::*;
 use std::fmt;
@@ -28,8 +28,8 @@ impl ContextMenuItem {
     //    unsafe { TODO: call ffi:webkit_context_menu_item_new() }
     //}
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_context_menu_item_new_from_gaction")]
     #[doc(alias = "new_from_gaction")]
     pub fn from_gaction(
@@ -98,8 +98,8 @@ impl ContextMenuItem {
     //    unsafe { TODO: call ffi:webkit_context_menu_item_get_action() }
     //}
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_context_menu_item_get_gaction")]
     #[doc(alias = "get_gaction")]
     pub fn gaction(&self) -> Option<gio::Action> {

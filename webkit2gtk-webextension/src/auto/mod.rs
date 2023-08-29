@@ -348,26 +348,26 @@ pub use self::web_hit_test_result::WebHitTestResult;
 mod web_page;
 pub use self::web_page::WebPage;
 
-#[cfg(any(feature = "v2_12", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+#[cfg(feature = "v2_12")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 mod console_message;
-#[cfg(any(feature = "v2_12", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+#[cfg(feature = "v2_12")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 pub use self::console_message::ConsoleMessage;
 
 mod enums;
-#[cfg(any(feature = "v2_12", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+#[cfg(feature = "v2_12")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 pub use self::enums::ConsoleMessageLevel;
-#[cfg(any(feature = "v2_12", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+#[cfg(feature = "v2_12")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 pub use self::enums::ConsoleMessageSource;
 pub use self::enums::ContextMenuAction;
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 pub use self::enums::FormSubmissionStep;
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 pub use self::enums::UserMessageError;
 
 mod flags;

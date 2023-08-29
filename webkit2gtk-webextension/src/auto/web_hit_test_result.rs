@@ -20,19 +20,16 @@ impl WebHitTestResult {
     pub const NONE: Option<&'static WebHitTestResult> = None;
 }
 
-pub trait WebHitTestResultExt: 'static {
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "webkit_web_hit_test_result_get_node")]
-    #[doc(alias = "get_node")]
-    fn node(&self) -> Option<DOMNode>;
-
-    fn get_property_node(&self) -> Option<DOMNode>;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::WebHitTestResult>> Sealed for T {}
 }
 
-impl<O: IsA<WebHitTestResult>> WebHitTestResultExt for O {
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+pub trait WebHitTestResultExt: IsA<WebHitTestResult> + sealed::Sealed + 'static {
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "webkit_web_hit_test_result_get_node")]
+    #[doc(alias = "get_node")]
     fn node(&self) -> Option<DOMNode> {
         unsafe {
             from_glib_none(ffi::webkit_web_hit_test_result_get_node(
@@ -42,9 +39,11 @@ impl<O: IsA<WebHitTestResult>> WebHitTestResultExt for O {
     }
 
     fn get_property_node(&self) -> Option<DOMNode> {
-        glib::ObjectExt::property(self.as_ref(), "node")
+        ObjectExt::property(self.as_ref(), "node")
     }
 }
+
+impl<O: IsA<WebHitTestResult>> WebHitTestResultExt for O {}
 
 impl fmt::Display for WebHitTestResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

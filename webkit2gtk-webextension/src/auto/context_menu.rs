@@ -73,8 +73,8 @@ impl ContextMenu {
         unsafe { ffi::webkit_context_menu_get_n_items(self.to_glib_none().0) }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_context_menu_get_user_data")]
     #[doc(alias = "get_user_data")]
     pub fn user_data(&self) -> Option<glib::Variant> {
@@ -129,8 +129,8 @@ impl ContextMenu {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_context_menu_set_user_data")]
     pub fn set_user_data(&self, user_data: &glib::Variant) {
         unsafe {

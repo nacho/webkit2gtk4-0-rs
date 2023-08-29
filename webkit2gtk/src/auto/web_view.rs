@@ -4,35 +4,35 @@
 // DO NOT EDIT
 #![allow(deprecated)]
 
-#[cfg(any(feature = "v2_2", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_2")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
 use crate::AuthenticationRequest;
-#[cfg(any(feature = "v2_10", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+#[cfg(feature = "v2_10")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 use crate::EditorState;
-#[cfg(any(feature = "v2_34", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+#[cfg(feature = "v2_34")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
 use crate::MediaCaptureState;
-#[cfg(any(feature = "v2_18", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+#[cfg(feature = "v2_18")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
 use crate::OptionMenu;
-#[cfg(any(feature = "v2_24", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+#[cfg(feature = "v2_24")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
 use crate::ScriptDialog;
-#[cfg(any(feature = "v2_20", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+#[cfg(feature = "v2_20")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 use crate::WebProcessTerminationReason;
-#[cfg(any(feature = "v2_12", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+#[cfg(feature = "v2_12")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 use crate::WebViewSessionState;
-#[cfg(any(feature = "v2_16", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+#[cfg(feature = "v2_16")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use crate::WebsiteDataManager;
-#[cfg(any(feature = "v2_30", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+#[cfg(feature = "v2_30")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 use crate::WebsitePolicies;
-#[cfg(any(feature = "v2_28", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 use crate::{AutomationBrowsingContextPresentation, InputMethodContext, UserMessage};
 use crate::{
     BackForwardList, BackForwardListItem, ContextMenu, Download, FileChooserRequest,
@@ -41,11 +41,11 @@ use crate::{
     Settings, SnapshotOptions, SnapshotRegion, URIRequest, WebContext, WebInspector, WebResource,
     WebViewBase, WindowProperties,
 };
-#[cfg(any(feature = "v2_8", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 use crate::{ColorChooserRequest, Notification};
-#[cfg(any(feature = "v2_6", feature = "dox"))]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+#[cfg(feature = "v2_6")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
 use crate::{NavigationAction, UserContentManager};
 use glib::{
     prelude::*,
@@ -84,8 +84,8 @@ impl WebView {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
     #[doc(alias = "webkit_web_view_new_with_related_view")]
     #[doc(alias = "new_with_related_view")]
     pub fn with_related_view(web_view: &impl IsA<WebView>) -> WebView {
@@ -98,8 +98,8 @@ impl WebView {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
     #[doc(alias = "webkit_web_view_new_with_settings")]
     #[doc(alias = "new_with_settings")]
     pub fn with_settings(settings: &impl IsA<Settings>) -> WebView {
@@ -112,8 +112,8 @@ impl WebView {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
     #[doc(alias = "webkit_web_view_new_with_user_content_manager")]
     #[doc(alias = "new_with_user_content_manager")]
     pub fn with_user_content_manager(
@@ -159,8 +159,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     pub fn automation_presentation_type(
         self,
         automation_presentation_type: AutomationBrowsingContextPresentation,
@@ -172,8 +172,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
     pub fn camera_capture_state(self, camera_capture_state: MediaCaptureState) -> Self {
         Self {
             builder: self
@@ -182,8 +182,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
     pub fn display_capture_state(self, display_capture_state: MediaCaptureState) -> Self {
         Self {
             builder: self
@@ -192,16 +192,16 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     pub fn editable(self, editable: bool) -> Self {
         Self {
             builder: self.builder.property("editable", editable),
         }
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     pub fn is_controlled_by_automation(self, is_controlled_by_automation: bool) -> Self {
         Self {
             builder: self
@@ -210,24 +210,24 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     pub fn is_ephemeral(self, is_ephemeral: bool) -> Self {
         Self {
             builder: self.builder.property("is-ephemeral", is_ephemeral),
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     pub fn is_muted(self, is_muted: bool) -> Self {
         Self {
             builder: self.builder.property("is-muted", is_muted),
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
     pub fn microphone_capture_state(self, microphone_capture_state: MediaCaptureState) -> Self {
         Self {
             builder: self
@@ -236,8 +236,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
     pub fn related_view(self, related_view: &impl IsA<WebView>) -> Self {
         Self {
             builder: self
@@ -246,16 +246,16 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
     pub fn settings(self, settings: &impl IsA<Settings>) -> Self {
         Self {
             builder: self.builder.property("settings", settings.clone().upcast()),
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
     pub fn user_content_manager(self, user_content_manager: &impl IsA<UserContentManager>) -> Self {
         Self {
             builder: self.builder.property(
@@ -273,8 +273,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     pub fn website_policies(self, website_policies: &impl IsA<WebsitePolicies>) -> Self {
         Self {
             builder: self
@@ -307,8 +307,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v2_18")))]
+    #[cfg(feature = "gtk_v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v2_18")))]
     #[cfg_attr(feature = "v3_14", deprecated = "Since 3.14")]
     pub fn double_buffered(self, double_buffered: bool) -> Self {
         Self {
@@ -320,24 +320,24 @@ impl WebViewBuilder {
     //    Self { builder: self.builder.property("events", events), }
     //}
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn expand(self, expand: bool) -> Self {
         Self {
             builder: self.builder.property("expand", expand),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3_20", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3_20")))]
+    #[cfg(feature = "gtk_v3_20")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3_20")))]
     pub fn focus_on_click(self, focus_on_click: bool) -> Self {
         Self {
             builder: self.builder.property("focus-on-click", focus_on_click),
         }
     }
 
-    //    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    //    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     //pub fn halign(self, halign: /*Ignored*/gtk::Align) -> Self {
     //    Self { builder: self.builder.property("halign", halign), }
     //}
@@ -354,8 +354,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v2_12")))]
+    #[cfg(feature = "gtk_v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v2_12")))]
     pub fn has_tooltip(self, has_tooltip: bool) -> Self {
         Self {
             builder: self.builder.property("has-tooltip", has_tooltip),
@@ -368,16 +368,16 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn hexpand(self, hexpand: bool) -> Self {
         Self {
             builder: self.builder.property("hexpand", hexpand),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn hexpand_set(self, hexpand_set: bool) -> Self {
         Self {
             builder: self.builder.property("hexpand-set", hexpand_set),
@@ -390,32 +390,32 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn margin(self, margin: i32) -> Self {
         Self {
             builder: self.builder.property("margin", margin),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn margin_bottom(self, margin_bottom: i32) -> Self {
         Self {
             builder: self.builder.property("margin-bottom", margin_bottom),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3_12")))]
+    #[cfg(feature = "gtk_v3_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3_12")))]
     pub fn margin_end(self, margin_end: i32) -> Self {
         Self {
             builder: self.builder.property("margin-end", margin_end),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     #[cfg_attr(feature = "v3_12", deprecated = "Since 3.12")]
     pub fn margin_left(self, margin_left: i32) -> Self {
         Self {
@@ -423,8 +423,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     #[cfg_attr(feature = "v3_12", deprecated = "Since 3.12")]
     pub fn margin_right(self, margin_right: i32) -> Self {
         Self {
@@ -432,16 +432,16 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v3_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3_12")))]
+    #[cfg(feature = "gtk_v3_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3_12")))]
     pub fn margin_start(self, margin_start: i32) -> Self {
         Self {
             builder: self.builder.property("margin-start", margin_start),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn margin_top(self, margin_top: i32) -> Self {
         Self {
             builder: self.builder.property("margin-top", margin_top),
@@ -460,8 +460,8 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v3_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3_8")))]
+    #[cfg(feature = "gtk_v3_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3_8")))]
     pub fn opacity(self, opacity: f64) -> Self {
         Self {
             builder: self.builder.property("opacity", opacity),
@@ -488,8 +488,8 @@ impl WebViewBuilder {
     //    Self { builder: self.builder.property("style", style.clone().upcast()), }
     //}
 
-    #[cfg(any(feature = "gtk_v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v2_12")))]
+    #[cfg(feature = "gtk_v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v2_12")))]
     pub fn tooltip_markup(self, tooltip_markup: impl Into<glib::GString>) -> Self {
         Self {
             builder: self
@@ -498,29 +498,29 @@ impl WebViewBuilder {
         }
     }
 
-    #[cfg(any(feature = "gtk_v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v2_12")))]
+    #[cfg(feature = "gtk_v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v2_12")))]
     pub fn tooltip_text(self, tooltip_text: impl Into<glib::GString>) -> Self {
         Self {
             builder: self.builder.property("tooltip-text", tooltip_text.into()),
         }
     }
 
-    //    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    //    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     //pub fn valign(self, valign: /*Ignored*/gtk::Align) -> Self {
     //    Self { builder: self.builder.property("valign", valign), }
     //}
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn vexpand(self, vexpand: bool) -> Self {
         Self {
             builder: self.builder.property("vexpand", vexpand),
         }
     }
 
-    #[cfg(any(feature = "gtk_v3", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "gtk_v3")))]
+    #[cfg(feature = "gtk_v3")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "gtk_v3")))]
     pub fn vexpand_set(self, vexpand_set: bool) -> Self {
         Self {
             builder: self.builder.property("vexpand-set", vexpand_set),
@@ -547,660 +547,13 @@ impl WebViewBuilder {
     }
 }
 
-pub trait WebViewExt: 'static {
-    #[doc(alias = "webkit_web_view_can_execute_editing_command")]
-    fn can_execute_editing_command<P: FnOnce(Result<(), glib::Error>) + 'static>(
-        &self,
-        command: &str,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn can_execute_editing_command_future(
-        &self,
-        command: &str,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<(), glib::Error>> + 'static>>;
-
-    #[doc(alias = "webkit_web_view_can_go_back")]
-    fn can_go_back(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_can_go_forward")]
-    fn can_go_forward(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_can_show_mime_type")]
-    fn can_show_mime_type(&self, mime_type: &str) -> bool;
-
-    #[doc(alias = "webkit_web_view_download_uri")]
-    fn download_uri(&self, uri: &str) -> Option<Download>;
-
-    #[doc(alias = "webkit_web_view_execute_editing_command")]
-    fn execute_editing_command(&self, command: &str);
-
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
-    #[doc(alias = "webkit_web_view_execute_editing_command_with_argument")]
-    fn execute_editing_command_with_argument(&self, command: &str, argument: &str);
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "webkit_web_view_get_automation_presentation_type")]
-    #[doc(alias = "get_automation_presentation_type")]
-    fn automation_presentation_type(&self) -> AutomationBrowsingContextPresentation;
-
-    #[doc(alias = "webkit_web_view_get_back_forward_list")]
-    #[doc(alias = "get_back_forward_list")]
-    fn back_forward_list(&self) -> Option<BackForwardList>;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "webkit_web_view_get_background_color")]
-    #[doc(alias = "get_background_color")]
-    fn background_color(&self) -> gdk::RGBA;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_get_camera_capture_state")]
-    #[doc(alias = "get_camera_capture_state")]
-    fn camera_capture_state(&self) -> MediaCaptureState;
-
-    #[doc(alias = "webkit_web_view_get_context")]
-    #[doc(alias = "get_context")]
-    fn context(&self) -> Option<WebContext>;
-
-    #[doc(alias = "webkit_web_view_get_custom_charset")]
-    #[doc(alias = "get_custom_charset")]
-    fn custom_charset(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_get_display_capture_state")]
-    #[doc(alias = "get_display_capture_state")]
-    fn display_capture_state(&self) -> MediaCaptureState;
-
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
-    #[doc(alias = "webkit_web_view_get_editor_state")]
-    #[doc(alias = "get_editor_state")]
-    fn editor_state(&self) -> Option<EditorState>;
-
-    #[doc(alias = "webkit_web_view_get_estimated_load_progress")]
-    #[doc(alias = "get_estimated_load_progress")]
-    fn estimated_load_progress(&self) -> f64;
-
-    #[doc(alias = "webkit_web_view_get_favicon")]
-    #[doc(alias = "get_favicon")]
-    fn favicon(&self) -> Option<cairo::Surface>;
-
-    #[doc(alias = "webkit_web_view_get_find_controller")]
-    #[doc(alias = "get_find_controller")]
-    fn find_controller(&self) -> Option<FindController>;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "webkit_web_view_get_input_method_context")]
-    #[doc(alias = "get_input_method_context")]
-    fn input_method_context(&self) -> Option<InputMethodContext>;
-
-    #[doc(alias = "webkit_web_view_get_inspector")]
-    #[doc(alias = "get_inspector")]
-    fn inspector(&self) -> Option<WebInspector>;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_web_view_get_is_muted")]
-    #[doc(alias = "get_is_muted")]
-    fn is_muted(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_get_is_web_process_responsive")]
-    #[doc(alias = "get_is_web_process_responsive")]
-    fn is_web_process_responsive(&self) -> bool;
-
-    //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
-    //#[allow(deprecated)]
-    //#[doc(alias = "webkit_web_view_get_javascript_global_context")]
-    //#[doc(alias = "get_javascript_global_context")]
-    //fn javascript_global_context(&self) -> /*Ignored*/Option<javascriptcore::GlobalContextRef>;
-
-    #[doc(alias = "webkit_web_view_get_main_resource")]
-    #[doc(alias = "get_main_resource")]
-    fn main_resource(&self) -> Option<WebResource>;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_get_microphone_capture_state")]
-    #[doc(alias = "get_microphone_capture_state")]
-    fn microphone_capture_state(&self) -> MediaCaptureState;
-
-    #[doc(alias = "webkit_web_view_get_page_id")]
-    #[doc(alias = "get_page_id")]
-    fn page_id(&self) -> u64;
-
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
-    #[doc(alias = "webkit_web_view_get_session_state")]
-    #[doc(alias = "get_session_state")]
-    fn session_state(&self) -> Option<WebViewSessionState>;
-
-    #[doc(alias = "webkit_web_view_get_settings")]
-    #[doc(alias = "get_settings")]
-    fn settings(&self) -> Option<Settings>;
-
-    #[doc(alias = "webkit_web_view_get_snapshot")]
-    #[doc(alias = "get_snapshot")]
-    fn snapshot<P: FnOnce(Result<cairo::Surface, glib::Error>) + 'static>(
-        &self,
-        region: SnapshotRegion,
-        options: SnapshotOptions,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn snapshot_future(
-        &self,
-        region: SnapshotRegion,
-        options: SnapshotOptions,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<cairo::Surface, glib::Error>> + 'static>>;
-
-    #[doc(alias = "webkit_web_view_get_title")]
-    #[doc(alias = "get_title")]
-    fn title(&self) -> Option<glib::GString>;
-
-    #[doc(alias = "webkit_web_view_get_tls_info")]
-    #[doc(alias = "get_tls_info")]
-    fn tls_info(&self) -> Option<(gio::TlsCertificate, gio::TlsCertificateFlags)>;
-
-    #[doc(alias = "webkit_web_view_get_uri")]
-    #[doc(alias = "get_uri")]
-    fn uri(&self) -> Option<glib::GString>;
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "webkit_web_view_get_user_content_manager")]
-    #[doc(alias = "get_user_content_manager")]
-    fn user_content_manager(&self) -> Option<UserContentManager>;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_web_view_get_website_data_manager")]
-    #[doc(alias = "get_website_data_manager")]
-    fn website_data_manager(&self) -> Option<WebsiteDataManager>;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_web_view_get_website_policies")]
-    #[doc(alias = "get_website_policies")]
-    fn website_policies(&self) -> Option<WebsitePolicies>;
-
-    #[doc(alias = "webkit_web_view_get_window_properties")]
-    #[doc(alias = "get_window_properties")]
-    fn window_properties(&self) -> Option<WindowProperties>;
-
-    #[doc(alias = "webkit_web_view_get_zoom_level")]
-    #[doc(alias = "get_zoom_level")]
-    fn zoom_level(&self) -> f64;
-
-    #[doc(alias = "webkit_web_view_go_back")]
-    fn go_back(&self);
-
-    #[doc(alias = "webkit_web_view_go_forward")]
-    fn go_forward(&self);
-
-    #[doc(alias = "webkit_web_view_go_to_back_forward_list_item")]
-    fn go_to_back_forward_list_item(&self, list_item: &impl IsA<BackForwardListItem>);
-
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-    #[doc(alias = "webkit_web_view_is_controlled_by_automation")]
-    fn is_controlled_by_automation(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_is_editable")]
-    fn is_editable(&self) -> bool;
-
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
-    #[doc(alias = "webkit_web_view_is_ephemeral")]
-    fn is_ephemeral(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_is_loading")]
-    fn is_loading(&self) -> bool;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "webkit_web_view_is_playing_audio")]
-    fn is_playing_audio(&self) -> bool;
-
-    #[doc(alias = "webkit_web_view_load_alternate_html")]
-    fn load_alternate_html(&self, content: &str, content_uri: &str, base_uri: Option<&str>);
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "webkit_web_view_load_bytes")]
-    fn load_bytes(
-        &self,
-        bytes: &glib::Bytes,
-        mime_type: Option<&str>,
-        encoding: Option<&str>,
-        base_uri: Option<&str>,
-    );
-
-    #[doc(alias = "webkit_web_view_load_html")]
-    fn load_html(&self, content: &str, base_uri: Option<&str>);
-
-    #[doc(alias = "webkit_web_view_load_plain_text")]
-    fn load_plain_text(&self, plain_text: &str);
-
-    #[doc(alias = "webkit_web_view_load_request")]
-    fn load_request(&self, request: &impl IsA<URIRequest>);
-
-    #[doc(alias = "webkit_web_view_load_uri")]
-    fn load_uri(&self, uri: &str);
-
-    #[doc(alias = "webkit_web_view_reload")]
-    fn reload(&self);
-
-    #[doc(alias = "webkit_web_view_reload_bypass_cache")]
-    fn reload_bypass_cache(&self);
-
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
-    #[doc(alias = "webkit_web_view_restore_session_state")]
-    fn restore_session_state(&self, state: &WebViewSessionState);
-
-    #[doc(alias = "webkit_web_view_run_javascript")]
-    fn run_javascript<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
-        &self,
-        script: &str,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn run_javascript_future(
-        &self,
-        script: &str,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<JavascriptResult, glib::Error>> + 'static>>;
-
-    #[doc(alias = "webkit_web_view_run_javascript_from_gresource")]
-    fn run_javascript_from_gresource<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
-        &self,
-        resource: &str,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn run_javascript_from_gresource_future(
-        &self,
-        resource: &str,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<JavascriptResult, glib::Error>> + 'static>>;
-
-    #[cfg(any(feature = "v2_22", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
-    #[doc(alias = "webkit_web_view_run_javascript_in_world")]
-    fn run_javascript_in_world<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
-        &self,
-        script: &str,
-        world_name: &str,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    #[cfg(any(feature = "v2_22", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
-    fn run_javascript_in_world_future(
-        &self,
-        script: &str,
-        world_name: &str,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<JavascriptResult, glib::Error>> + 'static>>;
-
-    #[doc(alias = "webkit_web_view_save")]
-    fn save<P: FnOnce(Result<gio::InputStream, glib::Error>) + 'static>(
-        &self,
-        save_mode: SaveMode,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn save_future(
-        &self,
-        save_mode: SaveMode,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<gio::InputStream, glib::Error>> + 'static>>;
-
-    #[doc(alias = "webkit_web_view_save_to_file")]
-    fn save_to_file<P: FnOnce(Result<(), glib::Error>) + 'static>(
-        &self,
-        file: &impl IsA<gio::File>,
-        save_mode: SaveMode,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    fn save_to_file_future(
-        &self,
-        file: &(impl IsA<gio::File> + Clone + 'static),
-        save_mode: SaveMode,
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<(), glib::Error>> + 'static>>;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "webkit_web_view_send_message_to_page")]
-    fn send_message_to_page<P: FnOnce(Result<UserMessage, glib::Error>) + 'static>(
-        &self,
-        message: &impl IsA<UserMessage>,
-        cancellable: Option<&impl IsA<gio::Cancellable>>,
-        callback: P,
-    );
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    fn send_message_to_page_future(
-        &self,
-        message: &(impl IsA<UserMessage> + Clone + 'static),
-    ) -> Pin<Box_<dyn std::future::Future<Output = Result<UserMessage, glib::Error>> + 'static>>;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "webkit_web_view_set_background_color")]
-    fn set_background_color(&self, rgba: &gdk::RGBA);
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_set_camera_capture_state")]
-    fn set_camera_capture_state(&self, state: MediaCaptureState);
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_set_cors_allowlist")]
-    fn set_cors_allowlist(&self, allowlist: &[&str]);
-
-    #[doc(alias = "webkit_web_view_set_custom_charset")]
-    fn set_custom_charset(&self, charset: Option<&str>);
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_set_display_capture_state")]
-    fn set_display_capture_state(&self, state: MediaCaptureState);
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "webkit_web_view_set_editable")]
-    fn set_editable(&self, editable: bool);
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "webkit_web_view_set_input_method_context")]
-    fn set_input_method_context(&self, context: Option<&impl IsA<InputMethodContext>>);
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "webkit_web_view_set_is_muted")]
-    fn set_is_muted(&self, muted: bool);
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_set_microphone_capture_state")]
-    fn set_microphone_capture_state(&self, state: MediaCaptureState);
-
-    #[doc(alias = "webkit_web_view_set_settings")]
-    fn set_settings(&self, settings: &impl IsA<Settings>);
-
-    #[doc(alias = "webkit_web_view_set_zoom_level")]
-    fn set_zoom_level(&self, zoom_level: f64);
-
-    #[doc(alias = "webkit_web_view_stop_loading")]
-    fn stop_loading(&self);
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "webkit_web_view_terminate_web_process")]
-    fn terminate_web_process(&self);
-
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
-    #[doc(alias = "webkit_web_view_try_close")]
-    fn try_close(&self);
-
-    #[doc(alias = "web-context")]
-    fn web_context(&self) -> Option<WebContext>;
-
-    #[cfg(any(feature = "v2_2", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
-    #[doc(alias = "authenticate")]
-    fn connect_authenticate<F: Fn(&Self, &AuthenticationRequest) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "close")]
-    fn connect_close<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "context-menu")]
-    fn connect_context_menu<
-        F: Fn(&Self, &ContextMenu, &gdk::Event, &HitTestResult) -> glib::signal::Inhibit + 'static,
-    >(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "context-menu-dismissed")]
-    fn connect_context_menu_dismissed<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "create")]
-    fn connect_create<F: Fn(&Self, &NavigationAction) -> Option<gtk::Widget> + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "decide-policy")]
-    fn connect_decide_policy<
-        F: Fn(&Self, &PolicyDecision, PolicyDecisionType) -> glib::signal::Inhibit + 'static,
-    >(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "enter-fullscreen")]
-    fn connect_enter_fullscreen<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "insecure-content-detected")]
-    fn connect_insecure_content_detected<F: Fn(&Self, InsecureContentEvent) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "leave-fullscreen")]
-    fn connect_leave_fullscreen<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "load-changed")]
-    fn connect_load_changed<F: Fn(&Self, LoadEvent) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "load-failed")]
-    fn connect_load_failed<F: Fn(&Self, LoadEvent, &str, &glib::Error) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "load-failed-with-tls-errors")]
-    fn connect_load_failed_with_tls_errors<
-        F: Fn(&Self, &str, &gio::TlsCertificate, gio::TlsCertificateFlags) -> bool + 'static,
-    >(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "mouse-target-changed")]
-    fn connect_mouse_target_changed<F: Fn(&Self, &HitTestResult, u32) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "permission-request")]
-    fn connect_permission_request<F: Fn(&Self, &PermissionRequest) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "print")]
-    fn connect_print<F: Fn(&Self, &PrintOperation) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "ready-to-show")]
-    fn connect_ready_to_show<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "resource-load-started")]
-    fn connect_resource_load_started<F: Fn(&Self, &WebResource, &URIRequest) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "run-as-modal")]
-    fn connect_run_as_modal<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "run-color-chooser")]
-    fn connect_run_color_chooser<F: Fn(&Self, &ColorChooserRequest) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "run-file-chooser")]
-    fn connect_run_file_chooser<F: Fn(&Self, &FileChooserRequest) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_24", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
-    #[doc(alias = "script-dialog")]
-    fn connect_script_dialog<F: Fn(&Self, &ScriptDialog) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "show-notification")]
-    fn connect_show_notification<F: Fn(&Self, &Notification) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
-    #[doc(alias = "show-option-menu")]
-    fn connect_show_option_menu<
-        F: Fn(&Self, &OptionMenu, &gdk::Event, &gdk::Rectangle) -> bool + 'static,
-    >(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "submit-form")]
-    fn connect_submit_form<F: Fn(&Self, &FormSubmissionRequest) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "user-message-received")]
-    fn connect_user_message_received<F: Fn(&Self, &UserMessage) -> bool + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg_attr(feature = "v2_20", deprecated = "Since 2.20")]
-    #[doc(alias = "web-process-crashed")]
-    fn connect_web_process_crashed<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_20", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
-    #[doc(alias = "web-process-terminated")]
-    fn connect_web_process_terminated<F: Fn(&Self, WebProcessTerminationReason) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "camera-capture-state")]
-    fn connect_camera_capture_state_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "display-capture-state")]
-    fn connect_display_capture_state_notify<F: Fn(&Self) + 'static>(&self, f: F)
-        -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "editable")]
-    fn connect_editable_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "estimated-load-progress")]
-    fn connect_estimated_load_progress_notify<F: Fn(&Self) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[doc(alias = "favicon")]
-    fn connect_favicon_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "is-loading")]
-    fn connect_is_loading_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
-    #[doc(alias = "is-muted")]
-    fn connect_is_muted_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
-    #[doc(alias = "is-playing-audio")]
-    fn connect_is_playing_audio_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "is-web-process-responsive")]
-    fn connect_is_web_process_responsive_notify<F: Fn(&Self) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
-    #[doc(alias = "microphone-capture-state")]
-    fn connect_microphone_capture_state_notify<F: Fn(&Self) + 'static>(
-        &self,
-        f: F,
-    ) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
-    #[doc(alias = "page-id")]
-    fn connect_page_id_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
-    #[doc(alias = "settings")]
-    fn connect_settings_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "title")]
-    fn connect_title_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "uri")]
-    fn connect_uri_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "zoom-level")]
-    fn connect_zoom_level_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::WebView>> Sealed for T {}
 }
 
-impl<O: IsA<WebView>> WebViewExt for O {
+pub trait WebViewExt: IsA<WebView> + sealed::Sealed + 'static {
+    #[doc(alias = "webkit_web_view_can_execute_editing_command")]
     fn can_execute_editing_command<P: FnOnce(Result<(), glib::Error>) + 'static>(
         &self,
         command: &str,
@@ -1266,6 +619,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
+    #[doc(alias = "webkit_web_view_can_go_back")]
     fn can_go_back(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_can_go_back(
@@ -1274,6 +628,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_can_go_forward")]
     fn can_go_forward(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_can_go_forward(
@@ -1282,6 +637,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_can_show_mime_type")]
     fn can_show_mime_type(&self, mime_type: &str) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_can_show_mime_type(
@@ -1291,6 +647,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_download_uri")]
     fn download_uri(&self, uri: &str) -> Option<Download> {
         unsafe {
             from_glib_full(ffi::webkit_web_view_download_uri(
@@ -1300,6 +657,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_execute_editing_command")]
     fn execute_editing_command(&self, command: &str) {
         unsafe {
             ffi::webkit_web_view_execute_editing_command(
@@ -1309,8 +667,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[doc(alias = "webkit_web_view_execute_editing_command_with_argument")]
     fn execute_editing_command_with_argument(&self, command: &str, argument: &str) {
         unsafe {
             ffi::webkit_web_view_execute_editing_command_with_argument(
@@ -1321,8 +680,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "webkit_web_view_get_automation_presentation_type")]
+    #[doc(alias = "get_automation_presentation_type")]
     fn automation_presentation_type(&self) -> AutomationBrowsingContextPresentation {
         unsafe {
             from_glib(ffi::webkit_web_view_get_automation_presentation_type(
@@ -1331,6 +692,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_back_forward_list")]
+    #[doc(alias = "get_back_forward_list")]
     fn back_forward_list(&self) -> Option<BackForwardList> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_back_forward_list(
@@ -1339,8 +702,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "webkit_web_view_get_background_color")]
+    #[doc(alias = "get_background_color")]
     fn background_color(&self) -> gdk::RGBA {
         unsafe {
             let mut rgba = gdk::RGBA::uninitialized();
@@ -1352,8 +717,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_get_camera_capture_state")]
+    #[doc(alias = "get_camera_capture_state")]
     fn camera_capture_state(&self) -> MediaCaptureState {
         unsafe {
             from_glib(ffi::webkit_web_view_get_camera_capture_state(
@@ -1362,6 +729,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_context")]
+    #[doc(alias = "get_context")]
     fn context(&self) -> Option<WebContext> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_context(
@@ -1370,6 +739,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_custom_charset")]
+    #[doc(alias = "get_custom_charset")]
     fn custom_charset(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_custom_charset(
@@ -1378,8 +749,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_get_display_capture_state")]
+    #[doc(alias = "get_display_capture_state")]
     fn display_capture_state(&self) -> MediaCaptureState {
         unsafe {
             from_glib(ffi::webkit_web_view_get_display_capture_state(
@@ -1388,8 +761,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_10", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_10")))]
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[doc(alias = "webkit_web_view_get_editor_state")]
+    #[doc(alias = "get_editor_state")]
     fn editor_state(&self) -> Option<EditorState> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_editor_state(
@@ -1398,10 +773,14 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_estimated_load_progress")]
+    #[doc(alias = "get_estimated_load_progress")]
     fn estimated_load_progress(&self) -> f64 {
         unsafe { ffi::webkit_web_view_get_estimated_load_progress(self.as_ref().to_glib_none().0) }
     }
 
+    #[doc(alias = "webkit_web_view_get_favicon")]
+    #[doc(alias = "get_favicon")]
     fn favicon(&self) -> Option<cairo::Surface> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_favicon(
@@ -1410,6 +789,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_find_controller")]
+    #[doc(alias = "get_find_controller")]
     fn find_controller(&self) -> Option<FindController> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_find_controller(
@@ -1418,8 +799,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "webkit_web_view_get_input_method_context")]
+    #[doc(alias = "get_input_method_context")]
     fn input_method_context(&self) -> Option<InputMethodContext> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_input_method_context(
@@ -1428,6 +811,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_inspector")]
+    #[doc(alias = "get_inspector")]
     fn inspector(&self) -> Option<WebInspector> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_inspector(
@@ -1436,8 +821,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_web_view_get_is_muted")]
+    #[doc(alias = "get_is_muted")]
     fn is_muted(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_get_is_muted(
@@ -1446,6 +833,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_is_web_process_responsive")]
+    #[doc(alias = "get_is_web_process_responsive")]
     fn is_web_process_responsive(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_get_is_web_process_responsive(
@@ -1454,11 +843,16 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
     //#[allow(deprecated)]
+    //#[doc(alias = "webkit_web_view_get_javascript_global_context")]
+    //#[doc(alias = "get_javascript_global_context")]
     //fn javascript_global_context(&self) -> /*Ignored*/Option<javascriptcore::GlobalContextRef> {
     //    unsafe { TODO: call ffi:webkit_web_view_get_javascript_global_context() }
     //}
 
+    #[doc(alias = "webkit_web_view_get_main_resource")]
+    #[doc(alias = "get_main_resource")]
     fn main_resource(&self) -> Option<WebResource> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_main_resource(
@@ -1467,8 +861,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_get_microphone_capture_state")]
+    #[doc(alias = "get_microphone_capture_state")]
     fn microphone_capture_state(&self) -> MediaCaptureState {
         unsafe {
             from_glib(ffi::webkit_web_view_get_microphone_capture_state(
@@ -1477,12 +873,16 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_page_id")]
+    #[doc(alias = "get_page_id")]
     fn page_id(&self) -> u64 {
         unsafe { ffi::webkit_web_view_get_page_id(self.as_ref().to_glib_none().0) }
     }
 
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+    #[cfg(feature = "v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+    #[doc(alias = "webkit_web_view_get_session_state")]
+    #[doc(alias = "get_session_state")]
     fn session_state(&self) -> Option<WebViewSessionState> {
         unsafe {
             from_glib_full(ffi::webkit_web_view_get_session_state(
@@ -1491,6 +891,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_settings")]
+    #[doc(alias = "get_settings")]
     fn settings(&self) -> Option<Settings> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_settings(
@@ -1499,6 +901,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_snapshot")]
+    #[doc(alias = "get_snapshot")]
     fn snapshot<P: FnOnce(Result<cairo::Surface, glib::Error>) + 'static>(
         &self,
         region: SnapshotRegion,
@@ -1564,6 +968,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
+    #[doc(alias = "webkit_web_view_get_title")]
+    #[doc(alias = "get_title")]
     fn title(&self) -> Option<glib::GString> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_title(
@@ -1572,6 +978,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_tls_info")]
+    #[doc(alias = "get_tls_info")]
     fn tls_info(&self) -> Option<(gio::TlsCertificate, gio::TlsCertificateFlags)> {
         unsafe {
             let mut certificate = ptr::null_mut();
@@ -1589,12 +997,16 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_uri")]
+    #[doc(alias = "get_uri")]
     fn uri(&self) -> Option<glib::GString> {
         unsafe { from_glib_none(ffi::webkit_web_view_get_uri(self.as_ref().to_glib_none().0)) }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "webkit_web_view_get_user_content_manager")]
+    #[doc(alias = "get_user_content_manager")]
     fn user_content_manager(&self) -> Option<UserContentManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_user_content_manager(
@@ -1603,8 +1015,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_web_view_get_website_data_manager")]
+    #[doc(alias = "get_website_data_manager")]
     fn website_data_manager(&self) -> Option<WebsiteDataManager> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_website_data_manager(
@@ -1613,8 +1027,10 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_web_view_get_website_policies")]
+    #[doc(alias = "get_website_policies")]
     fn website_policies(&self) -> Option<WebsitePolicies> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_website_policies(
@@ -1623,6 +1039,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_window_properties")]
+    #[doc(alias = "get_window_properties")]
     fn window_properties(&self) -> Option<WindowProperties> {
         unsafe {
             from_glib_none(ffi::webkit_web_view_get_window_properties(
@@ -1631,22 +1049,27 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_get_zoom_level")]
+    #[doc(alias = "get_zoom_level")]
     fn zoom_level(&self) -> f64 {
         unsafe { ffi::webkit_web_view_get_zoom_level(self.as_ref().to_glib_none().0) }
     }
 
+    #[doc(alias = "webkit_web_view_go_back")]
     fn go_back(&self) {
         unsafe {
             ffi::webkit_web_view_go_back(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[doc(alias = "webkit_web_view_go_forward")]
     fn go_forward(&self) {
         unsafe {
             ffi::webkit_web_view_go_forward(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[doc(alias = "webkit_web_view_go_to_back_forward_list_item")]
     fn go_to_back_forward_list_item(&self, list_item: &impl IsA<BackForwardListItem>) {
         unsafe {
             ffi::webkit_web_view_go_to_back_forward_list_item(
@@ -1656,8 +1079,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
+    #[doc(alias = "webkit_web_view_is_controlled_by_automation")]
     fn is_controlled_by_automation(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_is_controlled_by_automation(
@@ -1666,6 +1090,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_is_editable")]
     fn is_editable(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_is_editable(
@@ -1674,8 +1099,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_16", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_16")))]
+    #[cfg(feature = "v2_16")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[doc(alias = "webkit_web_view_is_ephemeral")]
     fn is_ephemeral(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_is_ephemeral(
@@ -1684,6 +1110,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_is_loading")]
     fn is_loading(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_is_loading(
@@ -1692,8 +1119,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "webkit_web_view_is_playing_audio")]
     fn is_playing_audio(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_web_view_is_playing_audio(
@@ -1702,6 +1130,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_load_alternate_html")]
     fn load_alternate_html(&self, content: &str, content_uri: &str, base_uri: Option<&str>) {
         unsafe {
             ffi::webkit_web_view_load_alternate_html(
@@ -1713,8 +1142,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "webkit_web_view_load_bytes")]
     fn load_bytes(
         &self,
         bytes: &glib::Bytes,
@@ -1733,6 +1163,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_load_html")]
     fn load_html(&self, content: &str, base_uri: Option<&str>) {
         unsafe {
             ffi::webkit_web_view_load_html(
@@ -1743,6 +1174,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_load_plain_text")]
     fn load_plain_text(&self, plain_text: &str) {
         unsafe {
             ffi::webkit_web_view_load_plain_text(
@@ -1752,6 +1184,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_load_request")]
     fn load_request(&self, request: &impl IsA<URIRequest>) {
         unsafe {
             ffi::webkit_web_view_load_request(
@@ -1761,26 +1194,30 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_load_uri")]
     fn load_uri(&self, uri: &str) {
         unsafe {
             ffi::webkit_web_view_load_uri(self.as_ref().to_glib_none().0, uri.to_glib_none().0);
         }
     }
 
+    #[doc(alias = "webkit_web_view_reload")]
     fn reload(&self) {
         unsafe {
             ffi::webkit_web_view_reload(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[doc(alias = "webkit_web_view_reload_bypass_cache")]
     fn reload_bypass_cache(&self) {
         unsafe {
             ffi::webkit_web_view_reload_bypass_cache(self.as_ref().to_glib_none().0);
         }
     }
 
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+    #[cfg(feature = "v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+    #[doc(alias = "webkit_web_view_restore_session_state")]
     fn restore_session_state(&self, state: &WebViewSessionState) {
         unsafe {
             ffi::webkit_web_view_restore_session_state(
@@ -1790,6 +1227,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_run_javascript")]
     fn run_javascript<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
         &self,
         script: &str,
@@ -1856,6 +1294,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
+    #[doc(alias = "webkit_web_view_run_javascript_from_gresource")]
     fn run_javascript_from_gresource<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
         &self,
         resource: &str,
@@ -1922,8 +1361,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
-    #[cfg(any(feature = "v2_22", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
+    #[cfg(feature = "v2_22")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[doc(alias = "webkit_web_view_run_javascript_in_world")]
     fn run_javascript_in_world<P: FnOnce(Result<JavascriptResult, glib::Error>) + 'static>(
         &self,
         script: &str,
@@ -1979,8 +1419,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_22", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_22")))]
+    #[cfg(feature = "v2_22")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
     fn run_javascript_in_world_future(
         &self,
         script: &str,
@@ -1996,6 +1436,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
+    #[doc(alias = "webkit_web_view_save")]
     fn save<P: FnOnce(Result<gio::InputStream, glib::Error>) + 'static>(
         &self,
         save_mode: SaveMode,
@@ -2057,6 +1498,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
+    #[doc(alias = "webkit_web_view_save_to_file")]
     fn save_to_file<P: FnOnce(Result<(), glib::Error>) + 'static>(
         &self,
         file: &impl IsA<gio::File>,
@@ -2122,8 +1564,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "webkit_web_view_send_message_to_page")]
     fn send_message_to_page<P: FnOnce(Result<UserMessage, glib::Error>) + 'static>(
         &self,
         message: &impl IsA<UserMessage>,
@@ -2177,8 +1620,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     fn send_message_to_page_future(
         &self,
         message: &(impl IsA<UserMessage> + Clone + 'static),
@@ -2192,8 +1635,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }))
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "webkit_web_view_set_background_color")]
     fn set_background_color(&self, rgba: &gdk::RGBA) {
         unsafe {
             ffi::webkit_web_view_set_background_color(
@@ -2203,8 +1647,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_set_camera_capture_state")]
     fn set_camera_capture_state(&self, state: MediaCaptureState) {
         unsafe {
             ffi::webkit_web_view_set_camera_capture_state(
@@ -2214,8 +1659,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_set_cors_allowlist")]
     fn set_cors_allowlist(&self, allowlist: &[&str]) {
         unsafe {
             ffi::webkit_web_view_set_cors_allowlist(
@@ -2225,6 +1671,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_set_custom_charset")]
     fn set_custom_charset(&self, charset: Option<&str>) {
         unsafe {
             ffi::webkit_web_view_set_custom_charset(
@@ -2234,8 +1681,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_set_display_capture_state")]
     fn set_display_capture_state(&self, state: MediaCaptureState) {
         unsafe {
             ffi::webkit_web_view_set_display_capture_state(
@@ -2245,16 +1693,18 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "webkit_web_view_set_editable")]
     fn set_editable(&self, editable: bool) {
         unsafe {
             ffi::webkit_web_view_set_editable(self.as_ref().to_glib_none().0, editable.into_glib());
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "webkit_web_view_set_input_method_context")]
     fn set_input_method_context(&self, context: Option<&impl IsA<InputMethodContext>>) {
         unsafe {
             ffi::webkit_web_view_set_input_method_context(
@@ -2264,16 +1714,18 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "webkit_web_view_set_is_muted")]
     fn set_is_muted(&self, muted: bool) {
         unsafe {
             ffi::webkit_web_view_set_is_muted(self.as_ref().to_glib_none().0, muted.into_glib());
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_set_microphone_capture_state")]
     fn set_microphone_capture_state(&self, state: MediaCaptureState) {
         unsafe {
             ffi::webkit_web_view_set_microphone_capture_state(
@@ -2283,6 +1735,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_set_settings")]
     fn set_settings(&self, settings: &impl IsA<Settings>) {
         unsafe {
             ffi::webkit_web_view_set_settings(
@@ -2292,40 +1745,46 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "webkit_web_view_set_zoom_level")]
     fn set_zoom_level(&self, zoom_level: f64) {
         unsafe {
             ffi::webkit_web_view_set_zoom_level(self.as_ref().to_glib_none().0, zoom_level);
         }
     }
 
+    #[doc(alias = "webkit_web_view_stop_loading")]
     fn stop_loading(&self) {
         unsafe {
             ffi::webkit_web_view_stop_loading(self.as_ref().to_glib_none().0);
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "webkit_web_view_terminate_web_process")]
     fn terminate_web_process(&self) {
         unsafe {
             ffi::webkit_web_view_terminate_web_process(self.as_ref().to_glib_none().0);
         }
     }
 
-    #[cfg(any(feature = "v2_12", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_12")))]
+    #[cfg(feature = "v2_12")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+    #[doc(alias = "webkit_web_view_try_close")]
     fn try_close(&self) {
         unsafe {
             ffi::webkit_web_view_try_close(self.as_ref().to_glib_none().0);
         }
     }
 
+    #[doc(alias = "web-context")]
     fn web_context(&self) -> Option<WebContext> {
-        glib::ObjectExt::property(self.as_ref(), "web-context")
+        ObjectExt::property(self.as_ref(), "web-context")
     }
 
-    #[cfg(any(feature = "v2_2", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_2")))]
+    #[cfg(feature = "v2_2")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
+    #[doc(alias = "authenticate")]
     fn connect_authenticate<F: Fn(&Self, &AuthenticationRequest) -> bool + 'static>(
         &self,
         f: F,
@@ -2358,6 +1817,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "close")]
     fn connect_close<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn close_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -2379,15 +1839,16 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "context-menu")]
     fn connect_context_menu<
-        F: Fn(&Self, &ContextMenu, &gdk::Event, &HitTestResult) -> glib::signal::Inhibit + 'static,
+        F: Fn(&Self, &ContextMenu, &gdk::Event, &HitTestResult) -> glib::Propagation + 'static,
     >(
         &self,
         f: F,
     ) -> SignalHandlerId {
         unsafe extern "C" fn context_menu_trampoline<
             P: IsA<WebView>,
-            F: Fn(&P, &ContextMenu, &gdk::Event, &HitTestResult) -> glib::signal::Inhibit + 'static,
+            F: Fn(&P, &ContextMenu, &gdk::Event, &HitTestResult) -> glib::Propagation + 'static,
         >(
             this: *mut ffi::WebKitWebView,
             context_menu: *mut ffi::WebKitContextMenu,
@@ -2417,6 +1878,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "context-menu-dismissed")]
     fn connect_context_menu_dismissed<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn context_menu_dismissed_trampoline<
             P: IsA<WebView>,
@@ -2441,8 +1903,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "create")]
     fn connect_create<F: Fn(&Self, &NavigationAction) -> Option<gtk::Widget> + 'static>(
         &self,
         f: F,
@@ -2475,15 +1938,16 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "decide-policy")]
     fn connect_decide_policy<
-        F: Fn(&Self, &PolicyDecision, PolicyDecisionType) -> glib::signal::Inhibit + 'static,
+        F: Fn(&Self, &PolicyDecision, PolicyDecisionType) -> glib::Propagation + 'static,
     >(
         &self,
         f: F,
     ) -> SignalHandlerId {
         unsafe extern "C" fn decide_policy_trampoline<
             P: IsA<WebView>,
-            F: Fn(&P, &PolicyDecision, PolicyDecisionType) -> glib::signal::Inhibit + 'static,
+            F: Fn(&P, &PolicyDecision, PolicyDecisionType) -> glib::Propagation + 'static,
         >(
             this: *mut ffi::WebKitWebView,
             decision: *mut ffi::WebKitPolicyDecision,
@@ -2511,6 +1975,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "enter-fullscreen")]
     fn connect_enter_fullscreen<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn enter_fullscreen_trampoline<
             P: IsA<WebView>,
@@ -2535,6 +2000,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "insecure-content-detected")]
     fn connect_insecure_content_detected<F: Fn(&Self, InsecureContentEvent) + 'static>(
         &self,
         f: F,
@@ -2566,6 +2032,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "leave-fullscreen")]
     fn connect_leave_fullscreen<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn leave_fullscreen_trampoline<
             P: IsA<WebView>,
@@ -2590,6 +2057,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "load-changed")]
     fn connect_load_changed<F: Fn(&Self, LoadEvent) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn load_changed_trampoline<
             P: IsA<WebView>,
@@ -2618,6 +2086,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "load-failed")]
     fn connect_load_failed<F: Fn(&Self, LoadEvent, &str, &glib::Error) -> bool + 'static>(
         &self,
         f: F,
@@ -2654,8 +2123,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "load-failed-with-tls-errors")]
     fn connect_load_failed_with_tls_errors<
         F: Fn(&Self, &str, &gio::TlsCertificate, gio::TlsCertificateFlags) -> bool + 'static,
     >(
@@ -2694,6 +2164,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "mouse-target-changed")]
     fn connect_mouse_target_changed<F: Fn(&Self, &HitTestResult, u32) + 'static>(
         &self,
         f: F,
@@ -2727,6 +2198,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "permission-request")]
     fn connect_permission_request<F: Fn(&Self, &PermissionRequest) -> bool + 'static>(
         &self,
         f: F,
@@ -2759,6 +2231,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "print")]
     fn connect_print<F: Fn(&Self, &PrintOperation) -> bool + 'static>(
         &self,
         f: F,
@@ -2791,6 +2264,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "ready-to-show")]
     fn connect_ready_to_show<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn ready_to_show_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -2812,6 +2286,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "resource-load-started")]
     fn connect_resource_load_started<F: Fn(&Self, &WebResource, &URIRequest) + 'static>(
         &self,
         f: F,
@@ -2845,6 +2320,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "run-as-modal")]
     fn connect_run_as_modal<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn run_as_modal_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -2866,8 +2342,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "run-color-chooser")]
     fn connect_run_color_chooser<F: Fn(&Self, &ColorChooserRequest) -> bool + 'static>(
         &self,
         f: F,
@@ -2900,6 +2377,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "run-file-chooser")]
     fn connect_run_file_chooser<F: Fn(&Self, &FileChooserRequest) -> bool + 'static>(
         &self,
         f: F,
@@ -2932,8 +2410,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_24", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_24")))]
+    #[cfg(feature = "v2_24")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_24")))]
+    #[doc(alias = "script-dialog")]
     fn connect_script_dialog<F: Fn(&Self, &ScriptDialog) -> bool + 'static>(
         &self,
         f: F,
@@ -2966,8 +2445,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "show-notification")]
     fn connect_show_notification<F: Fn(&Self, &Notification) -> bool + 'static>(
         &self,
         f: F,
@@ -3000,8 +2480,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_18", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_18")))]
+    #[cfg(feature = "v2_18")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
+    #[doc(alias = "show-option-menu")]
     fn connect_show_option_menu<
         F: Fn(&Self, &OptionMenu, &gdk::Event, &gdk::Rectangle) -> bool + 'static,
     >(
@@ -3040,6 +2521,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "submit-form")]
     fn connect_submit_form<F: Fn(&Self, &FormSubmissionRequest) + 'static>(
         &self,
         f: F,
@@ -3071,8 +2553,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "user-message-received")]
     fn connect_user_message_received<F: Fn(&Self, &UserMessage) -> bool + 'static>(
         &self,
         f: F,
@@ -3105,6 +2588,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[cfg_attr(feature = "v2_20", deprecated = "Since 2.20")]
+    #[doc(alias = "web-process-crashed")]
     fn connect_web_process_crashed<F: Fn(&Self) -> bool + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn web_process_crashed_trampoline<
             P: IsA<WebView>,
@@ -3129,8 +2614,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_20", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+    #[cfg(feature = "v2_20")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+    #[doc(alias = "web-process-terminated")]
     fn connect_web_process_terminated<F: Fn(&Self, WebProcessTerminationReason) + 'static>(
         &self,
         f: F,
@@ -3162,8 +2648,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "camera-capture-state")]
     fn connect_camera_capture_state_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_camera_capture_state_trampoline<
             P: IsA<WebView>,
@@ -3189,8 +2676,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "display-capture-state")]
     fn connect_display_capture_state_notify<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -3219,8 +2707,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "editable")]
     fn connect_editable_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_editable_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3243,6 +2732,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "estimated-load-progress")]
     fn connect_estimated_load_progress_notify<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -3271,6 +2761,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "favicon")]
     fn connect_favicon_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_favicon_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3293,6 +2784,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "is-loading")]
     fn connect_is_loading_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_loading_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3315,8 +2807,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_30", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_30")))]
+    #[cfg(feature = "v2_30")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[doc(alias = "is-muted")]
     fn connect_is_muted_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_muted_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3339,8 +2832,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_8", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[doc(alias = "is-playing-audio")]
     fn connect_is_playing_audio_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_playing_audio_trampoline<
             P: IsA<WebView>,
@@ -3366,8 +2860,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "is-web-process-responsive")]
     fn connect_is_web_process_responsive_notify<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -3396,8 +2891,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_34", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_34")))]
+    #[cfg(feature = "v2_34")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_34")))]
+    #[doc(alias = "microphone-capture-state")]
     fn connect_microphone_capture_state_notify<F: Fn(&Self) + 'static>(
         &self,
         f: F,
@@ -3426,8 +2922,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_28", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_28")))]
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
+    #[doc(alias = "page-id")]
     fn connect_page_id_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_page_id_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3450,8 +2947,9 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_6", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_6")))]
+    #[cfg(feature = "v2_6")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_6")))]
+    #[doc(alias = "settings")]
     fn connect_settings_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_settings_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3474,6 +2972,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "title")]
     fn connect_title_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_title_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3496,6 +2995,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "uri")]
     fn connect_uri_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_uri_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3518,6 +3018,7 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 
+    #[doc(alias = "zoom-level")]
     fn connect_zoom_level_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_zoom_level_trampoline<P: IsA<WebView>, F: Fn(&P) + 'static>(
             this: *mut ffi::WebKitWebView,
@@ -3540,6 +3041,8 @@ impl<O: IsA<WebView>> WebViewExt for O {
         }
     }
 }
+
+impl<O: IsA<WebView>> WebViewExt for O {}
 
 impl fmt::Display for WebView {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

@@ -52,8 +52,8 @@ impl NavigationAction {
         }
     }
 
-    #[cfg(any(feature = "v2_20", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_20")))]
+    #[cfg(feature = "v2_20")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
     #[doc(alias = "webkit_navigation_action_is_redirect")]
     pub fn is_redirect(&mut self) -> bool {
         unsafe {

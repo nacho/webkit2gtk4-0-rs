@@ -24,28 +24,16 @@ impl ResponsePolicyDecision {
     pub const NONE: Option<&'static ResponsePolicyDecision> = None;
 }
 
-pub trait ResponsePolicyDecisionExt: 'static {
-    #[doc(alias = "webkit_response_policy_decision_get_request")]
-    #[doc(alias = "get_request")]
-    fn request(&self) -> Option<URIRequest>;
-
-    #[doc(alias = "webkit_response_policy_decision_get_response")]
-    #[doc(alias = "get_response")]
-    fn response(&self) -> Option<URIResponse>;
-
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
-    #[doc(alias = "webkit_response_policy_decision_is_mime_type_supported")]
-    fn is_mime_type_supported(&self) -> bool;
-
-    #[doc(alias = "request")]
-    fn connect_request_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
-
-    #[doc(alias = "response")]
-    fn connect_response_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId;
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::ResponsePolicyDecision>> Sealed for T {}
 }
 
-impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
+pub trait ResponsePolicyDecisionExt:
+    IsA<ResponsePolicyDecision> + sealed::Sealed + 'static
+{
+    #[doc(alias = "webkit_response_policy_decision_get_request")]
+    #[doc(alias = "get_request")]
     fn request(&self) -> Option<URIRequest> {
         unsafe {
             from_glib_none(ffi::webkit_response_policy_decision_get_request(
@@ -54,6 +42,8 @@ impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
         }
     }
 
+    #[doc(alias = "webkit_response_policy_decision_get_response")]
+    #[doc(alias = "get_response")]
     fn response(&self) -> Option<URIResponse> {
         unsafe {
             from_glib_none(ffi::webkit_response_policy_decision_get_response(
@@ -62,8 +52,9 @@ impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
         }
     }
 
-    #[cfg(any(feature = "v2_4", feature = "dox"))]
-    #[cfg_attr(feature = "dox", doc(cfg(feature = "v2_4")))]
+    #[cfg(feature = "v2_4")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[doc(alias = "webkit_response_policy_decision_is_mime_type_supported")]
     fn is_mime_type_supported(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_response_policy_decision_is_mime_type_supported(
@@ -72,6 +63,7 @@ impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
         }
     }
 
+    #[doc(alias = "request")]
     fn connect_request_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_request_trampoline<
             P: IsA<ResponsePolicyDecision>,
@@ -97,6 +89,7 @@ impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
         }
     }
 
+    #[doc(alias = "response")]
     fn connect_response_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_response_trampoline<
             P: IsA<ResponsePolicyDecision>,
@@ -122,6 +115,8 @@ impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {
         }
     }
 }
+
+impl<O: IsA<ResponsePolicyDecision>> ResponsePolicyDecisionExt for O {}
 
 impl fmt::Display for ResponsePolicyDecision {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
