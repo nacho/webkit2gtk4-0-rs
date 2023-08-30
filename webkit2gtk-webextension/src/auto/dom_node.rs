@@ -24,8 +24,10 @@ glib::wrapper! {
 impl DOMNode {
     pub const NONE: Option<&'static DOMNode> = None;
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_22")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_node_for_js_value")]
     pub fn for_js_value(value: &impl IsA<javascriptcore::Value>) -> Option<DOMNode> {
         assert_initialized_main_thread!();

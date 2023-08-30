@@ -3,17 +3,12 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use glib::prelude::*;
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitEditorState")]
@@ -34,8 +29,6 @@ mod sealed {
 }
 
 pub trait EditorStateExt: IsA<EditorState> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[doc(alias = "webkit_editor_state_get_typing_attributes")]
     #[doc(alias = "get_typing_attributes")]
     fn typing_attributes(&self) -> u32 {

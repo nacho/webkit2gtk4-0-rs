@@ -5,10 +5,7 @@
 #![allow(deprecated)]
 
 use crate::{ContextMenu, ContextMenuAction};
-#[cfg(feature = "v2_18")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
-use glib::prelude::*;
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {
@@ -21,6 +18,8 @@ glib::wrapper! {
 }
 
 impl ContextMenuItem {
+    pub const NONE: Option<&'static ContextMenuItem> = None;
+
     //#[cfg_attr(feature = "v2_18", deprecated = "Since 2.18")]
     //#[allow(deprecated)]
     //#[doc(alias = "webkit_context_menu_item_new")]
@@ -80,21 +79,28 @@ impl ContextMenuItem {
 
     #[doc(alias = "webkit_context_menu_item_new_with_submenu")]
     #[doc(alias = "new_with_submenu")]
-    pub fn with_submenu(label: &str, submenu: &ContextMenu) -> ContextMenuItem {
+    pub fn with_submenu(label: &str, submenu: &impl IsA<ContextMenu>) -> ContextMenuItem {
         skip_assert_initialized!();
         unsafe {
             from_glib_none(ffi::webkit_context_menu_item_new_with_submenu(
                 label.to_glib_none().0,
-                submenu.to_glib_none().0,
+                submenu.as_ref().to_glib_none().0,
             ))
         }
     }
+}
 
+mod sealed {
+    pub trait Sealed {}
+    impl<T: super::IsA<super::ContextMenuItem>> Sealed for T {}
+}
+
+pub trait ContextMenuItemExt: IsA<ContextMenuItem> + sealed::Sealed + 'static {
     //#[cfg_attr(feature = "v2_18", deprecated = "Since 2.18")]
     //#[allow(deprecated)]
     //#[doc(alias = "webkit_context_menu_item_get_action")]
     //#[doc(alias = "get_action")]
-    //pub fn action(&self) -> /*Ignored*/Option<gtk::Action> {
+    //fn action(&self) -> /*Ignored*/Option<gtk::Action> {
     //    unsafe { TODO: call ffi:webkit_context_menu_item_get_action() }
     //}
 
@@ -102,53 +108,55 @@ impl ContextMenuItem {
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_context_menu_item_get_gaction")]
     #[doc(alias = "get_gaction")]
-    pub fn gaction(&self) -> Option<gio::Action> {
+    fn gaction(&self) -> Option<gio::Action> {
         unsafe {
             from_glib_none(ffi::webkit_context_menu_item_get_gaction(
-                self.to_glib_none().0,
+                self.as_ref().to_glib_none().0,
             ))
         }
     }
 
     #[doc(alias = "webkit_context_menu_item_get_stock_action")]
     #[doc(alias = "get_stock_action")]
-    pub fn stock_action(&self) -> ContextMenuAction {
+    fn stock_action(&self) -> ContextMenuAction {
         unsafe {
             from_glib(ffi::webkit_context_menu_item_get_stock_action(
-                self.to_glib_none().0,
+                self.as_ref().to_glib_none().0,
             ))
         }
     }
 
     #[doc(alias = "webkit_context_menu_item_get_submenu")]
     #[doc(alias = "get_submenu")]
-    pub fn submenu(&self) -> Option<ContextMenu> {
+    fn submenu(&self) -> Option<ContextMenu> {
         unsafe {
             from_glib_none(ffi::webkit_context_menu_item_get_submenu(
-                self.to_glib_none().0,
+                self.as_ref().to_glib_none().0,
             ))
         }
     }
 
     #[doc(alias = "webkit_context_menu_item_is_separator")]
-    pub fn is_separator(&self) -> bool {
+    fn is_separator(&self) -> bool {
         unsafe {
             from_glib(ffi::webkit_context_menu_item_is_separator(
-                self.to_glib_none().0,
+                self.as_ref().to_glib_none().0,
             ))
         }
     }
 
     #[doc(alias = "webkit_context_menu_item_set_submenu")]
-    pub fn set_submenu(&self, submenu: Option<&ContextMenu>) {
+    fn set_submenu(&self, submenu: Option<&impl IsA<ContextMenu>>) {
         unsafe {
             ffi::webkit_context_menu_item_set_submenu(
-                self.to_glib_none().0,
-                submenu.to_glib_none().0,
+                self.as_ref().to_glib_none().0,
+                submenu.map(|p| p.as_ref()).to_glib_none().0,
             );
         }
     }
 }
+
+impl<O: IsA<ContextMenuItem>> ContextMenuItemExt for O {}
 
 impl fmt::Display for ContextMenuItem {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

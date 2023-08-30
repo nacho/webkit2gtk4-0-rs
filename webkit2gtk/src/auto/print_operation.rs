@@ -163,6 +163,7 @@ pub trait PrintOperationExt: IsA<PrintOperation> + sealed::Sealed + 'static {
         ObjectExt::property(self.as_ref(), "web-view")
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_16")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     #[doc(alias = "create-custom-widget")]

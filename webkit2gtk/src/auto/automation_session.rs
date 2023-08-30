@@ -3,20 +3,13 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-#[cfg(feature = "v2_18")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
 use crate::{ApplicationInfo, WebView};
-use glib::prelude::*;
-#[cfg(feature = "v2_18")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_18")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitAutomationSession")]
@@ -37,8 +30,6 @@ mod sealed {
 }
 
 pub trait AutomationSessionExt: IsA<AutomationSession> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_18")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_automation_session_get_application_info")]
     #[doc(alias = "get_application_info")]
     fn application_info(&self) -> Option<ApplicationInfo> {
@@ -49,8 +40,6 @@ pub trait AutomationSessionExt: IsA<AutomationSession> + sealed::Sealed + 'stati
         }
     }
 
-    #[cfg(feature = "v2_18")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_automation_session_get_id")]
     #[doc(alias = "get_id")]
     fn id(&self) -> Option<glib::GString> {
@@ -61,8 +50,6 @@ pub trait AutomationSessionExt: IsA<AutomationSession> + sealed::Sealed + 'stati
         }
     }
 
-    #[cfg(feature = "v2_18")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_18")))]
     #[doc(alias = "webkit_automation_session_set_application_info")]
     fn set_application_info(&self, info: &ApplicationInfo) {
         unsafe {

@@ -2,12 +2,13 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 use crate::ConsoleMessage;
-#[cfg(feature = "v2_2")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
+#[cfg(feature = "v2_26")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 use crate::Frame;
 #[cfg(feature = "v2_28")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
@@ -48,6 +49,8 @@ mod sealed {
 }
 
 pub trait WebPageExt: IsA<WebPage> + sealed::Sealed + 'static {
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_web_page_get_dom_document")]
     #[doc(alias = "get_dom_document")]
     fn dom_document(&self) -> Option<DOMDocument> {
@@ -70,14 +73,22 @@ pub trait WebPageExt: IsA<WebPage> + sealed::Sealed + 'static {
         }
     }
 
+    //#[cfg(feature = "v2_40")]
+    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    //#[doc(alias = "webkit_web_page_get_form_manager")]
+    //#[doc(alias = "get_form_manager")]
+    //fn form_manager(&self, world: Option<&impl IsA<ScriptWorld>>) -> /*Ignored*/Option<WebFormManager> {
+    //    unsafe { TODO: call ffi:webkit_web_page_get_form_manager() }
+    //}
+
     #[doc(alias = "webkit_web_page_get_id")]
     #[doc(alias = "get_id")]
     fn id(&self) -> u64 {
         unsafe { ffi::webkit_web_page_get_id(self.as_ref().to_glib_none().0) }
     }
 
-    #[cfg(feature = "v2_2")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     #[doc(alias = "webkit_web_page_get_main_frame")]
     #[doc(alias = "get_main_frame")]
     fn main_frame(&self) -> Option<Frame> {
@@ -165,6 +176,7 @@ pub trait WebPageExt: IsA<WebPage> + sealed::Sealed + 'static {
         }))
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_12")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
     #[doc(alias = "console-message-sent")]
@@ -266,6 +278,7 @@ pub trait WebPageExt: IsA<WebPage> + sealed::Sealed + 'static {
     //    Empty ctype elements: *.PtrArray TypeId { ns_id: 1, id: 12 }
     //}
 
+    //#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     //#[cfg(feature = "v2_26")]
     //#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     //#[doc(alias = "form-controls-associated-for-frame")]
@@ -345,6 +358,7 @@ pub trait WebPageExt: IsA<WebPage> + sealed::Sealed + 'static {
         }
     }
 
+    //#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     //#[cfg(feature = "v2_20")]
     //#[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
     //#[doc(alias = "will-submit-form")]

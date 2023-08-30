@@ -717,6 +717,13 @@ const RUST_LAYOUTS: &[(&str, Layout)] = &[
         },
     ),
     (
+        "WebKitPermissionState",
+        Layout {
+            size: size_of::<WebKitPermissionState>(),
+            alignment: align_of::<WebKitPermissionState>(),
+        },
+    ),
+    (
         "WebKitPlugin",
         Layout {
             size: size_of::<WebKitPlugin>(),
@@ -1074,6 +1081,13 @@ const RUST_LAYOUTS: &[(&str, Layout)] = &[
         },
     ),
     (
+        "WebKitWebExtensionMode",
+        Layout {
+            size: size_of::<WebKitWebExtensionMode>(),
+            alignment: align_of::<WebKitWebExtensionMode>(),
+        },
+    ),
+    (
         "WebKitWebInspector",
         Layout {
             size: size_of::<WebKitWebInspector>(),
@@ -1402,6 +1416,8 @@ const RUST_CONSTANTS: &[(&str, &str)] = &[
     ("(gint) WEBKIT_INPUT_PURPOSE_URL", "4"),
     ("(gint) WEBKIT_INSECURE_CONTENT_DISPLAYED", "1"),
     ("(gint) WEBKIT_INSECURE_CONTENT_RUN", "0"),
+    ("(gint) WEBKIT_JAVASCRIPT_ERROR_INVALID_PARAMETER", "600"),
+    ("(gint) WEBKIT_JAVASCRIPT_ERROR_INVALID_RESULT", "601"),
     ("(gint) WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED", "699"),
     ("(gint) WEBKIT_LOAD_COMMITTED", "2"),
     ("(gint) WEBKIT_LOAD_FINISHED", "3"),
@@ -1411,8 +1427,8 @@ const RUST_CONSTANTS: &[(&str, &str)] = &[
     ("(gint) WEBKIT_MEDIA_CAPTURE_STATE_ACTIVE", "1"),
     ("(gint) WEBKIT_MEDIA_CAPTURE_STATE_MUTED", "2"),
     ("(gint) WEBKIT_MEDIA_CAPTURE_STATE_NONE", "0"),
-    ("WEBKIT_MICRO_VERSION", "0"),
-    ("WEBKIT_MINOR_VERSION", "36"),
+    ("WEBKIT_MICRO_VERSION", "5"),
+    ("WEBKIT_MINOR_VERSION", "40"),
     ("(gint) WEBKIT_NAVIGATION_TYPE_BACK_FORWARD", "2"),
     ("(gint) WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED", "4"),
     ("(gint) WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED", "1"),
@@ -1427,6 +1443,9 @@ const RUST_CONSTANTS: &[(&str, &str)] = &[
     ("(gint) WEBKIT_NETWORK_PROXY_MODE_CUSTOM", "2"),
     ("(gint) WEBKIT_NETWORK_PROXY_MODE_DEFAULT", "0"),
     ("(gint) WEBKIT_NETWORK_PROXY_MODE_NO_PROXY", "1"),
+    ("(gint) WEBKIT_PERMISSION_STATE_DENIED", "1"),
+    ("(gint) WEBKIT_PERMISSION_STATE_GRANTED", "0"),
+    ("(gint) WEBKIT_PERMISSION_STATE_PROMPT", "2"),
     ("(gint) WEBKIT_PLUGIN_ERROR_CANNOT_FIND_PLUGIN", "200"),
     ("(gint) WEBKIT_PLUGIN_ERROR_CANNOT_LOAD_PLUGIN", "201"),
     ("(gint) WEBKIT_PLUGIN_ERROR_CONNECTION_CANCELLED", "203"),
@@ -1506,6 +1525,9 @@ const RUST_CONSTANTS: &[(&str, &str)] = &[
     ),
     ("(guint) WEBKIT_WEBSITE_DATA_SESSION_STORAGE", "8"),
     ("(guint) WEBKIT_WEBSITE_DATA_WEBSQL_DATABASES", "32"),
+    ("(gint) WEBKIT_WEB_EXTENSION_MODE_MANIFESTV2", "1"),
+    ("(gint) WEBKIT_WEB_EXTENSION_MODE_MANIFESTV3", "2"),
+    ("(gint) WEBKIT_WEB_EXTENSION_MODE_NONE", "0"),
     ("(gint) WEBKIT_WEB_PROCESS_CRASHED", "0"),
     ("(gint) WEBKIT_WEB_PROCESS_EXCEEDED_MEMORY_LIMIT", "1"),
     ("(gint) WEBKIT_WEB_PROCESS_TERMINATED_BY_API", "2"),

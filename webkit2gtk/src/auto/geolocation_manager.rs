@@ -3,20 +3,13 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-#[cfg(feature = "v2_26")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 use crate::GeolocationPosition;
-use glib::prelude::*;
-#[cfg(feature = "v2_26")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_26")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitGeolocationManager")]
@@ -37,8 +30,6 @@ mod sealed {
 }
 
 pub trait GeolocationManagerExt: IsA<GeolocationManager> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_26")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     #[doc(alias = "webkit_geolocation_manager_failed")]
     fn failed(&self, error_message: &str) {
         unsafe {
@@ -49,8 +40,6 @@ pub trait GeolocationManagerExt: IsA<GeolocationManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_26")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     #[doc(alias = "webkit_geolocation_manager_get_enable_high_accuracy")]
     #[doc(alias = "get_enable_high_accuracy")]
     fn enables_high_accuracy(&self) -> bool {
@@ -61,8 +50,6 @@ pub trait GeolocationManagerExt: IsA<GeolocationManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_26")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     #[doc(alias = "webkit_geolocation_manager_update_position")]
     fn update_position(&self, position: &mut GeolocationPosition) {
         unsafe {

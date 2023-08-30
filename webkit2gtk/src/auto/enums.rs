@@ -1969,7 +1969,11 @@ impl From<InsecureContentEvent> for glib::Value {
 #[doc(alias = "WebKitJavascriptError")]
 pub enum JavascriptError {
     #[doc(alias = "WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED")]
-    Failed,
+    ScriptFailed,
+    #[doc(alias = "WEBKIT_JAVASCRIPT_ERROR_INVALID_PARAMETER")]
+    InvalidParameter,
+    #[doc(alias = "WEBKIT_JAVASCRIPT_ERROR_INVALID_RESULT")]
+    InvalidResult,
     #[doc(hidden)]
     __Unknown(i32),
 }
@@ -1988,7 +1992,9 @@ impl fmt::Display for JavascriptError {
             f,
             "JavascriptError::{}",
             match *self {
-                Self::Failed => "Failed",
+                Self::ScriptFailed => "ScriptFailed",
+                Self::InvalidParameter => "InvalidParameter",
+                Self::InvalidResult => "InvalidResult",
                 _ => "Unknown",
             }
         )
@@ -2002,7 +2008,9 @@ impl IntoGlib for JavascriptError {
     #[inline]
     fn into_glib(self) -> ffi::WebKitJavascriptError {
         match self {
-            Self::Failed => ffi::WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED,
+            Self::ScriptFailed => ffi::WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED,
+            Self::InvalidParameter => ffi::WEBKIT_JAVASCRIPT_ERROR_INVALID_PARAMETER,
+            Self::InvalidResult => ffi::WEBKIT_JAVASCRIPT_ERROR_INVALID_RESULT,
             Self::__Unknown(value) => value,
         }
     }
@@ -2015,7 +2023,9 @@ impl FromGlib<ffi::WebKitJavascriptError> for JavascriptError {
         skip_assert_initialized!();
 
         match value {
-            ffi::WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED => Self::Failed,
+            ffi::WEBKIT_JAVASCRIPT_ERROR_SCRIPT_FAILED => Self::ScriptFailed,
+            ffi::WEBKIT_JAVASCRIPT_ERROR_INVALID_PARAMETER => Self::InvalidParameter,
+            ffi::WEBKIT_JAVASCRIPT_ERROR_INVALID_RESULT => Self::InvalidResult,
             value => Self::__Unknown(value),
         }
     }
@@ -2045,7 +2055,6 @@ impl glib::error::ErrorDomain for JavascriptError {
     fn from(code: i32) -> Option<Self> {
         skip_assert_initialized!();
         match unsafe { from_glib(code) } {
-            Self::__Unknown(_) => Some(Self::Failed),
             value => Some(value),
         }
     }
@@ -3483,6 +3492,7 @@ impl From<PrintOperationResponse> for glib::Value {
     }
 }
 
+#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
@@ -3499,6 +3509,7 @@ pub enum ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl fmt::Display for ProcessModel {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -3515,6 +3526,7 @@ impl fmt::Display for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl IntoGlib for ProcessModel {
     type GlibType = ffi::WebKitProcessModel;
@@ -3533,6 +3545,7 @@ impl IntoGlib for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitProcessModel> for ProcessModel {
     #[inline]
@@ -3551,6 +3564,7 @@ impl FromGlib<ffi::WebKitProcessModel> for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl StaticType for ProcessModel {
     #[inline]
     fn static_type() -> glib::Type {
@@ -3560,6 +3574,7 @@ impl StaticType for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl glib::HasParamSpec for ProcessModel {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -3572,12 +3587,14 @@ impl glib::HasParamSpec for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl glib::value::ValueType for ProcessModel {
     type Type = Self;
 }
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 unsafe impl<'a> glib::value::FromValue<'a> for ProcessModel {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
@@ -3590,6 +3607,7 @@ unsafe impl<'a> glib::value::FromValue<'a> for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl ToValue for ProcessModel {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -3608,6 +3626,7 @@ impl ToValue for ProcessModel {
 
 #[cfg(feature = "v2_4")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+#[allow(deprecated)]
 impl From<ProcessModel> for glib::Value {
     #[inline]
     fn from(v: ProcessModel) -> Self {

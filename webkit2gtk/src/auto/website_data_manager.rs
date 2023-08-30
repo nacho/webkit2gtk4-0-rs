@@ -13,10 +13,7 @@ use crate::TLSErrorsPolicy;
 #[cfg(feature = "v2_16")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use crate::{CookieManager, WebsiteData, WebsiteDataTypes};
-use glib::prelude::*;
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 #[cfg(feature = "v2_16")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
@@ -34,8 +31,6 @@ glib::wrapper! {
 impl WebsiteDataManager {
     pub const NONE: Option<&'static WebsiteDataManager> = None;
 
-    //#[cfg(feature = "v2_10")]
-    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     //#[doc(alias = "webkit_website_data_manager_new")]
     //pub fn new(first_option_name: &str, : /*Unknown conversion*//*Unimplemented*/Basic: VarArgs) -> WebsiteDataManager {
     //    unsafe { TODO: call ffi:webkit_website_data_manager_new() }
@@ -111,6 +106,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_10")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn disk_cache_directory(self, disk_cache_directory: impl Into<glib::GString>) -> Self {
         Self {
             builder: self
@@ -121,6 +117,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn dom_cache_directory(self, dom_cache_directory: impl Into<glib::GString>) -> Self {
         Self {
             builder: self
@@ -131,6 +128,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_26")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn hsts_cache_directory(self, hsts_cache_directory: impl Into<glib::GString>) -> Self {
         Self {
             builder: self
@@ -141,6 +139,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_10")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn indexeddb_directory(self, indexeddb_directory: impl Into<glib::GString>) -> Self {
         Self {
             builder: self
@@ -159,6 +158,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn itp_directory(self, itp_directory: impl Into<glib::GString>) -> Self {
         Self {
             builder: self.builder.property("itp-directory", itp_directory.into()),
@@ -167,6 +167,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_10")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn local_storage_directory(
         self,
         local_storage_directory: impl Into<glib::GString>,
@@ -180,6 +181,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_10")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn offline_application_cache_directory(
         self,
         offline_application_cache_directory: impl Into<glib::GString>,
@@ -194,6 +196,7 @@ impl WebsiteDataManagerBuilder {
 
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn service_worker_registrations_directory(
         self,
         service_worker_registrations_directory: impl Into<glib::GString>,
@@ -301,8 +304,6 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }))
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[doc(alias = "webkit_website_data_manager_get_base_cache_directory")]
     #[doc(alias = "get_base_cache_directory")]
     fn base_cache_directory(&self) -> Option<glib::GString> {
@@ -313,8 +314,6 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[doc(alias = "webkit_website_data_manager_get_base_data_directory")]
     #[doc(alias = "get_base_data_directory")]
     fn base_data_directory(&self) -> Option<glib::GString> {
@@ -337,8 +336,8 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_disk_cache_directory")]
     #[doc(alias = "get_disk_cache_directory")]
     fn disk_cache_directory(&self) -> Option<glib::GString> {
@@ -349,8 +348,10 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_dom_cache_directory")]
     #[doc(alias = "get_dom_cache_directory")]
     fn dom_cache_directory(&self) -> Option<glib::GString> {
@@ -361,8 +362,10 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_26")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_hsts_cache_directory")]
     #[doc(alias = "get_hsts_cache_directory")]
     fn hsts_cache_directory(&self) -> Option<glib::GString> {
@@ -373,8 +376,8 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_indexeddb_directory")]
     #[doc(alias = "get_indexeddb_directory")]
     fn indexeddb_directory(&self) -> Option<glib::GString> {
@@ -385,8 +388,10 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_itp_directory")]
     #[doc(alias = "get_itp_directory")]
     fn itp_directory(&self) -> Option<glib::GString> {
@@ -478,8 +483,8 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }))
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_local_storage_directory")]
     #[doc(alias = "get_local_storage_directory")]
     fn local_storage_directory(&self) -> Option<glib::GString> {
@@ -492,8 +497,8 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_offline_application_cache_directory")]
     #[doc(alias = "get_offline_application_cache_directory")]
     fn offline_application_cache_directory(&self) -> Option<glib::GString> {
@@ -520,8 +525,10 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_service_worker_registrations_directory")]
     #[doc(alias = "get_service_worker_registrations_directory")]
     fn service_worker_registrations_directory(&self) -> Option<glib::GString> {
@@ -547,8 +554,6 @@ pub trait WebsiteDataManagerExt: IsA<WebsiteDataManager> + sealed::Sealed + 'sta
     }
 
     #[cfg_attr(feature = "v2_24", deprecated = "Since 2.24")]
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[allow(deprecated)]
     #[doc(alias = "webkit_website_data_manager_get_websql_directory")]
     #[doc(alias = "get_websql_directory")]

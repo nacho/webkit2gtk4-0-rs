@@ -62,6 +62,20 @@ pub trait URISchemeRequestExt: IsA<URISchemeRequest> + sealed::Sealed + 'static 
     //    unsafe { TODO: call ffi:webkit_uri_scheme_request_finish_with_response() }
     //}
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_uri_scheme_request_get_http_body")]
+    #[doc(alias = "get_http_body")]
+    fn http_body(&self) -> Option<gio::InputStream> {
+        unsafe {
+            from_glib_full(ffi::webkit_uri_scheme_request_get_http_body(
+                self.as_ref().to_glib_none().0,
+            ))
+        }
+    }
+
+    //#[cfg(feature = "v2_36")]
+    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_36")))]
     //#[doc(alias = "webkit_uri_scheme_request_get_http_headers")]
     //#[doc(alias = "get_http_headers")]
     //fn http_headers(&self) -> /*Ignored*/Option<soup::MessageHeaders> {

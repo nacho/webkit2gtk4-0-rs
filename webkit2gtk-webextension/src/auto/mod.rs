@@ -318,7 +318,11 @@ pub use self::domx_path_ns_resolver::DOMXPathNSResolver;
 mod dom_xpath_result;
 pub use self::dom_xpath_result::DOMXPathResult;
 
+#[cfg(feature = "v2_26")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 mod frame;
+#[cfg(feature = "v2_26")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
 pub use self::frame::Frame;
 
 mod hit_test_result;
@@ -333,16 +337,28 @@ pub use self::uri_request::URIRequest;
 mod uri_response;
 pub use self::uri_response::URIResponse;
 
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 mod user_message;
+#[cfg(feature = "v2_28")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
 pub use self::user_message::UserMessage;
 
+#[cfg(feature = "v2_10")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 mod web_editor;
+#[cfg(feature = "v2_10")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 pub use self::web_editor::WebEditor;
 
 mod web_extension;
 pub use self::web_extension::WebExtension;
 
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 mod web_hit_test_result;
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 pub use self::web_hit_test_result::WebHitTestResult;
 
 mod web_page;
@@ -358,13 +374,16 @@ pub use self::console_message::ConsoleMessage;
 mod enums;
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 pub use self::enums::ConsoleMessageLevel;
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 pub use self::enums::ConsoleMessageSource;
 pub use self::enums::ContextMenuAction;
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 pub use self::enums::FormSubmissionStep;
 #[cfg(feature = "v2_28")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
@@ -375,6 +394,8 @@ pub use self::flags::HitTestResultContext;
 
 #[doc(hidden)]
 pub mod traits {
+    pub use super::context_menu::ContextMenuExt;
+    pub use super::context_menu_item::ContextMenuItemExt;
     pub use super::dom_attr::DOMAttrExt;
     pub use super::dom_blob::DOMBlobExt;
     pub use super::dom_character_data::DOMCharacterDataExt;
@@ -474,14 +495,22 @@ pub mod traits {
     pub use super::dom_xpath_expression::DOMXPathExpressionExt;
     pub use super::dom_xpath_result::DOMXPathResultExt;
     pub use super::domx_path_ns_resolver::DOMXPathNSResolverExt;
+    #[cfg(feature = "v2_26")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     pub use super::frame::FrameExt;
     pub use super::hit_test_result::HitTestResultExt;
     pub use super::script_world::ScriptWorldExt;
     pub use super::uri_request::URIRequestExt;
     pub use super::uri_response::URIResponseExt;
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     pub use super::user_message::UserMessageExt;
+    #[cfg(feature = "v2_10")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     pub use super::web_editor::WebEditorExt;
     pub use super::web_extension::WebExtensionExt;
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     pub use super::web_hit_test_result::WebHitTestResultExt;
     pub use super::web_page::WebPageExt;
 }

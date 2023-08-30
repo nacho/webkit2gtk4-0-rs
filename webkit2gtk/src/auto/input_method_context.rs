@@ -139,26 +139,6 @@ pub trait InputMethodContextExt: IsA<InputMethodContext> + sealed::Sealed + 'sta
         }
     }
 
-    #[doc(alias = "input-hints")]
-    fn get_property_input_hints(&self) -> InputHints {
-        ObjectExt::property(self.as_ref(), "input-hints")
-    }
-
-    #[doc(alias = "input-hints")]
-    fn set_property_input_hints(&self, input_hints: InputHints) {
-        ObjectExt::set_property(self.as_ref(), "input-hints", input_hints)
-    }
-
-    #[doc(alias = "input-purpose")]
-    fn get_property_input_purpose(&self) -> InputPurpose {
-        ObjectExt::property(self.as_ref(), "input-purpose")
-    }
-
-    #[doc(alias = "input-purpose")]
-    fn set_property_input_purpose(&self, input_purpose: InputPurpose) {
-        ObjectExt::set_property(self.as_ref(), "input-purpose", input_purpose)
-    }
-
     #[cfg(feature = "v2_28")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "committed")]
@@ -307,6 +287,8 @@ pub trait InputMethodContextExt: IsA<InputMethodContext> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "input-hints")]
     fn connect_input_hints_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_input_hints_trampoline<
@@ -333,6 +315,8 @@ pub trait InputMethodContextExt: IsA<InputMethodContext> + sealed::Sealed + 'sta
         }
     }
 
+    #[cfg(feature = "v2_28")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "input-purpose")]
     fn connect_input_purpose_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_input_purpose_trampoline<

@@ -632,6 +632,10 @@ pub trait DOMElementExt: IsA<DOMElement> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[cfg(feature = "v2_22")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_element_html_input_element_get_auto_filled")]
     fn html_input_element_get_auto_filled(&self) -> bool {
         unsafe {
@@ -641,8 +645,10 @@ pub trait DOMElementExt: IsA<DOMElement> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_22")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_element_html_input_element_is_user_edited")]
     fn html_input_element_is_user_edited(&self) -> bool {
         unsafe {
@@ -652,8 +658,10 @@ pub trait DOMElementExt: IsA<DOMElement> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_22")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_element_html_input_element_set_auto_filled")]
     fn html_input_element_set_auto_filled(&self, auto_filled: bool) {
         unsafe {
@@ -664,8 +672,10 @@ pub trait DOMElementExt: IsA<DOMElement> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_22")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_dom_element_html_input_element_set_editing_value")]
     fn html_input_element_set_editing_value(&self, value: &str) {
         unsafe {
