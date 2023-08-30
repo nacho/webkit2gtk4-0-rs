@@ -3,10 +3,7 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use glib::prelude::*;
-#[cfg(feature = "v2_28")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {
@@ -21,8 +18,6 @@ glib::wrapper! {
 impl UserMessage {
     pub const NONE: Option<&'static UserMessage> = None;
 
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_new")]
     pub fn new(name: &str, parameters: Option<&glib::Variant>) -> UserMessage {
         assert_initialized_main_thread!();
@@ -34,8 +29,6 @@ impl UserMessage {
         }
     }
 
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_new_with_fd_list")]
     #[doc(alias = "new_with_fd_list")]
     pub fn with_fd_list(
@@ -124,8 +117,6 @@ mod sealed {
 }
 
 pub trait UserMessageExt: IsA<UserMessage> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_get_fd_list")]
     #[doc(alias = "get_fd_list")]
     fn fd_list(&self) -> Option<gio::UnixFDList> {
@@ -136,8 +127,6 @@ pub trait UserMessageExt: IsA<UserMessage> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_get_name")]
     #[doc(alias = "get_name")]
     fn name(&self) -> Option<glib::GString> {
@@ -148,8 +137,6 @@ pub trait UserMessageExt: IsA<UserMessage> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_get_parameters")]
     #[doc(alias = "get_parameters")]
     fn parameters(&self) -> Option<glib::Variant> {
@@ -160,8 +147,6 @@ pub trait UserMessageExt: IsA<UserMessage> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_28")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_28")))]
     #[doc(alias = "webkit_user_message_send_reply")]
     fn send_reply(&self, reply: &impl IsA<UserMessage>) {
         unsafe {

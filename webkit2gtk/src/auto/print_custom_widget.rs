@@ -2,18 +2,14 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
-use glib::prelude::*;
-#[cfg(feature = "v2_16")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_16")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitPrintCustomWidget")]
@@ -27,8 +23,8 @@ glib::wrapper! {
 impl PrintCustomWidget {
     pub const NONE: Option<&'static PrintCustomWidget> = None;
 
-    #[cfg(feature = "v2_16")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_print_custom_widget_new")]
     pub fn new(widget: &impl IsA<gtk::Widget>, title: &str) -> PrintCustomWidget {
         assert_initialized_main_thread!();
@@ -75,6 +71,7 @@ impl PrintCustomWidgetBuilder {
 
     #[cfg(feature = "v2_16")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn title(self, title: impl Into<glib::GString>) -> Self {
         Self {
             builder: self.builder.property("title", title.into()),
@@ -83,6 +80,7 @@ impl PrintCustomWidgetBuilder {
 
     #[cfg(feature = "v2_16")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     pub fn widget(self, widget: &impl IsA<gtk::Widget>) -> Self {
         Self {
             builder: self.builder.property("widget", widget.clone().upcast()),
@@ -103,8 +101,8 @@ mod sealed {
 }
 
 pub trait PrintCustomWidgetExt: IsA<PrintCustomWidget> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_16")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_print_custom_widget_get_title")]
     #[doc(alias = "get_title")]
     fn title(&self) -> Option<glib::GString> {
@@ -115,8 +113,8 @@ pub trait PrintCustomWidgetExt: IsA<PrintCustomWidget> + sealed::Sealed + 'stati
         }
     }
 
-    #[cfg(feature = "v2_16")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_print_custom_widget_get_widget")]
     #[doc(alias = "get_widget")]
     fn widget(&self) -> Option<gtk::Widget> {
@@ -127,6 +125,7 @@ pub trait PrintCustomWidgetExt: IsA<PrintCustomWidget> + sealed::Sealed + 'stati
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_16")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     #[doc(alias = "apply")]
@@ -151,6 +150,7 @@ pub trait PrintCustomWidgetExt: IsA<PrintCustomWidget> + sealed::Sealed + 'stati
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_16")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_16")))]
     #[doc(alias = "update")]

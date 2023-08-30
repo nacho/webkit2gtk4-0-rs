@@ -32,16 +32,22 @@ mod sealed {
 pub trait UserMediaPermissionRequestExt:
     IsA<UserMediaPermissionRequest> + sealed::Sealed + 'static
 {
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "is-for-audio-device")]
     fn is_for_audio_device(&self) -> bool {
         ObjectExt::property(self.as_ref(), "is-for-audio-device")
     }
 
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "is-for-video-device")]
     fn is_for_video_device(&self) -> bool {
         ObjectExt::property(self.as_ref(), "is-for-video-device")
     }
 
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "is-for-audio-device")]
     fn connect_is_for_audio_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_for_audio_device_trampoline<
@@ -68,6 +74,8 @@ pub trait UserMediaPermissionRequestExt:
         }
     }
 
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "is-for-video-device")]
     fn connect_is_for_video_device_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_is_for_video_device_trampoline<

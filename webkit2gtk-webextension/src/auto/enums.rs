@@ -9,6 +9,7 @@ use glib::prelude::*;
 use glib::translate::*;
 use std::fmt;
 
+#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
@@ -31,6 +32,7 @@ pub enum ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl fmt::Display for ConsoleMessageLevel {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -50,6 +52,7 @@ impl fmt::Display for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl IntoGlib for ConsoleMessageLevel {
     type GlibType = ffi::WebKitConsoleMessageLevel;
@@ -69,6 +72,7 @@ impl IntoGlib for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitConsoleMessageLevel> for ConsoleMessageLevel {
     #[inline]
@@ -88,6 +92,7 @@ impl FromGlib<ffi::WebKitConsoleMessageLevel> for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl StaticType for ConsoleMessageLevel {
     #[inline]
     fn static_type() -> glib::Type {
@@ -97,6 +102,7 @@ impl StaticType for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl glib::HasParamSpec for ConsoleMessageLevel {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -109,12 +115,14 @@ impl glib::HasParamSpec for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl glib::value::ValueType for ConsoleMessageLevel {
     type Type = Self;
 }
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 unsafe impl<'a> glib::value::FromValue<'a> for ConsoleMessageLevel {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
@@ -127,6 +135,7 @@ unsafe impl<'a> glib::value::FromValue<'a> for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl ToValue for ConsoleMessageLevel {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -145,6 +154,7 @@ impl ToValue for ConsoleMessageLevel {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl From<ConsoleMessageLevel> for glib::Value {
     #[inline]
     fn from(v: ConsoleMessageLevel) -> Self {
@@ -153,6 +163,7 @@ impl From<ConsoleMessageLevel> for glib::Value {
     }
 }
 
+#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
@@ -175,6 +186,7 @@ pub enum ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl fmt::Display for ConsoleMessageSource {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -194,6 +206,7 @@ impl fmt::Display for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl IntoGlib for ConsoleMessageSource {
     type GlibType = ffi::WebKitConsoleMessageSource;
@@ -213,6 +226,7 @@ impl IntoGlib for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitConsoleMessageSource> for ConsoleMessageSource {
     #[inline]
@@ -232,6 +246,7 @@ impl FromGlib<ffi::WebKitConsoleMessageSource> for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl StaticType for ConsoleMessageSource {
     #[inline]
     fn static_type() -> glib::Type {
@@ -241,6 +256,7 @@ impl StaticType for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl glib::HasParamSpec for ConsoleMessageSource {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -253,12 +269,14 @@ impl glib::HasParamSpec for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl glib::value::ValueType for ConsoleMessageSource {
     type Type = Self;
 }
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 unsafe impl<'a> glib::value::FromValue<'a> for ConsoleMessageSource {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
@@ -271,6 +289,7 @@ unsafe impl<'a> glib::value::FromValue<'a> for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl ToValue for ConsoleMessageSource {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -289,6 +308,7 @@ impl ToValue for ConsoleMessageSource {
 
 #[cfg(feature = "v2_12")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_12")))]
+#[allow(deprecated)]
 impl From<ConsoleMessageSource> for glib::Value {
     #[inline]
     fn from(v: ConsoleMessageSource) -> Self {
@@ -586,6 +606,7 @@ impl FromGlib<ffi::WebKitContextMenuAction> for ContextMenuAction {
     }
 }
 
+#[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
@@ -602,6 +623,7 @@ pub enum FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl fmt::Display for FormSubmissionStep {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -618,6 +640,7 @@ impl fmt::Display for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl IntoGlib for FormSubmissionStep {
     type GlibType = ffi::WebKitFormSubmissionStep;
@@ -634,6 +657,7 @@ impl IntoGlib for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 #[doc(hidden)]
 impl FromGlib<ffi::WebKitFormSubmissionStep> for FormSubmissionStep {
     #[inline]
@@ -650,6 +674,7 @@ impl FromGlib<ffi::WebKitFormSubmissionStep> for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl StaticType for FormSubmissionStep {
     #[inline]
     fn static_type() -> glib::Type {
@@ -659,6 +684,7 @@ impl StaticType for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl glib::HasParamSpec for FormSubmissionStep {
     type ParamSpec = glib::ParamSpecEnum;
     type SetValue = Self;
@@ -671,12 +697,14 @@ impl glib::HasParamSpec for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl glib::value::ValueType for FormSubmissionStep {
     type Type = Self;
 }
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 unsafe impl<'a> glib::value::FromValue<'a> for FormSubmissionStep {
     type Checker = glib::value::GenericValueTypeChecker<Self>;
 
@@ -689,6 +717,7 @@ unsafe impl<'a> glib::value::FromValue<'a> for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl ToValue for FormSubmissionStep {
     #[inline]
     fn to_value(&self) -> glib::Value {
@@ -707,6 +736,7 @@ impl ToValue for FormSubmissionStep {
 
 #[cfg(feature = "v2_20")]
 #[cfg_attr(docsrs, doc(cfg(feature = "v2_20")))]
+#[allow(deprecated)]
 impl From<FormSubmissionStep> for glib::Value {
     #[inline]
     fn from(v: FormSubmissionStep) -> Self {

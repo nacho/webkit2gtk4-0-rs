@@ -3,17 +3,12 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-use glib::prelude::*;
-#[cfg(feature = "v2_8")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_8")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitNotification")]
@@ -43,8 +38,6 @@ pub trait NotificationExt: IsA<Notification> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_8")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_notification_close")]
     fn close(&self) {
         unsafe {
@@ -52,8 +45,6 @@ pub trait NotificationExt: IsA<Notification> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_8")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_notification_get_body")]
     #[doc(alias = "get_body")]
     fn body(&self) -> Option<glib::GString> {
@@ -64,8 +55,6 @@ pub trait NotificationExt: IsA<Notification> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_8")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_notification_get_id")]
     #[doc(alias = "get_id")]
     fn id(&self) -> u64 {
@@ -84,8 +73,6 @@ pub trait NotificationExt: IsA<Notification> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_8")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "webkit_notification_get_title")]
     #[doc(alias = "get_title")]
     fn title(&self) -> Option<glib::GString> {

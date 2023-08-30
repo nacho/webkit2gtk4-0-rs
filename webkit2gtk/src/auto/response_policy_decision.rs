@@ -52,6 +52,19 @@ pub trait ResponsePolicyDecisionExt:
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_response_policy_decision_is_main_frame_main_resource")]
+    fn is_main_frame_main_resource(&self) -> bool {
+        unsafe {
+            from_glib(
+                ffi::webkit_response_policy_decision_is_main_frame_main_resource(
+                    self.as_ref().to_glib_none().0,
+                ),
+            )
+        }
+    }
+
     #[cfg(feature = "v2_4")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
     #[doc(alias = "webkit_response_policy_decision_is_mime_type_supported")]

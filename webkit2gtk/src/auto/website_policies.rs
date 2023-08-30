@@ -3,13 +3,8 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-#[cfg(feature = "v2_30")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
 use crate::AutoplayPolicy;
-use glib::prelude::*;
-#[cfg(feature = "v2_30")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {
@@ -24,16 +19,12 @@ glib::wrapper! {
 impl WebsitePolicies {
     pub const NONE: Option<&'static WebsitePolicies> = None;
 
-    #[cfg(feature = "v2_30")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     #[doc(alias = "webkit_website_policies_new")]
     pub fn new() -> WebsitePolicies {
         assert_initialized_main_thread!();
         unsafe { from_glib_full(ffi::webkit_website_policies_new()) }
     }
 
-    //#[cfg(feature = "v2_30")]
-    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     //#[doc(alias = "webkit_website_policies_new_with_policies")]
     //#[doc(alias = "new_with_policies")]
     //pub fn with_policies(first_policy_name: &str, : /*Unknown conversion*//*Unimplemented*/Basic: VarArgs) -> WebsitePolicies {
@@ -55,8 +46,6 @@ mod sealed {
 }
 
 pub trait WebsitePoliciesExt: IsA<WebsitePolicies> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_30")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     #[doc(alias = "webkit_website_policies_get_autoplay_policy")]
     #[doc(alias = "get_autoplay_policy")]
     fn autoplay_policy(&self) -> AutoplayPolicy {

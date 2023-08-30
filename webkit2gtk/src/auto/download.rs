@@ -120,11 +120,11 @@ pub trait DownloadExt: IsA<Download> + sealed::Sealed + 'static {
     }
 
     #[doc(alias = "webkit_download_set_destination")]
-    fn set_destination(&self, uri: &str) {
+    fn set_destination(&self, destination: &str) {
         unsafe {
             ffi::webkit_download_set_destination(
                 self.as_ref().to_glib_none().0,
-                uri.to_glib_none().0,
+                destination.to_glib_none().0,
             );
         }
     }

@@ -2,7 +2,11 @@
 // from gir-files (https://github.com/gtk-rs/gir-files.git)
 // from webkit2gtk-gir-files
 // DO NOT EDIT
+#![allow(deprecated)]
 
+#[cfg(feature = "v2_40")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+use crate::ScriptWorld;
 use crate::{DOMNode, HitTestResult};
 use glib::{prelude::*, translate::*};
 use std::fmt;
@@ -26,8 +30,21 @@ mod sealed {
 }
 
 pub trait WebHitTestResultExt: IsA<WebHitTestResult> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_8")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_web_hit_test_result_get_js_node")]
+    #[doc(alias = "get_js_node")]
+    fn js_node(&self, world: Option<&impl IsA<ScriptWorld>>) -> Option<javascriptcore::Value> {
+        unsafe {
+            from_glib_full(ffi::webkit_web_hit_test_result_get_js_node(
+                self.as_ref().to_glib_none().0,
+                world.map(|p| p.as_ref()).to_glib_none().0,
+            ))
+        }
+    }
+
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_web_hit_test_result_get_node")]
     #[doc(alias = "get_node")]
     fn node(&self) -> Option<DOMNode> {
@@ -38,6 +55,7 @@ pub trait WebHitTestResultExt: IsA<WebHitTestResult> + sealed::Sealed + 'static 
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     fn get_property_node(&self) -> Option<DOMNode> {
         ObjectExt::property(self.as_ref(), "node")
     }

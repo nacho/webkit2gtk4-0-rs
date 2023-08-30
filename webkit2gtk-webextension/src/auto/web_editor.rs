@@ -3,20 +3,13 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 use crate::WebPage;
-use glib::prelude::*;
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
 use glib::{
+    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::fmt;
-#[cfg(feature = "v2_10")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
-use std::{boxed::Box as Box_, mem::transmute};
+use std::{boxed::Box as Box_, fmt, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitWebEditor")]
@@ -37,8 +30,6 @@ mod sealed {
 }
 
 pub trait WebEditorExt: IsA<WebEditor> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_10")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_10")))]
     #[doc(alias = "webkit_web_editor_get_page")]
     #[doc(alias = "get_page")]
     fn page(&self) -> Option<WebPage> {

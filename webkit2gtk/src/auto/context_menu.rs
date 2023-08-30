@@ -68,6 +68,18 @@ pub trait ContextMenuExt: IsA<ContextMenu> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_context_menu_get_event")]
+    #[doc(alias = "get_event")]
+    fn event(&self) -> Option<gdk::Event> {
+        unsafe {
+            from_glib_none(ffi::webkit_context_menu_get_event(
+                self.as_ref().to_glib_none().0,
+            ))
+        }
+    }
+
     #[doc(alias = "webkit_context_menu_get_item_at_position")]
     #[doc(alias = "get_item_at_position")]
     fn item_at_position(&self, position: u32) -> Option<ContextMenuItem> {

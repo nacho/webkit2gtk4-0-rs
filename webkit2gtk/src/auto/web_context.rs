@@ -148,6 +148,16 @@ impl WebContextBuilder {
         }
     }
 
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    pub fn time_zone_override(self, time_zone_override: impl Into<glib::GString>) -> Self {
+        Self {
+            builder: self
+                .builder
+                .property("time-zone-override", time_zone_override.into()),
+        }
+    }
+
     #[cfg(feature = "v2_30")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     pub fn use_system_appearance_for_scrollbars(
@@ -354,8 +364,10 @@ pub trait WebContextExt: IsA<WebContext> + sealed::Sealed + 'static {
         }))
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_4")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_web_context_get_process_model")]
     #[doc(alias = "get_process_model")]
     fn process_model(&self) -> ProcessModel {
@@ -407,6 +419,18 @@ pub trait WebContextExt: IsA<WebContext> + sealed::Sealed + 'static {
                     self.as_ref().to_glib_none().0,
                 ),
             )
+        }
+    }
+
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    #[doc(alias = "webkit_web_context_get_time_zone_override")]
+    #[doc(alias = "get_time_zone_override")]
+    fn time_zone_override(&self) -> Option<glib::GString> {
+        unsafe {
+            from_glib_none(ffi::webkit_web_context_get_time_zone_override(
+                self.as_ref().to_glib_none().0,
+            ))
         }
     }
 
@@ -617,8 +641,10 @@ pub trait WebContextExt: IsA<WebContext> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
     #[cfg(feature = "v2_4")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_4")))]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_web_context_set_process_model")]
     fn set_process_model(&self, process_model: ProcessModel) {
         unsafe {

@@ -4,10 +4,7 @@
 // DO NOT EDIT
 
 use crate::PermissionRequest;
-use glib::prelude::*;
-#[cfg(feature = "v2_30")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {
@@ -31,8 +28,6 @@ mod sealed {
 pub trait WebsiteDataAccessPermissionRequestExt:
     IsA<WebsiteDataAccessPermissionRequest> + sealed::Sealed + 'static
 {
-    #[cfg(feature = "v2_30")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     #[doc(alias = "webkit_website_data_access_permission_request_get_current_domain")]
     #[doc(alias = "get_current_domain")]
     fn current_domain(&self) -> Option<glib::GString> {
@@ -45,8 +40,6 @@ pub trait WebsiteDataAccessPermissionRequestExt:
         }
     }
 
-    #[cfg(feature = "v2_30")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_30")))]
     #[doc(alias = "webkit_website_data_access_permission_request_get_requesting_domain")]
     #[doc(alias = "get_requesting_domain")]
     fn requesting_domain(&self) -> Option<glib::GString> {

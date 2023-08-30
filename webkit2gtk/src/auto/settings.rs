@@ -178,6 +178,16 @@ impl SettingsBuilder {
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    pub fn disable_web_security(self, disable_web_security: bool) -> Self {
+        Self {
+            builder: self
+                .builder
+                .property("disable-web-security", disable_web_security),
+        }
+    }
+
     pub fn draw_compositing_indicators(self, draw_compositing_indicators: bool) -> Self {
         Self {
             builder: self
@@ -245,6 +255,7 @@ impl SettingsBuilder {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     pub fn enable_frame_flattening(self, enable_frame_flattening: bool) -> Self {
         Self {
             builder: self
@@ -285,6 +296,7 @@ impl SettingsBuilder {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     pub fn enable_java(self, enable_java: bool) -> Self {
         Self {
             builder: self.builder.property("enable-java", enable_java),
@@ -447,6 +459,14 @@ impl SettingsBuilder {
         }
     }
 
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    pub fn enable_webrtc(self, enable_webrtc: bool) -> Self {
+        Self {
+            builder: self.builder.property("enable-webrtc", enable_webrtc),
+        }
+    }
+
     #[cfg(feature = "v2_2")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     pub fn enable_write_console_messages_to_stdout(
@@ -461,6 +481,7 @@ impl SettingsBuilder {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     pub fn enable_xss_auditor(self, enable_xss_auditor: bool) -> Self {
         Self {
             builder: self
@@ -733,6 +754,18 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_settings_get_disable_web_security")]
+    #[doc(alias = "get_disable_web_security")]
+    fn is_disable_web_security(&self) -> bool {
+        unsafe {
+            from_glib(ffi::webkit_settings_get_disable_web_security(
+                self.as_ref().to_glib_none().0,
+            ))
+        }
+    }
+
     #[doc(alias = "webkit_settings_get_draw_compositing_indicators")]
     #[doc(alias = "get_draw_compositing_indicators")]
     fn draws_compositing_indicators(&self) -> bool {
@@ -813,6 +846,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_get_enable_frame_flattening")]
     #[doc(alias = "get_enable_frame_flattening")]
     fn enables_frame_flattening(&self) -> bool {
@@ -863,6 +898,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_get_enable_java")]
     #[doc(alias = "get_enable_java")]
     fn enables_java(&self) -> bool {
@@ -1073,6 +1110,18 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    #[doc(alias = "webkit_settings_get_enable_webrtc")]
+    #[doc(alias = "get_enable_webrtc")]
+    fn enables_webrtc(&self) -> bool {
+        unsafe {
+            from_glib(ffi::webkit_settings_get_enable_webrtc(
+                self.as_ref().to_glib_none().0,
+            ))
+        }
+    }
+
     #[cfg(feature = "v2_2")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     #[doc(alias = "webkit_settings_get_enable_write_console_messages_to_stdout")]
@@ -1087,6 +1136,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_get_enable_xss_auditor")]
     #[doc(alias = "get_enable_xss_auditor")]
     fn enables_xss_auditor(&self) -> bool {
@@ -1368,6 +1419,18 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "webkit_settings_set_disable_web_security")]
+    fn set_disable_web_security(&self, disabled: bool) {
+        unsafe {
+            ffi::webkit_settings_set_disable_web_security(
+                self.as_ref().to_glib_none().0,
+                disabled.into_glib(),
+            );
+        }
+    }
+
     #[doc(alias = "webkit_settings_set_draw_compositing_indicators")]
     fn set_draw_compositing_indicators(&self, enabled: bool) {
         unsafe {
@@ -1446,6 +1509,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_set_enable_frame_flattening")]
     fn set_enable_frame_flattening(&self, enabled: bool) {
         unsafe {
@@ -1496,6 +1561,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_set_enable_java")]
     fn set_enable_java(&self, enabled: bool) {
         unsafe {
@@ -1704,6 +1771,18 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    #[doc(alias = "webkit_settings_set_enable_webrtc")]
+    fn set_enable_webrtc(&self, enabled: bool) {
+        unsafe {
+            ffi::webkit_settings_set_enable_webrtc(
+                self.as_ref().to_glib_none().0,
+                enabled.into_glib(),
+            );
+        }
+    }
+
     #[cfg(feature = "v2_2")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     #[doc(alias = "webkit_settings_set_enable_write_console_messages_to_stdout")]
@@ -1716,6 +1795,8 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_settings_set_enable_xss_auditor")]
     fn set_enable_xss_auditor(&self, enabled: bool) {
         unsafe {
@@ -2180,6 +2261,34 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_40")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_40")))]
+    #[doc(alias = "disable-web-security")]
+    fn connect_disable_web_security_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
+        unsafe extern "C" fn notify_disable_web_security_trampoline<
+            P: IsA<Settings>,
+            F: Fn(&P) + 'static,
+        >(
+            this: *mut ffi::WebKitSettings,
+            _param_spec: glib::ffi::gpointer,
+            f: glib::ffi::gpointer,
+        ) {
+            let f: &F = &*(f as *const F);
+            f(Settings::from_glib_borrow(this).unsafe_cast_ref())
+        }
+        unsafe {
+            let f: Box_<F> = Box_::new(f);
+            connect_raw(
+                self.as_ptr() as *mut _,
+                b"notify::disable-web-security\0".as_ptr() as *const _,
+                Some(transmute::<_, unsafe extern "C" fn()>(
+                    notify_disable_web_security_trampoline::<Self, F> as *const (),
+                )),
+                Box_::into_raw(f),
+            )
+        }
+    }
+
     #[doc(alias = "draw-compositing-indicators")]
     fn connect_draw_compositing_indicators_notify<F: Fn(&Self) + 'static>(
         &self,
@@ -2391,6 +2500,7 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     #[doc(alias = "enable-frame-flattening")]
     fn connect_enable_frame_flattening_notify<F: Fn(&Self) + 'static>(
         &self,
@@ -2533,6 +2643,7 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     #[doc(alias = "enable-java")]
     fn connect_enable_java_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_enable_java_trampoline<
@@ -3070,6 +3181,34 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg(feature = "v2_38")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_38")))]
+    #[doc(alias = "enable-webrtc")]
+    fn connect_enable_webrtc_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
+        unsafe extern "C" fn notify_enable_webrtc_trampoline<
+            P: IsA<Settings>,
+            F: Fn(&P) + 'static,
+        >(
+            this: *mut ffi::WebKitSettings,
+            _param_spec: glib::ffi::gpointer,
+            f: glib::ffi::gpointer,
+        ) {
+            let f: &F = &*(f as *const F);
+            f(Settings::from_glib_borrow(this).unsafe_cast_ref())
+        }
+        unsafe {
+            let f: Box_<F> = Box_::new(f);
+            connect_raw(
+                self.as_ptr() as *mut _,
+                b"notify::enable-webrtc\0".as_ptr() as *const _,
+                Some(transmute::<_, unsafe extern "C" fn()>(
+                    notify_enable_webrtc_trampoline::<Self, F> as *const (),
+                )),
+                Box_::into_raw(f),
+            )
+        }
+    }
+
     #[cfg(feature = "v2_2")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     #[doc(alias = "enable-write-console-messages-to-stdout")]
@@ -3102,6 +3241,7 @@ pub trait WebkitSettingsExt: IsA<Settings> + sealed::Sealed + 'static {
         }
     }
 
+    #[cfg_attr(feature = "v2_38", deprecated = "Since 2.38")]
     #[doc(alias = "enable-xss-auditor")]
     fn connect_enable_xss_auditor_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_enable_xss_auditor_trampoline<

@@ -3,12 +3,17 @@
 // from webkit2gtk-gir-files
 // DO NOT EDIT
 
+use glib::prelude::*;
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
 use glib::{
-    prelude::*,
     signal::{connect_raw, SignalHandlerId},
     translate::*,
 };
-use std::{boxed::Box as Box_, fmt, mem::transmute};
+use std::fmt;
+#[cfg(feature = "v2_8")]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
+use std::{boxed::Box as Box_, mem::transmute};
 
 glib::wrapper! {
     #[doc(alias = "WebKitColorChooserRequest")]
@@ -47,6 +52,8 @@ impl ColorChooserRequestBuilder {
         }
     }
 
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     pub fn rgba(self, rgba: &gdk::RGBA) -> Self {
         Self {
             builder: self.builder.property("rgba", rgba),
@@ -127,14 +134,6 @@ pub trait ColorChooserRequestExt: IsA<ColorChooserRequest> + sealed::Sealed + 's
         }
     }
 
-    fn get_property_rgba(&self) -> Option<gdk::RGBA> {
-        ObjectExt::property(self.as_ref(), "rgba")
-    }
-
-    fn set_property_rgba(&self, rgba: Option<&gdk::RGBA>) {
-        ObjectExt::set_property(self.as_ref(), "rgba", rgba)
-    }
-
     #[cfg(feature = "v2_8")]
     #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "finished")]
@@ -162,6 +161,8 @@ pub trait ColorChooserRequestExt: IsA<ColorChooserRequest> + sealed::Sealed + 's
         }
     }
 
+    #[cfg(feature = "v2_8")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "v2_8")))]
     #[doc(alias = "rgba")]
     fn connect_rgba_notify<F: Fn(&Self) + 'static>(&self, f: F) -> SignalHandlerId {
         unsafe extern "C" fn notify_rgba_trampoline<

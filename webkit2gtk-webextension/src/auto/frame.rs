@@ -4,13 +4,8 @@
 // DO NOT EDIT
 #![allow(deprecated)]
 
-#[cfg(feature = "v2_22")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
 use crate::{DOMObject, ScriptWorld};
-use glib::prelude::*;
-#[cfg(feature = "v2_2")]
-#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
-use glib::translate::*;
+use glib::{prelude::*, translate::*};
 use std::fmt;
 
 glib::wrapper! {
@@ -32,8 +27,6 @@ mod sealed {
 }
 
 pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
-    #[cfg(feature = "v2_26")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_26")))]
     #[doc(alias = "webkit_frame_get_id")]
     #[doc(alias = "get_id")]
     fn id(&self) -> u64 {
@@ -41,8 +34,6 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
     }
 
     //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
-    //#[cfg(feature = "v2_2")]
-    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     //#[allow(deprecated)]
     //#[doc(alias = "webkit_frame_get_javascript_context_for_script_world")]
     //#[doc(alias = "get_javascript_context_for_script_world")]
@@ -51,8 +42,6 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
     //}
 
     //#[cfg_attr(feature = "v2_22", deprecated = "Since 2.22")]
-    //#[cfg(feature = "v2_2")]
-    //#[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     //#[allow(deprecated)]
     //#[doc(alias = "webkit_frame_get_javascript_global_context")]
     //#[doc(alias = "get_javascript_global_context")]
@@ -60,8 +49,6 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
     //    unsafe { TODO: call ffi:webkit_frame_get_javascript_global_context() }
     //}
 
-    #[cfg(feature = "v2_22")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
     #[doc(alias = "webkit_frame_get_js_context")]
     #[doc(alias = "get_js_context")]
     fn js_context(&self) -> Option<javascriptcore::Context> {
@@ -72,8 +59,6 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_22")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
     #[doc(alias = "webkit_frame_get_js_context_for_script_world")]
     #[doc(alias = "get_js_context_for_script_world")]
     fn js_context_for_script_world(
@@ -88,8 +73,8 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_22")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_frame_get_js_value_for_dom_object")]
     #[doc(alias = "get_js_value_for_dom_object")]
     fn js_value_for_dom_object(
@@ -104,8 +89,8 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_22")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_22")))]
+    #[cfg_attr(feature = "v2_40", deprecated = "Since 2.40")]
+    #[allow(deprecated)]
     #[doc(alias = "webkit_frame_get_js_value_for_dom_object_in_script_world")]
     #[doc(alias = "get_js_value_for_dom_object_in_script_world")]
     fn js_value_for_dom_object_in_script_world(
@@ -124,16 +109,12 @@ pub trait FrameExt: IsA<Frame> + sealed::Sealed + 'static {
         }
     }
 
-    #[cfg(feature = "v2_2")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     #[doc(alias = "webkit_frame_get_uri")]
     #[doc(alias = "get_uri")]
     fn uri(&self) -> Option<glib::GString> {
         unsafe { from_glib_none(ffi::webkit_frame_get_uri(self.as_ref().to_glib_none().0)) }
     }
 
-    #[cfg(feature = "v2_2")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "v2_2")))]
     #[doc(alias = "webkit_frame_is_main_frame")]
     fn is_main_frame(&self) -> bool {
         unsafe {
